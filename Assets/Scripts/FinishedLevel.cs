@@ -1,0 +1,224 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
+public class FinishedLevel : MonoBehaviour
+{
+    public PlayerDataUIValue PlayerDataUIValue;
+
+    public List<GameObject> gameObjectsInList;
+
+    public bool Finished;
+    public bool isInvoked;
+
+    public TMP_Text TextLost;
+
+    public DeathLevel DeathLevel;
+
+    public GameObject panelFinished;
+    public TMP_Text textFinished;
+    public GameObject InPanelFinishedGO;
+
+    public bool isRace;
+
+    void Start()
+    {
+        DeathLevel = FindObjectOfType<DeathLevel>();
+        PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+        Finished = false;
+        isInvoked = false;
+    }
+
+    private void OnEnable()
+    {
+        gameObjectsInList.Clear();
+    }
+
+    void Update()
+    {
+        if (Finished)
+        {
+            if(isInvoked == false)
+            { 
+                isInvoked = true;
+                StartCoroutine(FinishedAlive());
+            }
+        }
+
+        /*foreach(GameObject go in gameObjectsInList)
+        {
+            go.gameObject.tag = "Untagged";
+        }*/
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bot"))
+        {
+            if (gameObjectsInList.Contains(other.gameObject))
+            {
+                return;
+            }
+            else
+            {
+                gameObjectsInList.Add(other.gameObject);
+            }
+
+            other.gameObject.tag = "Untagged";
+
+            int j = gameObjectsInList.Count;
+            int jj = DeathLevel.gameBotObjectsLost.Length + 1 - j;
+            int jjj = DeathLevel.gameBotObjectsLost.Length + 1;
+            TextLost.text = "Lost players: " + jj + "/" + jjj;
+        }
+
+        else if (other.gameObject.CompareTag("Player"))
+        {
+            if (gameObjectsInList.Contains(other.gameObject))
+            {
+                return;
+            }
+            else
+            {
+                gameObjectsInList.Add(other.gameObject);
+            }
+
+            for (int i = 0; i < gameObjectsInList.Count; i++)
+            {
+                if (gameObjectsInList[i].gameObject.CompareTag("Player"))
+                {
+                    if (PlayerDataUIValue == null)
+                    {
+                        PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+
+                        if (Geekplay.Instance.PlayerData.PlayerFirstTimePlay == true)
+                        {
+                            Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop = true;
+
+                            
+
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
+                        else
+                        {
+                            PlayerDataUIValue.PlaceInLevel = i + 1; 
+                        }
+                    }
+                    else
+                    {
+                        if (Geekplay.Instance.PlayerData.PlayerFirstTimePlay == true)
+                        {
+                            Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop = true;
+
+                            
+
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
+                        else
+                        {
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
+                    }
+
+                    Finished = true;
+                }
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Bot"))
+        {
+            if (gameObjectsInList.Contains(other.gameObject))
+            {
+                return;
+            }
+            else
+            {
+                gameObjectsInList.Add(other.gameObject);
+            }
+
+            other.gameObject.tag = "Untagged";
+
+            int j = gameObjectsInList.Count;
+            int jj = DeathLevel.gameBotObjectsLost.Length + 1 - j;
+            int jjj = DeathLevel.gameBotObjectsLost.Length + 1;
+            TextLost.text = "Lost players: " + jj + "/" + jjj;
+        }
+
+        else if (other.gameObject.CompareTag("Player"))
+        {
+            if (gameObjectsInList.Contains(other.gameObject))
+            {
+                return;
+            }
+            else
+            {
+                gameObjectsInList.Add(other.gameObject);
+            }
+
+            for (int i = 0; i < gameObjectsInList.Count; i++)
+            {
+                if (gameObjectsInList[i].gameObject.CompareTag("Player"))
+                {
+                    if (PlayerDataUIValue == null)
+                    {
+                        PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+
+                        if(Geekplay.Instance.PlayerData.PlayerFirstTimePlay == true)
+                        {
+                            Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop = true;
+
+                            
+
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
+                        else
+                        {
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
+                    }
+                    else
+                    {
+                        if (Geekplay.Instance.PlayerData.PlayerFirstTimePlay == true)
+                        {
+                            Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop = true;
+
+                            
+
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
+                        else
+                        {
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+                        }
+                    }
+
+                    Finished = true;
+                }
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    IEnumerator FinishedAlive()
+    {
+        DeathLevel.panelWinInDeathlevel.GetComponent<panelWinScript>().panelWinInvoke();
+        if (isRace == false)
+        {
+            PlayerDataUIValue.PlaceInLevel = 1;
+        }
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Lobby");
+        yield break;
+    }
+}

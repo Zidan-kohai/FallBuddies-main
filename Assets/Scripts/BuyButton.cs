@@ -39,6 +39,22 @@ public class BuyButton : MonoBehaviour
     {
         CCharScript = CheckChar.GetComponent<CheckCharactersScript>();
         CMainInit = CanvasMain.GetComponent<Geekplay>();
+
+
+        Geekplay.Instance.SubscribeOnReward("ShopBody", AdBuyBodies);
+        Geekplay.Instance.SubscribeOnReward("ShopBodyparts", AdBuyBodyparts);
+        Geekplay.Instance.SubscribeOnReward("ShopEars", AdBuyEars);
+        Geekplay.Instance.SubscribeOnReward("ShopEyes", AdBuyEyes);
+        Geekplay.Instance.SubscribeOnReward("ShopEyesFromHead", AdBuyEyesFromHead);
+        Geekplay.Instance.SubscribeOnReward("ShopGloves", AdBuyGloves);
+        Geekplay.Instance.SubscribeOnReward("ShopHair", AdBuyHair);
+        Geekplay.Instance.SubscribeOnReward("ShopHat", AdBuyHat);
+        Geekplay.Instance.SubscribeOnReward("ShopHeadparts", AdBuyHeadparts);
+        Geekplay.Instance.SubscribeOnReward("ShopHorn", AdBuyHorn);
+        Geekplay.Instance.SubscribeOnReward("ShopMouth", AdBuyMounth);
+        Geekplay.Instance.SubscribeOnReward("ShopNoise", AdBuyNoise);
+        Geekplay.Instance.SubscribeOnReward("ShopAd", AdBuyTail);
+
     }
 
     public void StartBuy()

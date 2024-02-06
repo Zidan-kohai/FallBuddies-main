@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using CrazyGames;
 using GamePix;
+using System;
 
 [System.Serializable]
 public class Rewards
@@ -703,5 +704,27 @@ public class Geekplay : MonoBehaviour
     public void BuyShop()
     {
         shopCharacter.AdBuy();
+    }
+
+    public void SubscribeOnPurshace(string tag, UnityAction action)
+    {
+        for(int i = 0; i < purchasesList.Length; i++)
+        {
+            if (purchasesList[i].itemName == tag)
+            {
+                purchasesList[i].purchaseEvent.AddListener(action);
+            }
+        }
+    }
+
+    public void SubscribeOnReward(string tag, UnityAction action)
+    {
+        for (int i = 0; i < rewardsList.Length; i++)
+        {
+            if (rewardsList[i].rewardName == tag)
+            {
+                rewardsList[i].rewardEvent.AddListener(action);
+            }
+        }
     }
 }

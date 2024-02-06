@@ -10,6 +10,18 @@ public class InnAppShop : MonoBehaviour
     void Start()
     {
         playerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+
+        Geekplay.Instance.SubscribeOnPurshace("UncommonCard1", BuyUncommonCard1);
+        Geekplay.Instance.SubscribeOnPurshace("CommonCard1", BuyCommonCard1);
+        Geekplay.Instance.SubscribeOnPurshace("CommonCard2", BuyCommonCard2);
+        Geekplay.Instance.SubscribeOnPurshace("CommonCard3", BuyCommonCard3);
+        Geekplay.Instance.SubscribeOnPurshace("EpicCard1", BuyEpicCard1);
+        Geekplay.Instance.SubscribeOnPurshace("LegendaryCard1", BuyLegendatyCard1);
+        Geekplay.Instance.SubscribeOnPurshace("RareCard1", BuyRareCard1);
+        Geekplay.Instance.SubscribeOnPurshace("RareCard2", BuyRareCard2);
+        Geekplay.Instance.SubscribeOnPurshace("RareCard3", BuyRareCard3);
+        Geekplay.Instance.SubscribeOnPurshace("Money1", BuyMoney1);
+        Geekplay.Instance.SubscribeOnPurshace("HardMoney1", BuyHardMoney1);
     }
 
     public void InnAppBuy(string tag)

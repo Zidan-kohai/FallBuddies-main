@@ -25875,388 +25875,100 @@ MonoBehaviour:
   - rewardName: ShopBody
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyBodies
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopBodyparts
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyBodyparts
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopEars
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyEars
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopEyes
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyEyes
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopEyesFromHead
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyEyesFromHead
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopGloves
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyGloves
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopHair
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyHair
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopHat
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyHat
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopHeadparts
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyHeadparts
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopHorn
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyHorn
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopMouth
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyMounth
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopNoise
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyNoise
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - rewardName: ShopAd
     rewardEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 493108848}
-          m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
-          m_MethodName: AdBuyTail
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   purchasesList:
   - itemName: UncommonCard1
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyUncommonCard1
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - itemName: CommonCard1
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyCommonCard1
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - itemName: CommonCard2
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyCommonCard2
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - itemName: CommonCard3
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyCommonCard3
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - itemName: EpicCard1
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyEpicCard1
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - itemName: LegendaryCard1
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyLegendatyCard1
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - itemName: RareCard1
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyRareCard1
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - itemName: Money1
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyMoney1
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - itemName: HardMoney1
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyHardMoney1
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - itemName: RareCard2
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyRareCard2
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   - itemName: RareCard3
     purchaseEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 907991656}
-          m_TargetAssemblyTypeName: InnAppShop, Assembly-CSharp
-          m_MethodName: BuyRareCard3
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   Platform: 0
   gameArterPrefab: {fileID: 0}
   leaderboardBtn: {fileID: 0}

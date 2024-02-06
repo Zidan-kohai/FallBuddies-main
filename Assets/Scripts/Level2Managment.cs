@@ -133,7 +133,7 @@ public class Level2Managment : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         panelLevelStarted.gameObject.SetActive(true);
-        playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
+        //playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
 
         if (Geekplay.Instance.language == "en")
             panelLevelText.text = "GO!";
@@ -173,6 +173,7 @@ public class Level2Managment : MonoBehaviour
         }
         else
         {
+            playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
             yield break;
         }
     }
@@ -206,7 +207,7 @@ public class Level2Managment : MonoBehaviour
             {
                 bot.GetComponent<NavMeshAgent>().speed = NativeSpeedBot * 0.5f;
             }
-            playerGO.GetComponent<PlayerControlls>().speed = NativeSpeed;
+            playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
 
             tutorTextLost.gameObject.SetActive(false);
             panelLost.gameObject.SetActive(false);
@@ -222,7 +223,7 @@ public class Level2Managment : MonoBehaviour
                 panelMobile.SetParent(canvas, false);
 
             }
-            
+
             yield return null;
         }
         else

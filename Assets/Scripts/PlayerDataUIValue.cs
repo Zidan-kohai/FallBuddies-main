@@ -46,6 +46,18 @@ public class PlayerDataUIValue : MonoBehaviour
 
     public int speedUIreward;
 
+    private void Start()
+    {
+        if (Geekplay.Instance.language == "ru")
+        {
+            TextLevelUp.text = "Новый уровень!";
+        }
+        else
+        {
+            TextLevelUp.text = "Level up!";
+        }
+    }
+
     private void Update()
     {
         if (SceneManager.GetActiveScene().name == "Lobby")

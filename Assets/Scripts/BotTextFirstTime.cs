@@ -45,12 +45,19 @@ public class BotTextFirstTime : MonoBehaviour
             }
             else
             {
-                text3DBotText.text = "Bot";
+                if (Geekplay.Instance.language == "en")
+                {
+                    text3DBotText.text = "Bot";
+                }
+                else
+                {
+                    text3DBotText.text = "Бот";
+                }
             }
         }
 
-        if (Geekplay.Instance.language == "ru")
-            Destroy(text3DBotText.gameObject);
+        //if (Geekplay.Instance.language == "ru")
+        //    Destroy(text3DBotText.gameObject);
     }
 
     // Update is called once per frame

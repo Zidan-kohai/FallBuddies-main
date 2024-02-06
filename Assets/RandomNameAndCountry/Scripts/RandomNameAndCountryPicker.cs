@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,20 +12,24 @@ namespace RandomNameAndCountry.Scripts
     {
         public static RandomNameAndCountryPicker Instance;
         [SerializeField] private List<Sprite> countries;
-        private static List<string> m_namesList;
-        private TextAsset m_textAsset;
-
+        private static List<string> m_EnNamesList;
+        private static List<string> m_RuNamesList;
+        private TextAsset enNames;
+        private TextAsset ruNames;
         private void Awake()
         {
             Instance = this;
-            m_textAsset = Resources.Load("TextFiles/names") as TextAsset;
+            enNames = Resources.Load("TextFiles/EnNames") as TextAsset;
+            ruNames = Resources.Load("TextFiles/RuNames") as TextAsset;
+
             ReadTextFile();
             GetRandomPlayerInfo();
         }
 
         private void ReadTextFile()
         {
-            m_namesList = m_textAsset.text.Split('\n').ToList();
+            m_EnNamesList = enNames.text.Split('\n').ToList();
+            m_RuNamesList = ruNames.text.Split('\n').ToList();
         }
 
         public RandomPlayerInfo GetRandomPlayerInfo()
@@ -34,7 +39,16 @@ namespace RandomNameAndCountry.Scripts
             var countryName = Regex.Replace(rawCountryName, "[^a-zA-Z]", "");
             countryName = ToUpperFirstLetter(countryName);
             var randomPlayerInfo = new RandomPlayerInfo();
-            randomPlayerInfo.playerName = m_namesList[UnityEngine.Random.Range(0, m_namesList.Count)];
+
+            if (Geekplay.Instance.language == "en")
+            {
+                randomPlayerInfo.playerName = m_EnNamesList[UnityEngine.Random.Range(0, m_EnNamesList.Count)];
+            }
+            else if(Geekplay.Instance.language == "ru")
+            {
+                randomPlayerInfo.playerName = m_RuNamesList[UnityEngine.Random.Range(0, m_RuNamesList.Count)];
+            }
+
             randomPlayerInfo.countrySprite = countrySprite;
             randomPlayerInfo.countryName = countryName;
             Debug.Log(countryName);

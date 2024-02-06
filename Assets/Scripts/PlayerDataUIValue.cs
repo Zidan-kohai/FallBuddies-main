@@ -16,6 +16,7 @@ public class PlayerDataUIValue : MonoBehaviour
     public TMP_Text TextExpPanelReward;
     public TMP_Text TextMoneyPanelReward;
     public TMP_Text TextLevelUp;
+    public TMP_Text TextReward;
 
     public Slider Slider;
 
@@ -51,10 +52,12 @@ public class PlayerDataUIValue : MonoBehaviour
         if (Geekplay.Instance.language == "ru")
         {
             TextLevelUp.text = "Новый уровень!";
+            TextReward.text = "твоя награда";
         }
         else
         {
             TextLevelUp.text = "Level up!";
+            TextReward.text = "Your Reward";
         }
     }
 

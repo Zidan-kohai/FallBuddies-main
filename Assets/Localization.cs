@@ -25,6 +25,19 @@ public class Localization : MonoBehaviour
     [SerializeField] private TextMeshProUGUI showRewardText;
     [SerializeField] private TextMeshProUGUI levelUpText;
 
+	[Header("InApp")]
+	[SerializeField] private TextMeshProUGUI rare1;
+    [SerializeField] private TextMeshProUGUI rare2;
+    [SerializeField] private TextMeshProUGUI rare3;
+
+	[SerializeField] private TextMeshProUGUI unusual1;
+	[SerializeField] private TextMeshProUGUI unusual2;
+	[SerializeField] private TextMeshProUGUI unusual3;
+	[SerializeField] private TextMeshProUGUI unusual4;
+	[SerializeField] private TextMeshProUGUI unusual5;
+	[SerializeField] private TextMeshProUGUI unusual6;
+
+
     public void LocalizationFunc()
     {
     	if (Geekplay.Instance.language == "ru")
@@ -48,6 +61,17 @@ public class Localization : MonoBehaviour
 			bodyandskinText.text = "Тело";
 			showRewardText.text = "Награды";
 		    levelUpText.text = "Новый уровень!";
+
+			rare1.text = "редкое";
+			rare2.text = "редкое";
+			rare3.text = "редкое";
+
+			unusual1.text = "Необычное";
+			unusual2.text = "Необычное";
+			unusual3.text = "Необычное";
+			unusual4.text = "Необычное";
+			unusual5.text = "Необычное";
+			unusual6.text = "Необычное";
     	}
     	else if (Geekplay.Instance.language == "en")
     	{
@@ -70,6 +94,18 @@ public class Localization : MonoBehaviour
 		    bodyandskinText.text = "Bodies";
 		    showRewardText.text = "Rewards";
 		    levelUpText.text = "Level Up!";
-    	} 
+
+
+            rare1.text = "rare";
+            rare2.text = "rare";
+            rare3.text = "rare";
+
+            unusual1.text = "Unusual";
+            unusual2.text = "Unusual";
+            unusual3.text = "Unusual";
+            unusual4.text = "Unusual";
+            unusual5.text = "Unusual";
+            unusual6.text = "Unusual";
+        } 
     }
 }

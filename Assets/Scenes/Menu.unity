@@ -25581,6 +25581,7 @@ MonoBehaviour:
   TextExpPanelReward: {fileID: 412622963}
   TextMoneyPanelReward: {fileID: 231642176}
   TextLevelUp: {fileID: 2063992984}
+  TextReward: {fileID: 930897571}
   Slider: {fileID: 30330536}
   PanelMain: {fileID: 1288324168}
   PanelShowReward: {fileID: 2123678377}
@@ -26291,6 +26292,15 @@ MonoBehaviour:
   bodyandskinText: {fileID: 1040007484}
   showRewardText: {fileID: 930897571}
   levelUpText: {fileID: 2063992984}
+  rare1: {fileID: 307081322}
+  rare2: {fileID: 1134624243}
+  rare3: {fileID: 1971083109}
+  unusual1: {fileID: 347015926}
+  unusual2: {fileID: 1247383379}
+  unusual3: {fileID: 313095704}
+  unusual4: {fileID: 947588030}
+  unusual5: {fileID: 1122413507}
+  unusual6: {fileID: 1164795815}
 --- !u!1 &893868358 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9120040576130388201, guid: e469b900253e9ca42a2383b54ff1e20f, type: 3}

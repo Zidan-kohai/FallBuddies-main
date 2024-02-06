@@ -94,6 +94,14 @@ public class BuyButton : MonoBehaviour
                 {
 
                 }
+
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterBodies.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterBodies[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterBodies[idBuy] = 1;
             }
             else if (isBodyparts)
             {
@@ -125,6 +133,13 @@ public class BuyButton : MonoBehaviour
                     
                     
                 }
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterBodyparts.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterBodyparts[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterBodyparts[idBuy] = 1;
             }
             else if (isEyes)
             {
@@ -155,6 +170,12 @@ public class BuyButton : MonoBehaviour
                 {
                      
                 }
+                for (int i = 0; i < CMainInit.PlayerData.CharacterEyes.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterEyes[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterEyes[idBuy] = 1;
             }
             else if (isGloves)
             {
@@ -183,8 +204,15 @@ public class BuyButton : MonoBehaviour
                 }
                 else
                 {
-                    
+
                 }
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterGloves.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterGloves[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterGloves[idBuy] = 1;
             }
             else if (isHeadparts)
             {
@@ -208,6 +236,12 @@ public class BuyButton : MonoBehaviour
                 {
                     Geekplay.Instance.ShowRewardedAd("ShopHeadparts");
                 }
+                for (int i = 0; i < CMainInit.PlayerData.CharacterHeadparts.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterHeadparts[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterHeadparts[idBuy] = 1;
             }
             else if (isMounth)
             {
@@ -231,6 +265,13 @@ public class BuyButton : MonoBehaviour
                 {
                     Geekplay.Instance.ShowRewardedAd("ShopMouth");
                 }
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterMounth.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterMounth[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterMounth[idBuy] = 1;
             }
             else if (isNoise)
             {
@@ -254,6 +295,13 @@ public class BuyButton : MonoBehaviour
                 {
                     Geekplay.Instance.ShowRewardedAd("ShopNoise");
                 }
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterNoise.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterNoise[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterNoise[idBuy] = 1;
             }
             else if (isCombs)
             {
@@ -277,6 +325,13 @@ public class BuyButton : MonoBehaviour
                 {
                     Geekplay.Instance.ShowRewardedAd("ShopCombs");
                 }
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterCombs.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterCombs[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterCombs[idBuy] = 1;
             }
             else if (isEars)
             {
@@ -300,6 +355,13 @@ public class BuyButton : MonoBehaviour
                 {
                     Geekplay.Instance.ShowRewardedAd("ShopEars");
                 }
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterEars.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterEars[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterEars[idBuy] = 1;
             }
             else if (isEyesFromHead)
             {
@@ -323,6 +385,13 @@ public class BuyButton : MonoBehaviour
                 {
                     Geekplay.Instance.ShowRewardedAd("ShopEyesFromHead");
                 }
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterEyesFromHead.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterEyesFromHead[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterEyesFromHead[idBuy] = 1;
             }
             else if (isHair)
             {
@@ -346,6 +415,15 @@ public class BuyButton : MonoBehaviour
                 {
                     Geekplay.Instance.ShowRewardedAd("ShopHair");
                 }
+
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterHair.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterHair[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterHair[idBuy] = 1;
+
             }
             else if (isHat)
             {
@@ -369,6 +447,13 @@ public class BuyButton : MonoBehaviour
                 {
                     Geekplay.Instance.ShowRewardedAd("ShopHat");
                 }
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterHat.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterHat[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterHat[idBuy] = 1;
             }
             else if (isHorn)
             {
@@ -392,6 +477,13 @@ public class BuyButton : MonoBehaviour
                 {
                     Geekplay.Instance.ShowRewardedAd("ShopHorn");
                 }
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterHorn.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterHorn[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterHorn[idBuy] = 1;
             }
             else if (isTails)
             {
@@ -415,6 +507,13 @@ public class BuyButton : MonoBehaviour
                 {
                     Geekplay.Instance.ShowRewardedAd("ShopTail");
                 }
+
+                for (int i = 0; i < CMainInit.PlayerData.CharacterTails.Length; i++)
+                {
+                    CMainInit.PlayerData.CharacterTails[i] = 0;
+                }
+
+                CMainInit.PlayerData.CharacterTails[idBuy] = 1;
             }
             else
             {

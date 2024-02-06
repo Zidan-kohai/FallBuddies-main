@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
 
 public class InnAppShop : MonoBehaviour
 {
@@ -70,9 +66,9 @@ public class InnAppShop : MonoBehaviour
 
     public void BuyCommonCard2()
     {
-        Geekplay.Instance.PlayerData.Bodyparts[3] = 1;
-        Geekplay.Instance.PlayerData.Bodyparts[4] = 1;
-        Geekplay.Instance.PlayerData.Bodyparts[5] = 1;
+        Geekplay.Instance.PlayerData.Bodyparts[1] = 1;
+        Geekplay.Instance.PlayerData.Horn[2] = 1;
+        Geekplay.Instance.PlayerData.EyesFromHead[2] = 1;
         CheckMoneyTextUI();
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");

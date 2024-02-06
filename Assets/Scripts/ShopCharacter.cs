@@ -287,6 +287,7 @@ public class ShopCharacter : MonoBehaviour
                     }
 
                     PDShop.CharacterBodyparts[ItemId] = 1;
+
                     isEquip = true;
                 }
                 else
@@ -294,6 +295,7 @@ public class ShopCharacter : MonoBehaviour
                     PDShop.CharacterBodyparts[ItemId] = 0;
                     isEquip = false;
                 }
+
             }
             else
             {
@@ -304,6 +306,11 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterBodyparts.Length; i++)
+                    {
+                        PDShop.CharacterBodyparts[i] = 0;
+                    }
+
                     PDShop.CharacterBodyparts[ItemId] = 1;
                     isEquip = true;
                 }
@@ -342,6 +349,11 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterEyes.Length; i++)
+                    {
+                        PDShop.CharacterEyes[i] = 0;
+                    }
+
                     PDShop.CharacterEyes[ItemId] = 1;
                     isEquip = true;
                 }
@@ -379,6 +391,11 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterGloves.Length; i++)
+                    {
+                        PDShop.CharacterGloves[i] = 0;
+                    }
+
                     PDShop.CharacterGloves[ItemId] = 1;
                     isEquip = true;
                 }
@@ -416,6 +433,10 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterHeadparts.Length; i++)
+                    {
+                        PDShop.CharacterHeadparts[i] = 0;
+                    }
                     PDShop.CharacterHeadparts[ItemId] = 1;
                     isEquip = true;
                 }
@@ -453,6 +474,10 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterMounth.Length; i++)
+                    {
+                        PDShop.CharacterMounth[i] = 0;
+                    }
                     PDShop.CharacterMounth[ItemId] = 1;
                     isEquip = true;
                 }
@@ -490,6 +515,10 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterNoise.Length; i++)
+                    {
+                        PDShop.CharacterNoise[i] = 0;
+                    }
                     PDShop.CharacterNoise[ItemId] = 1;
                     isEquip = true;
                 }
@@ -527,6 +556,11 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterCombs.Length; i++)
+                    {
+                        PDShop.CharacterCombs[i] = 0;
+                    }
+
                     PDShop.CharacterCombs[ItemId] = 1;
                     isEquip = true;
                 }
@@ -564,6 +598,11 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterEars.Length; i++)
+                    {
+                        PDShop.CharacterEars[i] = 0;
+                    }
+
                     PDShop.CharacterEars[ItemId] = 1;
                     isEquip = true;
                 }
@@ -601,6 +640,11 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterEyesFromHead.Length; i++)
+                    {
+                        PDShop.CharacterEyesFromHead[i] = 0;
+                    }
+
                     PDShop.CharacterEyesFromHead[ItemId] = 1;
                     isEquip = true;
                 }
@@ -638,6 +682,11 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterHair.Length; i++)
+                    {
+                        PDShop.CharacterHair[i] = 0;
+                    }
+
                     PDShop.CharacterHair[ItemId] = 1;
                     isEquip = true;
                 }
@@ -674,6 +723,10 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterHat.Length; i++)
+                    {
+                        PDShop.CharacterHat[i] = 0;
+                    }
                     PDShop.CharacterHat[ItemId] = 1;
                     isEquip = true;
                 }
@@ -711,6 +764,11 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterHorn.Length; i++)
+                    {
+                        PDShop.CharacterHorn[i] = 0;
+                    }
+
                     PDShop.CharacterHorn[ItemId] = 1;
                     isEquip = true;
                 }
@@ -748,6 +806,11 @@ public class ShopCharacter : MonoBehaviour
                 }
                 else
                 {
+                    for (int i = 0; i < PDShop.CharacterTails.Length; i++)
+                    {
+                        PDShop.CharacterTails[i] = 0;
+                    }
+
                     PDShop.CharacterTails[ItemId] = 1;
                     isEquip = true;
                 }

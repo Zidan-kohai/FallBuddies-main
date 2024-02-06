@@ -40,6 +40,10 @@ public class PlayerUIControl : MonoBehaviour
     [SerializeField] private bool isNeedTheLevelLoad;
     [SerializeField] private string TheLevelLoad;
 
+    [SerializeField] private Button newGameButton;
+    [SerializeField] private Button mainMenuButton;
+
+    [SerializeField] private Button doubleAward;
     public void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
@@ -53,7 +57,36 @@ public class PlayerUIControl : MonoBehaviour
         else
         {
             ImageTextFirstGame.gameObject.SetActive(false);
+            if (newGameButton != null || mainMenuButton != null)
+            {
+                Image newGameButtonImage = newGameButton.GetComponent<Image>();
+                Image mainMenuButtonImage = mainMenuButton.GetComponent<Image>();
+                newGameButtonImage.color = new Color(1, 1, 1, 0f);
+                mainMenuButtonImage.color = new Color(1, 1, 1, 0f);
+
+                mainMenuButton.interactable = false;
+                newGameButton.interactable = false;
+
+                newGameButtonImage.DOFade(1, 7f).OnComplete(() =>
+                {
+                    newGameButton.interactable = true;
+                });
+
+                mainMenuButtonImage.DOFade(1, 7f).OnComplete(() =>
+                {
+                    mainMenuButton.interactable = true;
+                });
+            }
         }
+
+
+
+        doubleAward.onClick.AddListener(() =>
+        {
+            Debug.Log("DoubleAward");
+            Geekplay.Instance.ShowRewardedAd("DoubleAward");
+            doubleAward.gameObject.SetActive(false);
+        });
 
         isPressed = false;
         isStop = false;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
+using UnityEngine.UIElements;
 
 public class PlayerControlls : MonoBehaviour
 {
@@ -119,6 +120,7 @@ public class PlayerControlls : MonoBehaviour
         Vector3.ClampMagnitude(velocityChange, maxForce);
 
         rb.AddForce(velocityChange, ForceMode.VelocityChange);
+
     }
 
     public void MoveMobile()
@@ -162,7 +164,8 @@ public class PlayerControlls : MonoBehaviour
 
         Vector3.ClampMagnitude(velocityChange, maxForce);
 
-        rb.AddForce(velocityChange * speed, ForceMode.VelocityChange);
+        rb.AddForce(velocityChange, ForceMode.VelocityChange);
+
     }
 
     public void Look()
@@ -184,11 +187,13 @@ public class PlayerControlls : MonoBehaviour
         if (grounded)
         {
             jumpForces = Vector3.up * jumpForce;
-            if (Geekplay.Instance.mobile)
-            	jumpForces *= 2;
+            //if (Geekplay.Instance.mobile)
+            //	jumpForces *= 2;
+
+            grounded = false;
         }
 
-        rb.AddForce(jumpForces, ForceMode.VelocityChange);
+        rb.velocity = new Vector3(rb.velocity.x, jumpForces.y, rb.velocity.z);
     }
 
     public void SetGrounded(bool state)
@@ -209,6 +214,13 @@ public class PlayerControlls : MonoBehaviour
         if (collision.gameObject.CompareTag("Jump"))
         {
             SetGrounded(true);
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Jump"))
+        {
+            SetGrounded(false);
         }
     }
 }

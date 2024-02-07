@@ -80,13 +80,15 @@ public class PlayerUIControl : MonoBehaviour
         }
 
 
-
-        doubleAward.onClick.AddListener(() =>
+        if (doubleAward != null)
         {
-            Debug.Log("DoubleAward");
-            Geekplay.Instance.ShowRewardedAd("DoubleAward");
-            doubleAward.gameObject.SetActive(false);
-        });
+            doubleAward.onClick.AddListener(() =>
+            {
+                Debug.Log("DoubleAward");
+                Geekplay.Instance.ShowRewardedAd("DoubleAward");
+                doubleAward.gameObject.SetActive(false);
+            });
+        }
 
         isPressed = false;
         isStop = false;
@@ -161,17 +163,17 @@ public class PlayerUIControl : MonoBehaviour
 
         if (ii > 120)
         {
-            Level = "Level1";
+            Level = "Level4";
             imageLevel = 0;
         }
         else if(ii > 90 && ii <= 120)
         {
-            Level = "Level2";
+            Level = "Level4";
             imageLevel = 1;
         }
         else if (ii > 60 && ii <= 90)
         {
-            Level = "Level3";
+            Level = "Level4";
             imageLevel = 2;
         }
         else if (ii > 30 && ii <= 60)
@@ -181,7 +183,7 @@ public class PlayerUIControl : MonoBehaviour
         }
         else
         {
-            Level = "Level5";
+            Level = "Level4";
             imageLevel = 4;
         }
 

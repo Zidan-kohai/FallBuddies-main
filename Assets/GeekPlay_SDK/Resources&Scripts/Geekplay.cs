@@ -729,6 +729,17 @@ public class Geekplay : MonoBehaviour
             }
         }
     }
+    public void UnsubscribeOnPurshace(string tag, UnityAction action)
+    {
+        for (int i = 0; i < purchasesList.Length; i++)
+        {
+            if (purchasesList[i].itemName == tag)
+            {
+                purchasesList[i].purchaseEvent.RemoveListener(action);
+            }
+        }
+    }
+
 
     public void SubscribeOnReward(string tag, UnityAction action)
     {
@@ -737,6 +748,16 @@ public class Geekplay : MonoBehaviour
             if (rewardsList[i].rewardName == tag)
             {
                 rewardsList[i].rewardEvent.AddListener(action);
+            }
+        }
+    }
+    public void UnsubscribeOnReward(string tag, UnityAction action)
+    {
+        for (int i = 0; i < rewardsList.Length; i++)
+        {
+            if (rewardsList[i].rewardName == tag)
+            {
+                rewardsList[i].rewardEvent.RemoveListener(action);
             }
         }
     }

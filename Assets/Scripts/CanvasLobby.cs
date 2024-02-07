@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using JetBrains.Annotations;
 
 public class CanvasLobby : MonoBehaviour
 {
@@ -17,10 +18,47 @@ public class CanvasLobby : MonoBehaviour
 
     public TMP_Text PlaceText;
 
+    [Header("In App Shop")]
+    [SerializeField] private List<GameObject> panelsToDisableWhenInAppTurnOn;
+    [SerializeField] private GameObject inAppShop;
+
+    public TMP_Text TextValueMoney;
+    public TMP_Text TextValueHardMoney;
+
+    public PlayerDataUIValue playerDataUIValue;
+
     private void OnEnable()
     {
         MainCanvas = FindObjectOfType<Geekplay>().gameObject;
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        playerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+
+        playerDataUIValue.TextValueMoney = TextValueMoney;
+        playerDataUIValue.TextValueHardMoney = TextValueHardMoney;
+    }
+
+    public void ShowOrDisableInAppShop()
+    {
+        Debug.Log("asdsadasd");
+        if (inAppShop.activeSelf)
+        {
+            foreach (var item in panelsToDisableWhenInAppTurnOn)
+            {
+                item.SetActive(true);
+            }
+
+            inAppShop.SetActive(false);
+        }
+        else
+        {
+            inAppShop.SetActive(true);
+
+            foreach (var item in panelsToDisableWhenInAppTurnOn)
+            {
+                item.SetActive(false);
+            }
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

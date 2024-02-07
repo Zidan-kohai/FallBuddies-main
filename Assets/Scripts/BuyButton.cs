@@ -65,7 +65,11 @@ public class BuyButton : MonoBehaviour
             {
                 if (CMainInit.PlayerData.Bodies[idBuy] == 0)
                 {
-                    if(idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                    if (idIsAD)
+                    {
+                        Geekplay.Instance.ShowRewardedAd("ShopBody");
+                    }
+                    else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                     {
                         audioSource.clip.name = "Buy";
                         audioSource.Play();
@@ -85,10 +89,6 @@ public class BuyButton : MonoBehaviour
                         Debug.Log("Geekplay.Instance.Save()");
                         Geekplay.Instance.Save();
                     }
-                    else if(idIsAD)
-                    {
-                        Geekplay.Instance.ShowRewardedAd("ShopBody");
-                    }
                 }
                 else
                 {
@@ -107,7 +107,11 @@ public class BuyButton : MonoBehaviour
             {
                 if (CMainInit.PlayerData.Bodyparts[idBuy] == 0)
                 {
-                    if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                    if (idIsAD)
+                    {
+                        Geekplay.Instance.ShowRewardedAd("ShopBodyparts");
+                    }
+                    else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                     {
                         CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                         CMainInit.PlayerData.Bodyparts[idBuy] = 1;
@@ -122,10 +126,6 @@ public class BuyButton : MonoBehaviour
                         this.gameObject.SetActive(false);
                         Debug.Log("Geekplay.Instance.Save()");
                         Geekplay.Instance.Save();
-                    }
-                    else if (idIsAD)
-                    {
-                        Geekplay.Instance.ShowRewardedAd("ShopBodyparts");
                     }
                 }
                 else
@@ -145,7 +145,11 @@ public class BuyButton : MonoBehaviour
             {
                 if (CMainInit.PlayerData.Eyes[idBuy] == 0)
                 {
-                    if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                    if (idIsAD)
+                    {
+                        Geekplay.Instance.ShowRewardedAd("ShopEyes");
+                    }
+                    else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                     {
                         CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                         CMainInit.PlayerData.Eyes[idBuy] = 1;
@@ -160,10 +164,6 @@ public class BuyButton : MonoBehaviour
                         this.gameObject.SetActive(false);
                         Debug.Log("Geekplay.Instance.Save()");
                         Geekplay.Instance.Save();
-                    }
-                    else if (idIsAD)
-                    {
-                        Geekplay.Instance.ShowRewardedAd("ShopEyes");
                     }
                 }
                 else
@@ -181,7 +181,11 @@ public class BuyButton : MonoBehaviour
             {
                 if (CMainInit.PlayerData.Gloves[idBuy] == 0)
                 {
-                    if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                    if (idIsAD)
+                    {
+                        Geekplay.Instance.ShowRewardedAd("ShopGloves");
+                    }
+                    else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                     {
                         CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                         CMainInit.PlayerData.Gloves[idBuy] = 1;
@@ -189,6 +193,7 @@ public class BuyButton : MonoBehaviour
                         Debug.Log("Geekplay.Instance.Save()");
                         Geekplay.Instance.Save();
                     }
+                    
                     else if (idIsHardMoney == false && CMainInit.PlayerData.PlayerMoney >= idCost)
                     {
                         CMainInit.PlayerData.PlayerMoney -= idCost;
@@ -197,10 +202,7 @@ public class BuyButton : MonoBehaviour
                         Debug.Log("Geekplay.Instance.Save()");
                         Geekplay.Instance.Save();
                     }
-                    else if (idIsAD)
-                    {
-                        Geekplay.Instance.ShowRewardedAd("ShopGloves");
-                    }
+                    
                 }
                 else
                 {
@@ -216,7 +218,11 @@ public class BuyButton : MonoBehaviour
             }
             else if (isHeadparts)
             {
-                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                if (idIsAD)
+                {
+                    Geekplay.Instance.ShowRewardedAd("ShopHeadparts");
+                }
+                else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
                     CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Headparts[idBuy] = 1;
@@ -232,10 +238,7 @@ public class BuyButton : MonoBehaviour
                     Debug.Log("Geekplay.Instance.Save()");
                     Geekplay.Instance.Save();
                 }
-                else if (idIsAD)
-                {
-                    Geekplay.Instance.ShowRewardedAd("ShopHeadparts");
-                }
+
                 for (int i = 0; i < CMainInit.PlayerData.CharacterHeadparts.Length; i++)
                 {
                     CMainInit.PlayerData.CharacterHeadparts[i] = 0;
@@ -245,7 +248,11 @@ public class BuyButton : MonoBehaviour
             }
             else if (isMounth)
             {
-                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                if (idIsAD)
+                {
+                    Geekplay.Instance.ShowRewardedAd("ShopMouth");
+                }
+                else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
                     CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Mounth[idBuy] = 1;
@@ -260,10 +267,6 @@ public class BuyButton : MonoBehaviour
                     this.gameObject.SetActive(false);
                     Debug.Log("Geekplay.Instance.Save()");
                     Geekplay.Instance.Save();
-                }
-                else if (idIsAD)
-                {
-                    Geekplay.Instance.ShowRewardedAd("ShopMouth");
                 }
 
                 for (int i = 0; i < CMainInit.PlayerData.CharacterMounth.Length; i++)
@@ -275,7 +278,11 @@ public class BuyButton : MonoBehaviour
             }
             else if (isNoise)
             {
-                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                if (idIsAD)
+                {
+                    Geekplay.Instance.ShowRewardedAd("ShopNoise");
+                }
+                else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
                     CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Noise[idBuy] = 1;
@@ -290,10 +297,6 @@ public class BuyButton : MonoBehaviour
                     this.gameObject.SetActive(false);
                     Debug.Log("Geekplay.Instance.Save()");
                     Geekplay.Instance.Save();
-                }
-                else if (idIsAD)
-                {
-                    Geekplay.Instance.ShowRewardedAd("ShopNoise");
                 }
 
                 for (int i = 0; i < CMainInit.PlayerData.CharacterNoise.Length; i++)
@@ -305,7 +308,11 @@ public class BuyButton : MonoBehaviour
             }
             else if (isCombs)
             {
-                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                if (idIsAD)
+                {
+                    Geekplay.Instance.ShowRewardedAd("ShopCombs");
+                }
+                else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
                     CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Combs[idBuy] = 1;
@@ -320,10 +327,6 @@ public class BuyButton : MonoBehaviour
                     this.gameObject.SetActive(false);
                     Debug.Log("Geekplay.Instance.Save()");
                     Geekplay.Instance.Save();
-                }
-                else if (idIsAD)
-                {
-                    Geekplay.Instance.ShowRewardedAd("ShopCombs");
                 }
 
                 for (int i = 0; i < CMainInit.PlayerData.CharacterCombs.Length; i++)
@@ -335,7 +338,11 @@ public class BuyButton : MonoBehaviour
             }
             else if (isEars)
             {
-                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                if (idIsAD)
+                {
+                    Geekplay.Instance.ShowRewardedAd("ShopEars");
+                }
+                else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
                     CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Ears[idBuy] = 1;
@@ -350,10 +357,6 @@ public class BuyButton : MonoBehaviour
                     this.gameObject.SetActive(false);
                     Debug.Log("Geekplay.Instance.Save()");
                     Geekplay.Instance.Save();
-                }
-                else if (idIsAD)
-                {
-                    Geekplay.Instance.ShowRewardedAd("ShopEars");
                 }
 
                 for (int i = 0; i < CMainInit.PlayerData.CharacterEars.Length; i++)
@@ -365,7 +368,11 @@ public class BuyButton : MonoBehaviour
             }
             else if (isEyesFromHead)
             {
-                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                if (idIsAD)
+                {
+                    Geekplay.Instance.ShowRewardedAd("ShopEyesFromHead");
+                }
+                else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
                     CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.EyesFromHead[idBuy] = 1;
@@ -380,10 +387,6 @@ public class BuyButton : MonoBehaviour
                     this.gameObject.SetActive(false);
                     Debug.Log("Geekplay.Instance.Save()");
                     Geekplay.Instance.Save();
-                }
-                else if (idIsAD)
-                {
-                    Geekplay.Instance.ShowRewardedAd("ShopEyesFromHead");
                 }
 
                 for (int i = 0; i < CMainInit.PlayerData.CharacterEyesFromHead.Length; i++)
@@ -395,7 +398,11 @@ public class BuyButton : MonoBehaviour
             }
             else if (isHair)
             {
-                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                if (idIsAD)
+                {
+                    Geekplay.Instance.ShowRewardedAd("ShopHair");
+                }
+                else if(idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
                     CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Hair[idBuy] = 1;
@@ -410,11 +417,7 @@ public class BuyButton : MonoBehaviour
                     this.gameObject.SetActive(false);
                     Debug.Log("Geekplay.Instance.Save()");
                     Geekplay.Instance.Save();
-                }
-                else if (idIsAD)
-                {
-                    Geekplay.Instance.ShowRewardedAd("ShopHair");
-                }
+                } 
 
 
                 for (int i = 0; i < CMainInit.PlayerData.CharacterHair.Length; i++)
@@ -427,7 +430,11 @@ public class BuyButton : MonoBehaviour
             }
             else if (isHat)
             {
-                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                if (idIsAD)
+                {
+                    Geekplay.Instance.ShowRewardedAd("ShopHat");
+                }
+                else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
                     CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Hat[idBuy] = 1;
@@ -442,10 +449,6 @@ public class BuyButton : MonoBehaviour
                     this.gameObject.SetActive(false);
                     Debug.Log("Geekplay.Instance.Save()");
                     Geekplay.Instance.Save();
-                }
-                else if (idIsAD)
-                {
-                    Geekplay.Instance.ShowRewardedAd("ShopHat");
                 }
 
                 for (int i = 0; i < CMainInit.PlayerData.CharacterHat.Length; i++)
@@ -457,7 +460,11 @@ public class BuyButton : MonoBehaviour
             }
             else if (isHorn)
             {
-                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                if (idIsAD)
+                {
+                    Geekplay.Instance.ShowRewardedAd("ShopHorn");
+                }
+                else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
                     CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Horn[idBuy] = 1;
@@ -472,10 +479,6 @@ public class BuyButton : MonoBehaviour
                     this.gameObject.SetActive(false);
                     Debug.Log("Geekplay.Instance.Save()");
                     Geekplay.Instance.Save();
-                }
-                else if (idIsAD)
-                {
-                    Geekplay.Instance.ShowRewardedAd("ShopHorn");
                 }
 
                 for (int i = 0; i < CMainInit.PlayerData.CharacterHorn.Length; i++)
@@ -487,7 +490,11 @@ public class BuyButton : MonoBehaviour
             }
             else if (isTails)
             {
-                if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
+                if (idIsAD)
+                {
+                    Geekplay.Instance.ShowRewardedAd("ShopTail");
+                }
+                else if (idIsHardMoney == true && CMainInit.PlayerData.PlayerHardMoney >= idCostHard)
                 {
                     CMainInit.PlayerData.PlayerHardMoney -= idCostHard;
                     CMainInit.PlayerData.Tails[idBuy] = 1;
@@ -502,10 +509,6 @@ public class BuyButton : MonoBehaviour
                     this.gameObject.SetActive(false);
                     Debug.Log("Geekplay.Instance.Save()");
                     Geekplay.Instance.Save();
-                }
-                else if (idIsAD)
-                {
-                    Geekplay.Instance.ShowRewardedAd("ShopTail");
                 }
 
                 for (int i = 0; i < CMainInit.PlayerData.CharacterTails.Length; i++)

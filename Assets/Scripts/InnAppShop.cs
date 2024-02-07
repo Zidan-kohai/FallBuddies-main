@@ -7,6 +7,7 @@ public class InnAppShop : MonoBehaviour
     public TMP_Text TextValueHardMoney;
     public PlayerDataUIValue playerDataUIValue;
 
+
     void Start()
     {
         playerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
@@ -22,6 +23,8 @@ public class InnAppShop : MonoBehaviour
         Geekplay.Instance.SubscribeOnPurshace("RareCard3", BuyRareCard3);
         Geekplay.Instance.SubscribeOnPurshace("Money1", BuyMoney1);
         Geekplay.Instance.SubscribeOnPurshace("HardMoney1", BuyHardMoney1);
+
+
     }
 
     public void InnAppBuy(string tag)
@@ -154,5 +157,20 @@ public class InnAppShop : MonoBehaviour
         playerDataUIValue.TextValueMoney.text = "" + Geekplay.Instance.PlayerData.PlayerMoney;
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+    }
+
+    private void OnDisable()
+    {
+        Geekplay.Instance.UnsubscribeOnPurshace("UncommonCard1", BuyUncommonCard1);
+        Geekplay.Instance.UnsubscribeOnPurshace("CommonCard1", BuyCommonCard1);
+        Geekplay.Instance.UnsubscribeOnPurshace("CommonCard2", BuyCommonCard2);
+        Geekplay.Instance.UnsubscribeOnPurshace("CommonCard3", BuyCommonCard3);
+        Geekplay.Instance.UnsubscribeOnPurshace("EpicCard1", BuyEpicCard1);
+        Geekplay.Instance.UnsubscribeOnPurshace("LegendaryCard1", BuyLegendatyCard1);
+        Geekplay.Instance.UnsubscribeOnPurshace("RareCard1", BuyRareCard1);
+        Geekplay.Instance.UnsubscribeOnPurshace("RareCard2", BuyRareCard2);
+        Geekplay.Instance.UnsubscribeOnPurshace("RareCard3", BuyRareCard3);
+        Geekplay.Instance.UnsubscribeOnPurshace("Money1", BuyMoney1);
+        Geekplay.Instance.UnsubscribeOnPurshace("HardMoney1", BuyHardMoney1);
     }
 }

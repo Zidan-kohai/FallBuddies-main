@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.Mathematics;
+using UnityEditor.Experimental.RestService;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class MainMenuUI : MonoBehaviour
     [Header("Inn App Shop")]
     public GameObject PanelInnShop;
     public GameObject ButtonInnShop;
+    [SerializeField] private TextMeshProUGUI moneyValueText;
+    [SerializeField] private TextMeshProUGUI hardMoneyValueText;
 
     public List<ShopCharacter> ShopChars;
 
@@ -67,6 +70,9 @@ public class MainMenuUI : MonoBehaviour
         {
             scroll.SetActive(false);
         }
+
+        PlayerDataUIValue.TextValueMoney = moneyValueText;
+        PlayerDataUIValue.TextValueHardMoney = hardMoneyValueText;
     }
 
     public void StartShopping()

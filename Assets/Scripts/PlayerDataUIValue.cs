@@ -375,41 +375,54 @@ public class PlayerDataUIValue : MonoBehaviour
         j = doubleExp;
         l = doubleMoney;
 
-        for (int i = 0; i < RewardsPanelInPanelShowReward.Length - 3; i++)
-        {
-            RewardsImageInPanelShowReward[i].color = Color.white; //Random.ColorHSV();
-            RewardsImageInPanelShowReward[i + 3].color = Color.white; //Random.ColorHSV();
-            RewardsImageInPanelShowReward[i + 3].sprite = RewardsSprite[UnityEngine.Random.Range(0, RewardsSprite.Length)];
-            RewardsPanelInPanelShowReward[i].DOScale(new Vector3(0.7f, 0.7f, 0.7f), 1.5f * speedUIreward);
-            RewardsPanelInPanelShowReward[i + 3].DOScale(new Vector3(0.52f, 0.5f, 0.5f), 1.5f * speedUIreward);
+        //for (int i = 0; i < RewardsPanelInPanelShowReward.Length - 3; i++)
+        //{
+        //    RewardsImageInPanelShowReward[i].color = Color.white; //Random.ColorHSV();
+        //    RewardsImageInPanelShowReward[i + 3].color = Color.white; //Random.ColorHSV();
+        //    RewardsImageInPanelShowReward[i + 3].sprite = RewardsSprite[UnityEngine.Random.Range(0, RewardsSprite.Length)];
+        //    RewardsPanelInPanelShowReward[i].DOScale(new Vector3(0.7f, 0.7f, 0.7f), 1.5f * speedUIreward);
+        //    RewardsPanelInPanelShowReward[i + 3].DOScale(new Vector3(0.52f, 0.5f, 0.5f), 1.5f * speedUIreward);
 
-            for (int k = 0; k < 10; k++)
-            {
-                Color ColorImage = RewardsImageInPanelShowReward[i].color;
-                Color ColorImage1 = RewardsImageInPanelShowReward[i + 3].color;
-                ColorImage.a = k * 0.1f;
-                ColorImage1.a = k * 0.1f;
-                RewardsImageInPanelShowReward[i].color = ColorImage;
-                RewardsImageInPanelShowReward[i + 3].color = ColorImage1;
-                yield return new WaitForSeconds(0.05f * speedUIreward);
-            }
-            //yield return new WaitForSeconds(1.0f);
-        }
-        int currentMoney = Convert.ToInt32(TextMoneyPanelReward.text);
-        while (currentMoney <= doubleMoney)
+        //    for (int k = 0; k < 10; k++)
+        //    {
+        //        Color ColorImage = RewardsImageInPanelShowReward[i].color;
+        //        Color ColorImage1 = RewardsImageInPanelShowReward[i + 3].color;
+        //        ColorImage.a = k * 0.1f;
+        //        ColorImage1.a = k * 0.1f;
+        //        RewardsImageInPanelShowReward[i].color = ColorImage;
+        //        RewardsImageInPanelShowReward[i + 3].color = ColorImage1;
+        //        yield return new WaitForSeconds(0.05f * speedUIreward);
+        //    }
+        //    //yield return new WaitForSeconds(1.0f);
+        //}
+        //while (currentMoney <= doubleMoney)
+        //{
+        //    currentMoney++;
+        //    TextMoneyPanelReward.text = currentMoney.ToString();
+        //    yield return new WaitForSeconds(0.10f * speedUIreward);
+        //}
+
+        //while (currentMoney <= doubleExp)
+        //{
+        //    currentExp++;
+        //    TextExpPanelReward.text = currentExp.ToString();
+        //    yield return new WaitForSeconds(0.10f * speedUIreward);
+        //}
+
+        float currentMoney = Convert.ToInt32(TextMoneyPanelReward.text);
+        float currentExp = Convert.ToInt32(TextExpPanelReward.text);
+
+        currentExp = currentExp / 100f;
+        currentMoney = currentMoney / 100f;
+        for (int i = 0; i < 100; i++)
         {
-            currentMoney++;
-            TextMoneyPanelReward.text = currentMoney.ToString();
-            yield return new WaitForSeconds(0.10f * speedUIreward);
+            TextExpPanelReward.text = (float.Parse(TextExpPanelReward.text) + currentExp).ToString();
+            TextMoneyPanelReward.text = (float.Parse(TextMoneyPanelReward.text) + currentMoney).ToString();
+            yield return new WaitForSeconds(0.02f * speedUIreward);
         }
 
-        int currentExp = Convert.ToInt32(TextExpPanelReward.text);
-        while (currentMoney <= doubleExp)
-        {
-            currentExp++;
-            TextExpPanelReward.text = currentExp.ToString();
-            yield return new WaitForSeconds(0.10f * speedUIreward);
-        }
+        TextExpPanelReward.text = doubleExp.ToString();
+        TextMoneyPanelReward.text = doubleMoney.ToString();
 
         //for (int i = 0; i < 10; i++)
         //{

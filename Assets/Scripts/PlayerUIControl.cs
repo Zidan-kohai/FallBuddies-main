@@ -82,6 +82,12 @@ public class PlayerUIControl : MonoBehaviour
 
         if (doubleAward != null)
         {
+            doubleAward.gameObject.SetActive(false);
+            DOTween.Sequence().SetDelay(4f).OnComplete(() =>
+            {
+                doubleAward.gameObject.SetActive(true);
+            });
+
             doubleAward.onClick.AddListener(() =>
             {
                 Debug.Log("DoubleAward");
@@ -163,17 +169,17 @@ public class PlayerUIControl : MonoBehaviour
 
         if (ii > 120)
         {
-            Level = "Level4";
+            Level = "Level1";
             imageLevel = 0;
         }
         else if(ii > 90 && ii <= 120)
         {
-            Level = "Level4";
+            Level = "Level2";
             imageLevel = 1;
         }
         else if (ii > 60 && ii <= 90)
         {
-            Level = "Level4";
+            Level = "Level3";
             imageLevel = 2;
         }
         else if (ii > 30 && ii <= 60)
@@ -183,7 +189,7 @@ public class PlayerUIControl : MonoBehaviour
         }
         else
         {
-            Level = "Level4";
+            Level = "Level5";
             imageLevel = 4;
         }
 

@@ -193,7 +193,7 @@ public class PlayerControlls : MonoBehaviour
             grounded = false;
         }
 
-        rb.velocity = new Vector3(rb.velocity.x, jumpForces.y, rb.velocity.z);
+        rb.AddForce(jumpForces);
     }
 
     public void SetGrounded(bool state)

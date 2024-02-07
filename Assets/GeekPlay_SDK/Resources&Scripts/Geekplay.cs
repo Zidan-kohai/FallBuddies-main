@@ -61,6 +61,16 @@ public class Geekplay : MonoBehaviour
 
     [SerializeField] private Localization localScript;
 
+
+    public string[] l;
+    public string[] lN;
+    public int leaderNumber;
+    public int leaderNumberN;
+    public LeaderboardInGame leaderboardInGame;
+    public float remainingTimeUntilUpdateLeaderboard;
+    public float timeToUpdateLeaderboard = 60;
+    public string lastLeaderText;
+
     void Start()
     {
         Utils.GameReady();
@@ -72,6 +82,9 @@ public class Geekplay : MonoBehaviour
             PlayerData = new PlayerData();
             Save();
         }
+
+
+        remainingTimeUntilUpdateLeaderboard -= Time.deltaTime;
     }
     //РЕКЛАМА
     public void OnRewarded() //ВОЗНАГРАЖДЕНИЕ ПОСЛЕ ПРОСМОТРА РЕКЛАМЫ

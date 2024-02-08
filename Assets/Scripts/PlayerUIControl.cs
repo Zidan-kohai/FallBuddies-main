@@ -44,6 +44,12 @@ public class PlayerUIControl : MonoBehaviour
     [SerializeField] private Button mainMenuButton;
 
     [SerializeField] private Button doubleAward;
+
+    [SerializeField] private Button firstLevelStart;
+    [SerializeField] private Button secondLevelStart;
+    [SerializeField] private Button thirdLevelStart;
+    [SerializeField] private Button fourLevelStart;
+
     public void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
@@ -57,15 +63,60 @@ public class PlayerUIControl : MonoBehaviour
         else
         {
             ImageTextFirstGame.gameObject.SetActive(false);
-            if (newGameButton != null || mainMenuButton != null)
+            if (newGameButton != null && mainMenuButton != null &&
+                firstLevelStart != null && secondLevelStart != null 
+                && thirdLevelStart != null && fourLevelStart != null)
             {
                 mainMenuButton.gameObject.SetActive(false);
                 newGameButton.gameObject.SetActive(false);
+                firstLevelStart.gameObject.SetActive(false);
+                secondLevelStart.gameObject.SetActive(false);
+                thirdLevelStart.gameObject.SetActive(false);
+                fourLevelStart.gameObject.SetActive(false);
+
+
+
+                Image mainMenuButtonImage = mainMenuButton.GetComponent<Image>();
+                Image newGameButtonImage = newGameButton.GetComponent<Image>();  
+                Image firstLevelStartImage = firstLevelStart.GetComponent<Image>();  
+                Image secondLevelStartImage = secondLevelStart.GetComponent<Image>();  
+                Image thirdLevelStartImage = thirdLevelStart.GetComponent<Image>();  
+                Image fourLevelStartImage = fourLevelStart.GetComponent<Image>();  
 
                 DOTween.Sequence().SetDelay(7f).OnComplete(() =>
                 {
+                    mainMenuButtonImage.DOFade(0, 0f).OnComplete(() =>
+                    {
+                        mainMenuButtonImage.DOFade(1, 1f);
+                    });
+
+                    newGameButtonImage.DOFade(0, 0f).OnComplete(() =>
+                    {
+                        newGameButtonImage.DOFade(1, 1f);
+                    });
+                    firstLevelStartImage.DOFade(0, 0f).OnComplete(() =>
+                    {
+                        firstLevelStartImage.DOFade(1, 1f);
+                    });
+                    secondLevelStartImage.DOFade(0, 0f).OnComplete(() =>
+                    {
+                        secondLevelStartImage.DOFade(1, 1f);
+                    });
+                    thirdLevelStartImage.DOFade(0, 0f).OnComplete(() =>
+                    {
+                        thirdLevelStartImage.DOFade(1, 1f);
+                    });
+                    fourLevelStartImage.DOFade(0, 0f).OnComplete(() =>
+                    {
+                        fourLevelStartImage.DOFade(1, 1f);
+                    });
+
                     newGameButton.gameObject.SetActive(true);
                     mainMenuButton.gameObject.SetActive(true);
+                    firstLevelStart.gameObject.SetActive(true);
+                    secondLevelStart.gameObject.SetActive(true);
+                    thirdLevelStart.gameObject.SetActive(true);
+                    fourLevelStart.gameObject.SetActive(true);
                 });
             }
         }
@@ -74,8 +125,13 @@ public class PlayerUIControl : MonoBehaviour
         if (doubleAward != null)
         {
             doubleAward.gameObject.SetActive(false);
-            DOTween.Sequence().SetDelay(4f).OnComplete(() =>
+            Image doubleAwardButtonImage = doubleAward.GetComponent<Image>();
+            DOTween.Sequence().SetDelay(6f).OnComplete(() =>
             {
+                doubleAwardButtonImage.DOFade(0, 0f).OnComplete(() =>
+                {
+                    doubleAwardButtonImage.DOFade(1, 1f);
+                });
                 doubleAward.gameObject.SetActive(true);
             });
 
@@ -152,6 +208,10 @@ public class PlayerUIControl : MonoBehaviour
         yield return null;
     }
 
+    public void LoadLevelByIndex(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
     IEnumerator AwakeGame()
     {
         string Level;

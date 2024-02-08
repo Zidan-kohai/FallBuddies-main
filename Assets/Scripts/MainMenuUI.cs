@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class MainMenuUI : MonoBehaviour
@@ -36,6 +37,11 @@ public class MainMenuUI : MonoBehaviour
     public List<ShopCharacter> ShopChars;
 
 
+    [SerializeField] private Button firstLevelStart;
+    [SerializeField] private Button secondLevelStart;
+    [SerializeField] private Button thirdLevelStart;
+    [SerializeField] private Button fourLevelStart;
+
     public void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
@@ -46,6 +52,10 @@ public class MainMenuUI : MonoBehaviour
         if ((FirstTime == true) && (FirstTimeShop == false))
         {
             ImageTextFirstGame.gameObject.SetActive(true);
+            firstLevelStart.gameObject.SetActive(false);
+            secondLevelStart.gameObject.SetActive(false);
+            thirdLevelStart.gameObject.SetActive(false);
+            fourLevelStart.gameObject.SetActive(false);
         }
         else
         {
@@ -56,6 +66,10 @@ public class MainMenuUI : MonoBehaviour
         if ((FirstTime == true) && (FirstTimeShop == true))
         {
             ImageTextFirstGameShop.gameObject.SetActive(true);
+            firstLevelStart.gameObject.SetActive(false);
+            secondLevelStart.gameObject.SetActive(false);
+            thirdLevelStart.gameObject.SetActive(false);
+            fourLevelStart.gameObject.SetActive(false);
         }
         else
         {

@@ -1455,7 +1455,7 @@ MonoBehaviour:
   sensitivity: 0.1
   lookRotation: 0
   maxForce: 12
-  jumpForce: 10
+  jumpForce: 12
   powerKick: 100
   grounded: 0
   isMobile: 0

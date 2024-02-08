@@ -41,31 +41,31 @@ public class panelWinScript : MonoBehaviour
         //BlueR.transform.DOMoveX(BlueR.transform.position.x + 400, 0f);
 
 
-        roundL.transform.DOMoveX(roundL.transform.position.x - 1500, 0f);
-        roundR.transform.DOMoveX(roundR.transform.position.x + 1500, 0f);
-        PingL.transform.DOMoveX(PingL.transform.position.x - 500, 0f);
-        PingR.transform.DOMoveX(PingR.transform.position.x + 500, 0f);
-        BlueL.transform.DOMoveX(BlueL.transform.position.x - 500, 0f);
-        BlueR.transform.DOMoveX(BlueR.transform.position.x + 500, 0f);
+        roundL.transform.DOMoveX(roundL.transform.position.x - 1700, 0f);
+        roundR.transform.DOMoveX(roundR.transform.position.x + 1700, 0f);
+        PingL.transform.DOMoveX(PingL.transform.position.x - 700, 0f);
+        PingR.transform.DOMoveX(PingR.transform.position.x + 700, 0f);
+        BlueL.transform.DOMoveX(BlueL.transform.position.x - 700, 0f);
+        BlueR.transform.DOMoveX(BlueR.transform.position.x + 700, 0f);
         yield return null;
     }
 
     IEnumerator WinPos()
     {
-        roundL.transform.DOMoveX(roundL.transform.position.x + 1500, 0.25f).SetEase(easeType);
-        roundR.transform.DOMoveX(roundR.transform.position.x - 1500, 0.25f);
+        roundL.transform.DOMoveX(roundL.transform.position.x + 1700, 0.25f).SetEase(easeType);
+        roundR.transform.DOMoveX(roundR.transform.position.x - 1700, 0.25f);
         yield return new WaitForSeconds(0.3f);
-        PingL.transform.DOMoveX(PingL.transform.position.x + 500, 0.3f);
+        PingL.transform.DOMoveX(PingL.transform.position.x + 700, 0.3f);
         yield return new WaitForSeconds(0.1f);
         PingL.transform.DOShakeScale(0.2f);
-        PingR.transform.DOMoveX(PingR.transform.position.x - 500, 0.4f);
+        PingR.transform.DOMoveX(PingR.transform.position.x - 700, 0.4f);
         yield return new WaitForSeconds(0.1f);
         PingR.transform.DOShakeScale(0.2f);
         yield return new WaitForSeconds(0.4f);
-        BlueL.transform.DOMoveX(BlueL.transform.position.x + 500, 0.4f);
+        BlueL.transform.DOMoveX(BlueL.transform.position.x + 700, 0.4f);
         yield return new WaitForSeconds(0.1f);
         BlueL.transform.DOShakeScale(0.2f);
-        BlueR.transform.DOMoveX(BlueR.transform.position.x - 500, 0.3f);
+        BlueR.transform.DOMoveX(BlueR.transform.position.x - 700, 0.3f);
         yield return new WaitForSeconds(0.1f);
         BlueR.transform.DOShakeScale(0.2f);
         yield return new WaitForSeconds(0.4f);

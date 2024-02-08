@@ -127,7 +127,7 @@ public class PlayerControlls : MonoBehaviour
     {
         Vector3 currentVelocity = rb.velocity;
         Vector3 targetVelocity = new Vector3(Joystick.Horizontal, 0, Joystick.Vertical);
-        //targetVelocity = targetVelocity * speed;
+        targetVelocity = targetVelocity * speed;
 
         if (Geekplay.Instance.mobile == true)
         {
@@ -193,7 +193,7 @@ public class PlayerControlls : MonoBehaviour
             grounded = false;
         }
 
-        rb.AddForce(jumpForces);
+        rb.AddForce(jumpForces, ForceMode.VelocityChange);
     }
 
     public void SetGrounded(bool state)

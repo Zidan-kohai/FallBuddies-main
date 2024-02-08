@@ -59,22 +59,13 @@ public class PlayerUIControl : MonoBehaviour
             ImageTextFirstGame.gameObject.SetActive(false);
             if (newGameButton != null || mainMenuButton != null)
             {
-                Image newGameButtonImage = newGameButton.GetComponent<Image>();
-                Image mainMenuButtonImage = mainMenuButton.GetComponent<Image>();
-                newGameButtonImage.color = new Color(1, 1, 1, 0f);
-                mainMenuButtonImage.color = new Color(1, 1, 1, 0f);
+                mainMenuButton.gameObject.SetActive(false);
+                newGameButton.gameObject.SetActive(false);
 
-                mainMenuButton.interactable = false;
-                newGameButton.interactable = false;
-
-                newGameButtonImage.DOFade(1, 7f).OnComplete(() =>
+                DOTween.Sequence().SetDelay(7f).OnComplete(() =>
                 {
-                    newGameButton.interactable = true;
-                });
-
-                mainMenuButtonImage.DOFade(1, 7f).OnComplete(() =>
-                {
-                    mainMenuButton.interactable = true;
+                    newGameButton.gameObject.SetActive(true);
+                    mainMenuButton.gameObject.SetActive(true);
                 });
             }
         }
@@ -182,11 +173,11 @@ public class PlayerUIControl : MonoBehaviour
             Level = "Level3";
             imageLevel = 2;
         }
-        else if (ii > 30 && ii <= 60)
-        {
-            Level = "Level4";
-            imageLevel = 3;
-        }
+        //else if (ii > 30 && ii <= 60)
+        //{
+        //    Level = "Level4";
+        //    imageLevel = 3;
+        //}
         else
         {
             Level = "Level5";

@@ -69,14 +69,14 @@ public class PlayerControlls : MonoBehaviour
     {
         if(isMainMenuOrLobby == false)
         {
-            //if (Geekplay.Instance.mobile == false)
-            //{
+            if (Geekplay.Instance.mobile == false)
+            {
                 Move();
-            //}
-            //else
-            //{
-            //    MoveMobile();
-            //}
+            }
+            else
+            {
+                MoveMobile();
+            }
         } 
     }
 

@@ -50,6 +50,8 @@ public class PlayerUIControl : MonoBehaviour
     [SerializeField] private Button thirdLevelStart;
     [SerializeField] private Button fourLevelStart;
 
+
+    private static int LastLevelIndex;
     public void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
@@ -215,23 +217,31 @@ public class PlayerUIControl : MonoBehaviour
     IEnumerator AwakeGame()
     {
         string Level;
-        int ii = Random.Range(0, 150);
         int imageLevel = 0;
+        int ii = Random.Range(0, 4);
 
-        if (ii > 120)
+        while (LastLevelIndex == ii)
+        {
+            ii = Random.Range(0, 3);
+        }
+
+        if (ii == 0)
         {
             Level = "Level1";
             imageLevel = 0;
+            LastLevelIndex = 0;
         }
-        else if(ii > 90 && ii <= 120)
+        else if(ii == 1)
         {
             Level = "Level2";
             imageLevel = 1;
+            LastLevelIndex = 1;
         }
-        else if (ii > 60 && ii <= 90)
+        else if (ii == 2)
         {
             Level = "Level3";
             imageLevel = 2;
+            LastLevelIndex = 2;
         }
         //else if (ii > 30 && ii <= 60)
         //{
@@ -242,6 +252,7 @@ public class PlayerUIControl : MonoBehaviour
         {
             Level = "Level5";
             imageLevel = 4;
+            LastLevelIndex = 3;
         }
 
         isStop = true;

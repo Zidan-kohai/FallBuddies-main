@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -47,6 +48,8 @@ public class PlayerDataUIValue : MonoBehaviour
 
 
     public int speedUIreward;
+
+    public static UnityAction<bool> AwardingEnd;
 
     private void Start()
     {
@@ -364,6 +367,7 @@ public class PlayerDataUIValue : MonoBehaviour
             Geekplay.Instance.PlayerData.PlayerExperience = (int)Slider.value;
         }
 
+        AwardingEnd?.Invoke(true);
         StartCoroutine(ShowADV());
 
         PlaceInLevel = 999;
@@ -418,12 +422,15 @@ public class PlayerDataUIValue : MonoBehaviour
         float currentMoney = Convert.ToInt32(TextMoneyPanelReward.text);
         float currentExp = Convert.ToInt32(TextExpPanelReward.text);
 
-        currentExp = currentExp / 100f;
-        currentMoney = currentMoney / 100f;
+        float deltaExp = currentExp / 100f;
+        float deltaMoney = currentMoney / 100f;
         for (int i = 0; i < 100; i++)
         {
-            TextExpPanelReward.text = (float.Parse(TextExpPanelReward.text) + currentExp).ToString();
-            TextMoneyPanelReward.text = (float.Parse(TextMoneyPanelReward.text) + currentMoney).ToString();
+            currentExp += deltaExp;
+            currentMoney += deltaMoney;
+
+            TextExpPanelReward.text = string.Format("{0:0.0}", currentExp);
+            TextMoneyPanelReward.text = string.Format("{0:0.0}", currentMoney);
             yield return new WaitForSeconds(0.02f * speedUIreward);
         }
 
@@ -495,10 +502,12 @@ public class PlayerDataUIValue : MonoBehaviour
 
         StartCoroutine(ShowADV());
 
+        AwardingEnd?.Invoke(false);
         PlaceInLevel = 999;
         Geekplay.Instance.Save();
         Geekplay.Instance.Leaderboard("Points", Geekplay.Instance.PlayerData.PlayerLevel);
         yield break;
+
     }
 
     IEnumerator ShowADV()

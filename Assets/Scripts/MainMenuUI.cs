@@ -21,6 +21,8 @@ public class MainMenuUI : MonoBehaviour
     public GameObject[] Scrolls;
     public GameObject panelSetting;
 
+    public List<GameObject> LevelstartButtons;
+
     public GameObject ImageTextFirstGame;
     public GameObject ImageTextFirstGameShop;
 
@@ -113,6 +115,11 @@ public class MainMenuUI : MonoBehaviour
                 PanelInnShop.SetActive(false);
 
                 Scrolls[0].SetActive(true);
+
+                foreach (var item in LevelstartButtons)
+                {
+                    item.SetActive(false);
+                }
             }
             else
             {
@@ -137,6 +144,11 @@ public class MainMenuUI : MonoBehaviour
                 PanelInnShop.SetActive(false);
 
                 Scrolls[0].SetActive(true);
+
+                foreach (var item in LevelstartButtons)
+                {
+                    item.SetActive(false);
+                }
             }
             else
             {
@@ -177,6 +189,10 @@ public class MainMenuUI : MonoBehaviour
         {
             ShopChar.CheckHasItorNotForTakeoff();
         }
+        foreach (var item in LevelstartButtons)
+        {
+            item.SetActive(true);
+        }
     }
 
     public void GoToInnShop()
@@ -191,6 +207,11 @@ public class MainMenuUI : MonoBehaviour
                 PanelShop.SetActive(false);
                 PanelInnShop.SetActive(true); 
                 ButtonMenuFromShop.SetActive(true);
+
+                foreach (var item in LevelstartButtons)
+                {
+                    item.SetActive(false);
+                }
             }
             else
             {

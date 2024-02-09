@@ -129,10 +129,12 @@ public class PlayerControlls : MonoBehaviour
         Vector3 targetVelocity = new Vector3(Joystick.Horizontal, 0, Joystick.Vertical);
         targetVelocity = targetVelocity * speed;
 
+        if (Mathf.Abs(Joystick.Vertical) < 0.15f && Mathf.Abs(Joystick.Horizontal) < 0.15f) return;
+
         if (Geekplay.Instance.mobile == true)
         {
 
-            if (Joystick.Vertical < -0.8f)
+            if (Joystick.Vertical < -0.1f)
             {
                 //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
                 //PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);

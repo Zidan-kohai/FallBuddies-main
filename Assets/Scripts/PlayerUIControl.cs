@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using DG.Tweening;
+using System;
 
 public class PlayerUIControl : MonoBehaviour
 {
@@ -78,76 +79,148 @@ public class PlayerUIControl : MonoBehaviour
 
 
 
-                Image mainMenuButtonImage = mainMenuButton.GetComponent<Image>();
-                Image newGameButtonImage = newGameButton.GetComponent<Image>();  
-                Image firstLevelStartImage = firstLevelStart.GetComponent<Image>();  
-                Image secondLevelStartImage = secondLevelStart.GetComponent<Image>();  
-                Image thirdLevelStartImage = thirdLevelStart.GetComponent<Image>();  
-                Image fourLevelStartImage = fourLevelStart.GetComponent<Image>();  
+                //Image mainMenuButtonImage = mainMenuButton.GetComponent<Image>();
+                //Image newGameButtonImage = newGameButton.GetComponent<Image>();  
+                //Image firstLevelStartImage = firstLevelStart.GetComponent<Image>();  
+                //Image secondLevelStartImage = secondLevelStart.GetComponent<Image>();  
+                //Image thirdLevelStartImage = thirdLevelStart.GetComponent<Image>();  
+                //Image fourLevelStartImage = fourLevelStart.GetComponent<Image>();  
 
-                DOTween.Sequence().SetDelay(7f).OnComplete(() =>
-                {
-                    mainMenuButtonImage.DOFade(0, 0f).OnComplete(() =>
-                    {
-                        mainMenuButtonImage.DOFade(1, 1f);
-                    });
+                //DOTween.Sequence().SetDelay(03f).OnComplete(() =>
+                //{
+                //    mainMenuButtonImage.DOFade(0, 0f).OnComplete(() =>
+                //    {
+                //        mainMenuButtonImage.DOFade(1, 1f);
+                //    });
 
-                    newGameButtonImage.DOFade(0, 0f).OnComplete(() =>
-                    {
-                        newGameButtonImage.DOFade(1, 1f);
-                    });
-                    firstLevelStartImage.DOFade(0, 0f).OnComplete(() =>
-                    {
-                        firstLevelStartImage.DOFade(1, 1f);
-                    });
-                    secondLevelStartImage.DOFade(0, 0f).OnComplete(() =>
-                    {
-                        secondLevelStartImage.DOFade(1, 1f);
-                    });
-                    thirdLevelStartImage.DOFade(0, 0f).OnComplete(() =>
-                    {
-                        thirdLevelStartImage.DOFade(1, 1f);
-                    });
-                    fourLevelStartImage.DOFade(0, 0f).OnComplete(() =>
-                    {
-                        fourLevelStartImage.DOFade(1, 1f);
-                    });
+                //    newGameButtonImage.DOFade(0, 0f).OnComplete(() =>
+                //    {
+                //        newGameButtonImage.DOFade(1, 1f);
+                //    });
+                //    firstLevelStartImage.DOFade(0, 0f).OnComplete(() =>
+                //    {
+                //        firstLevelStartImage.DOFade(1, 1f);
+                //    });
+                //    secondLevelStartImage.DOFade(0, 0f).OnComplete(() =>
+                //    {
+                //        secondLevelStartImage.DOFade(1, 1f);
+                //    });
+                //    thirdLevelStartImage.DOFade(0, 0f).OnComplete(() =>
+                //    {
+                //        thirdLevelStartImage.DOFade(1, 1f);
+                //    });
+                //    fourLevelStartImage.DOFade(0, 0f).OnComplete(() =>
+                //    {
+                //        fourLevelStartImage.DOFade(1, 1f);
+                //    });
 
-                    newGameButton.gameObject.SetActive(true);
-                    mainMenuButton.gameObject.SetActive(true);
-                    firstLevelStart.gameObject.SetActive(true);
-                    secondLevelStart.gameObject.SetActive(true);
-                    thirdLevelStart.gameObject.SetActive(true);
-                    fourLevelStart.gameObject.SetActive(true);
-                });
+                //    newGameButton.gameObject.SetActive(true);
+                //    mainMenuButton.gameObject.SetActive(true);
+                //    firstLevelStart.gameObject.SetActive(true);
+                //    secondLevelStart.gameObject.SetActive(true);
+                //    thirdLevelStart.gameObject.SetActive(true);
+                //    fourLevelStart.gameObject.SetActive(true);
+                //});
+
+                PlayerDataUIValue.AwardingEnd += OnAwardingEnd;
             }
+
+
+
         }
 
 
         if (doubleAward != null)
         {
             doubleAward.gameObject.SetActive(false);
-            Image doubleAwardButtonImage = doubleAward.GetComponent<Image>();
-            DOTween.Sequence().SetDelay(6f).OnComplete(() =>
-            {
-                doubleAwardButtonImage.DOFade(0, 0f).OnComplete(() =>
-                {
-                    doubleAwardButtonImage.DOFade(1, 1f);
-                });
-                doubleAward.gameObject.SetActive(true);
-            });
+            //Image doubleAwardButtonImage = doubleAward.GetComponent<Image>();
+            //DOTween.Sequence().SetDelay(6f).OnComplete(() =>
+            //{
+            //    doubleAwardButtonImage.DOFade(0, 0f).OnComplete(() =>
+            //    {
+            //        doubleAwardButtonImage.DOFade(1, 1f);
+            //    });
+            //    doubleAward.gameObject.SetActive(true);
+            //});
 
-            doubleAward.onClick.AddListener(() =>
-            {
-                Debug.Log("DoubleAward");
-                Geekplay.Instance.ShowRewardedAd("DoubleAward");
-                doubleAward.gameObject.SetActive(false);
-            });
+            doubleAward.onClick.AddListener(OnDoubleAwardClick);
         }
 
         isPressed = false;
         isStop = false;
     }
+
+    private void OnAwardingEnd(bool isFistAwarding)
+    {
+        if (doubleAward == null || mainMenuButton == null || newGameButton == null || firstLevelStart == null || secondLevelStart == null || thirdLevelStart == null || fourLevelStart == null) return;
+
+        if (isFistAwarding)
+        {
+            Image doubleAwardButtonImage = doubleAward.GetComponent<Image>();
+            DOTween.Sequence().SetDelay(0.2f).OnComplete(() =>
+            {
+                doubleAwardButtonImage.color = new Color(1, 1, 1, 0);
+                doubleAwardButtonImage.DOFade(1, 1f);
+                doubleAward.gameObject.SetActive(true);
+            });
+        }
+
+
+        Image mainMenuButtonImage = mainMenuButton.GetComponent<Image>();
+        Image newGameButtonImage = newGameButton.GetComponent<Image>();
+        Image firstLevelStartImage = firstLevelStart.GetComponent<Image>();
+        Image secondLevelStartImage = secondLevelStart.GetComponent<Image>();
+        Image thirdLevelStartImage = thirdLevelStart.GetComponent<Image>();
+        Image fourLevelStartImage = fourLevelStart.GetComponent<Image>();
+
+        DOTween.Sequence().SetDelay(2f).OnComplete(() =>
+        {
+            mainMenuButtonImage.color = new Color(1, 1, 1, 0);
+            mainMenuButtonImage.DOFade(1, 1f);
+
+            newGameButtonImage.color = new Color(1, 1, 1, 0);
+            newGameButtonImage.DOFade(1, 1f);
+
+            firstLevelStartImage.color = new Color(1, 1, 1, 0);
+            firstLevelStartImage.DOFade(1, 1f);
+
+            secondLevelStartImage.color = new Color(1, 1, 1, 0);
+            secondLevelStartImage.DOFade(1, 1f);
+
+            thirdLevelStartImage.color = new Color(1, 1, 1, 0);
+            thirdLevelStartImage.DOFade(1, 1f);
+
+            fourLevelStartImage.color = new Color(1, 1, 1, 0);
+            fourLevelStartImage.DOFade(1, 1f);
+
+            newGameButton.gameObject.SetActive(true);
+            mainMenuButton.gameObject.SetActive(true);
+            firstLevelStart.gameObject.SetActive(true);
+            secondLevelStart.gameObject.SetActive(true);
+            thirdLevelStart.gameObject.SetActive(true);
+            fourLevelStart.gameObject.SetActive(true);
+        });
+
+    }
+
+    private void OnDoubleAwardClick()
+    {
+
+        Debug.Log("DoubleAward");
+        DOTween.KillAll();
+        Geekplay.Instance.ShowRewardedAd("DoubleAward");
+        doubleAward.gameObject.SetActive(false);
+
+        mainMenuButton.gameObject.SetActive(false);
+        newGameButton.gameObject.SetActive(false);
+        firstLevelStart.gameObject.SetActive(false);
+        secondLevelStart.gameObject.SetActive(false);
+        thirdLevelStart.gameObject.SetActive(false);
+        fourLevelStart.gameObject.SetActive(false);
+
+        
+    }
+
     public void StartGameImage()
     {
         FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
@@ -218,11 +291,11 @@ public class PlayerUIControl : MonoBehaviour
     {
         string Level;
         int imageLevel = 0;
-        int ii = Random.Range(0, 4);
+        int ii = UnityEngine.Random.Range(0, 4);
 
         while (LastLevelIndex == ii)
         {
-            ii = Random.Range(0, 3);
+            ii = UnityEngine.Random.Range(0, 3);
         }
 
         if (ii == 0)
@@ -251,7 +324,7 @@ public class PlayerUIControl : MonoBehaviour
         else
         {
             Level = "Level5";
-            imageLevel = 4;
+            imageLevel = 3;
             LastLevelIndex = 3;
         }
 
@@ -309,9 +382,9 @@ public class PlayerUIControl : MonoBehaviour
     {
         if(isStop == false)
         {
-            Sprite sprite = imagesList1[Random.Range(0, imagesList1.Length)].GetComponent<Image>().sprite;
+            Sprite sprite = imagesList1[UnityEngine.Random.Range(0, imagesList1.Length)].GetComponent<Image>().sprite;
             imageCenterImageInPanel.GetComponent<Image>().sprite = sprite;
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.2f);
             StartCoroutine(ChangeImageLevel());
         }
         else

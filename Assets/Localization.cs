@@ -36,7 +36,7 @@ public class Localization : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI unusual4;
 	[SerializeField] private TextMeshProUGUI unusual5;
 	[SerializeField] private TextMeshProUGUI unusual6;
-
+	[SerializeField] private TextMeshProUGUI money1;
 
     public void LocalizationFunc()
     {
@@ -70,9 +70,11 @@ public class Localization : MonoBehaviour
 			unusual2.text = "Необычное";
 			unusual3.text = "Необычное";
 			unusual4.text = "Необычное";
-			unusual5.text = "Необычное";
-			unusual6.text = "Необычное";
-    	}
+			unusual5.text = "Эпичный";
+			unusual6.text = "Легендарный";
+			money1.text = "Вау!";
+
+        }
     	else if (Geekplay.Instance.language == "en")
     	{
 			showSummaryText.text = "Show Summary";
@@ -104,8 +106,9 @@ public class Localization : MonoBehaviour
             unusual2.text = "Unusual";
             unusual3.text = "Unusual";
             unusual4.text = "Unusual";
-            unusual5.text = "Unusual";
-            unusual6.text = "Unusual";
+            unusual5.text = "Epic";
+            unusual6.text = "Legendary";
+            money1.text = "WOW!";
         } 
     }
 }

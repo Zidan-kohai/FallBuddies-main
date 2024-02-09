@@ -8,8 +8,8 @@ using TMPro;
 public class ShopCharacter : MonoBehaviour
 {
     public GameObject Bought;
-    public GameObject Cost;
-    public GameObject CostHard;
+    public GameObject CostObject;
+    public GameObject CostHardObject;
     public GameObject MainCanvas;
     public GameObject ButtonBuy;
     public GameObject Equip;
@@ -59,7 +59,9 @@ public class ShopCharacter : MonoBehaviour
     public bool isHat;
     public bool isHorn;
     public bool isTails;
-    
+
+    public TextMeshProUGUI CostText;
+    public TextMeshProUGUI HardCostText;
 
     // Start is called before the first frame update
     void Start()
@@ -67,8 +69,11 @@ public class ShopCharacter : MonoBehaviour
         MainCanvas = FindObjectOfType<Geekplay>().gameObject;
         MCanvas = MainCanvas.gameObject.GetComponent<PlayerDataUIValue>();
         PDShop = MainCanvas.gameObject.GetComponent<Geekplay>().PlayerData;
-        Cost.GetComponent<TMP_Text>().text = "" + CostForBuy;
-        CostHard.GetComponent<TMP_Text>().text = "" + CostHardForBuy;
+        //CostObject.GetComponent<TMP_Text>().text = "" + CostForBuy;
+        //CostHardObject.GetComponent<TMP_Text>().text = "" + CostHardForBuy;
+        CostText.text = "" + CostForBuy;
+        HardCostText.text = "" + CostHardForBuy;
+
         ButtonBuy.SetActive(false);
 
         if (PDShop != null)
@@ -131,8 +136,8 @@ public class ShopCharacter : MonoBehaviour
        
     public void AdBuy()
     {
-        Cost.gameObject.SetActive(false);
-        CostHard.gameObject.SetActive(false);
+        CostObject.gameObject.SetActive(false);
+        CostHardObject.gameObject.SetActive(false);
         CostAD.gameObject.SetActive(true);
         ButtonBuy.SetActive(true);
     }
@@ -146,22 +151,22 @@ public class ShopCharacter : MonoBehaviour
         {
             if (isBuyByHardMoney == true)
             {
-                Cost.gameObject.SetActive(false);
-                CostHard.gameObject.SetActive(true);
+                CostObject.gameObject.SetActive(false);
+                CostHardObject.gameObject.SetActive(true);
                 CostAD.gameObject.SetActive(false);
                 ButtonBuy.SetActive(true);
             }
             else if (isAD == true)
             {
-                Cost.gameObject.SetActive(false);
-                CostHard.gameObject.SetActive(false);
+                CostObject.gameObject.SetActive(false);
+                CostHardObject.gameObject.SetActive(false);
                 CostAD.gameObject.SetActive(true);
                 ButtonBuy.SetActive(true);
             }
             else
             {
-                Cost.gameObject.SetActive(true);
-                CostHard.gameObject.SetActive(false);
+                CostObject.gameObject.SetActive(true);
+                CostHardObject.gameObject.SetActive(false);
                 CostAD.gameObject.SetActive(false);
                 ButtonBuy.SetActive(true);
             }
@@ -835,20 +840,20 @@ public class ShopCharacter : MonoBehaviour
             Bought.SetActive(false);
             if (isBuyByHardMoney == true)
             {
-                Cost.gameObject.SetActive(false);
-                CostHard.gameObject.SetActive(true);
+                CostObject.gameObject.SetActive(false);
+                CostHardObject.gameObject.SetActive(true);
                 CostAD.gameObject.SetActive(false);
             }
             else if(isAD == true)
             {
-                Cost.gameObject.SetActive(false);
-                CostHard.gameObject.SetActive(false);
+                CostObject.gameObject.SetActive(false);
+                CostHardObject.gameObject.SetActive(false);
                 CostAD.gameObject.SetActive(true);
             }
             else
             {
-                Cost.gameObject.SetActive(true);
-                CostHard.gameObject.SetActive(false);
+                CostObject.gameObject.SetActive(true);
+                CostHardObject.gameObject.SetActive(false);
                 CostAD.gameObject.SetActive(false);
             }
         }
@@ -864,8 +869,8 @@ public class ShopCharacter : MonoBehaviour
                 Bought.SetActive(false);
                 Equip.SetActive(true);
             }
-            Cost.SetActive(false);
-            CostHard.SetActive(false);
+            CostObject.SetActive(false);
+            CostHardObject.SetActive(false);
             CostAD.SetActive(false);
         }
     }
@@ -1175,20 +1180,20 @@ public class ShopCharacter : MonoBehaviour
             Bought.SetActive(false);
             if (isBuyByHardMoney == true)
             {
-                Cost.gameObject.SetActive(false);
-                CostHard.gameObject.SetActive(true);
+                CostObject.gameObject.SetActive(false);
+                CostHardObject.gameObject.SetActive(true);
                 CostAD.gameObject.SetActive(false);
             }
             else if (isAD == true)
             {
-                Cost.gameObject.SetActive(false);
-                CostHard.gameObject.SetActive(false);
+                CostObject.gameObject.SetActive(false);
+                CostHardObject.gameObject.SetActive(false);
                 CostAD.gameObject.SetActive(true);
             }
             else
             {
-                Cost.gameObject.SetActive(true);
-                CostHard.gameObject.SetActive(false);
+                CostObject.gameObject.SetActive(true);
+                CostHardObject.gameObject.SetActive(false);
                 CostAD.gameObject.SetActive(false);
             }
         }
@@ -1204,8 +1209,8 @@ public class ShopCharacter : MonoBehaviour
                 Bought.SetActive(false);
                 Equip.SetActive(true);
             }
-            Cost.SetActive(false);
-            CostHard.SetActive(false);
+            CostObject.SetActive(false);
+            CostHardObject.SetActive(false);
             CostAD.SetActive(false);
         }
     }

@@ -712,6 +712,8 @@ public class Geekplay : MonoBehaviour
     {
         if (Platform == Platform.Yandex)
             Utils.GameReady();
+
+        ShowInterstitialAd();
     }
 
     public void BuyShop()

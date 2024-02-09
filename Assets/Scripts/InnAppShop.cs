@@ -92,6 +92,7 @@ public class InnAppShop : MonoBehaviour
     public void BuyCommonCard3()
     {
         Geekplay.Instance.PlayerData.PlayerHardMoney += 100;
+        Geekplay.Instance.PlayerData.PlayerMoney += 1000;
         CheckMoneyTextUI();
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");

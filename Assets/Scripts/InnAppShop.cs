@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class InnAppShop : MonoBehaviour
 {
@@ -7,6 +9,21 @@ public class InnAppShop : MonoBehaviour
     public TMP_Text TextValueHardMoney;
     public PlayerDataUIValue playerDataUIValue;
 
+    public Button buyUncommonCard1Button;
+    public Button buyCommonCard1Button;
+    public Button buyCommonCard2Button;
+    public Button buyEpicCard1Button;
+    public Button buyLegendatyCard1Button;
+    public Button buyRareCard2Button;
+    public Button buyRareCard3Button;
+
+    public GameObject buyedUncommonCard1Panel;
+    public GameObject buyedCommonCard1Panel;
+    public GameObject buyedCommonCard2Panel;
+    public GameObject buyedEpicCard1Panel;
+    public GameObject buyedLegendatyCard1Panel;
+    public GameObject buyedRareCard2Panel;
+    public GameObject buyedRareCard3Panel;
 
     void Start()
     {
@@ -24,7 +41,41 @@ public class InnAppShop : MonoBehaviour
         Geekplay.Instance.SubscribeOnPurshace("Money1", BuyMoney1);
         Geekplay.Instance.SubscribeOnPurshace("HardMoney1", BuyHardMoney1);
 
+        if(Geekplay.Instance.PlayerData.buyUncommonCard1)
+        {
+            Buyed(buyUncommonCard1Button, buyedUncommonCard1Panel);
+        }
+        if (Geekplay.Instance.PlayerData.buyCommonCard1)
+        {
+            Buyed(buyCommonCard1Button, buyedCommonCard1Panel);
+        }
+        if (Geekplay.Instance.PlayerData.buyCommonCard2)
+        {
+            Buyed(buyCommonCard2Button, buyedCommonCard2Panel);
+        }
+        if (Geekplay.Instance.PlayerData.buyEpicCard1)
+        {
+            Buyed(buyEpicCard1Button, buyedEpicCard1Panel);
+        }
+        if (Geekplay.Instance.PlayerData.buyLegendatyCard1)
+        {
+            Buyed(buyLegendatyCard1Button, buyedLegendatyCard1Panel);
+        }
+        if (Geekplay.Instance.PlayerData.buyRareCard2)
+        {
+            Buyed(buyRareCard2Button, buyedRareCard2Panel);
+        }
+        if (Geekplay.Instance.PlayerData.buyRareCard3)
+        {
+            Buyed(buyRareCard3Button, buyedRareCard3Panel);
+        }
 
+    }
+
+    private void Buyed(Button button, GameObject buyedIcon)
+    {
+        button.interactable = false;
+        buyedIcon.SetActive(true);
     }
 
     public void InnAppBuy(string tag)
@@ -36,16 +87,24 @@ public class InnAppShop : MonoBehaviour
     {
         Geekplay.Instance.PlayerData.PlayerHardMoney += 1000;
         CheckMoneyTextUI();
+
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void BuyRareCard2()
     {
         Geekplay.Instance.PlayerData.Bodyparts[9] = 1;
         CheckMoneyTextUI();
+
+        Buyed(buyRareCard2Button, buyedRareCard2Panel);
+
+        Geekplay.Instance.PlayerData.buyRareCard2 = true;
+
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void BuyRareCard3()
@@ -54,8 +113,14 @@ public class InnAppShop : MonoBehaviour
         Geekplay.Instance.PlayerData.Tails[6] = 1;
         Geekplay.Instance.PlayerData.PlayerMoney += 1000;
         CheckMoneyTextUI();
+
+        Buyed(buyRareCard3Button, buyedRareCard3Panel);
+
+        Geekplay.Instance.PlayerData.buyRareCard3 = true;
+
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void BuyUncommonCard1()
@@ -67,16 +132,28 @@ public class InnAppShop : MonoBehaviour
         Geekplay.Instance.PlayerData.Eyes[5] = 1;
         Geekplay.Instance.PlayerData.Ears[0] = 1;
         CheckMoneyTextUI();
+
+        Buyed(buyUncommonCard1Button, buyedUncommonCard1Panel);
+
+        Geekplay.Instance.PlayerData.buyUncommonCard1 = true;
+
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void BuyCommonCard1()
     {
         Geekplay.Instance.PlayerData.PlayerHardMoney += 100;
         CheckMoneyTextUI();
+
+        Buyed(buyCommonCard1Button, buyedCommonCard1Panel);
+
+        Geekplay.Instance.PlayerData.buyCommonCard1 = true;
+
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void BuyCommonCard2()
@@ -85,8 +162,15 @@ public class InnAppShop : MonoBehaviour
         Geekplay.Instance.PlayerData.Horn[2] = 1;
         Geekplay.Instance.PlayerData.EyesFromHead[2] = 1;
         CheckMoneyTextUI();
+
+
+        Buyed(buyCommonCard2Button, buyedCommonCard2Panel);
+
+        Geekplay.Instance.PlayerData.buyCommonCard2 = true;
+
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void BuyCommonCard3()
@@ -94,8 +178,10 @@ public class InnAppShop : MonoBehaviour
         Geekplay.Instance.PlayerData.PlayerHardMoney += 100;
         Geekplay.Instance.PlayerData.PlayerMoney += 1000;
         CheckMoneyTextUI();
+
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void BuyEpicCard1()
@@ -109,8 +195,15 @@ public class InnAppShop : MonoBehaviour
         Geekplay.Instance.PlayerData.PlayerMoney += 20000;
         Geekplay.Instance.PlayerData.PlayerHardMoney += 20000;
         CheckMoneyTextUI();
+
+
+        Buyed(buyEpicCard1Button, buyedEpicCard1Panel);
+
+        Geekplay.Instance.PlayerData.buyEpicCard1 = true;
+
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void BuyLegendatyCard1()
@@ -132,8 +225,15 @@ public class InnAppShop : MonoBehaviour
 
         Geekplay.Instance.PlayerData.PlayerHardMoney += 30000;
         CheckMoneyTextUI();
+
+
+        Buyed(buyLegendatyCard1Button, buyedLegendatyCard1Panel);
+
+        Geekplay.Instance.PlayerData.buyLegendatyCard1 = true;
+
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void BuyMoney1()
@@ -142,6 +242,7 @@ public class InnAppShop : MonoBehaviour
         CheckMoneyTextUI();
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void BuyHardMoney1()
@@ -150,6 +251,7 @@ public class InnAppShop : MonoBehaviour
         CheckMoneyTextUI();
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     public void CheckMoneyTextUI() 
@@ -158,6 +260,7 @@ public class InnAppShop : MonoBehaviour
         playerDataUIValue.TextValueMoney.text = "" + Geekplay.Instance.PlayerData.PlayerMoney;
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
+        Geekplay.Instance.Save();
     }
 
     private void OnDisable()

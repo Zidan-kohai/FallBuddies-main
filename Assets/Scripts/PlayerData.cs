@@ -46,6 +46,14 @@ public class PlayerData
     public int[] CharacterTails = { 0, 0, 0, 0, 0, 0, 0, 0 };
 
     public string lastBuy;
+
+    public bool buyUncommonCard1;
+    public bool buyCommonCard1;
+    public bool buyCommonCard2;
+    public bool buyEpicCard1;
+    public bool buyLegendatyCard1;
+    public bool buyRareCard2;
+    public bool buyRareCard3;
 }
 
 

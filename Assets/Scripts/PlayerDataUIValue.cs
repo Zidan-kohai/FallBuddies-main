@@ -223,41 +223,35 @@ public class PlayerDataUIValue : MonoBehaviour
         if(Geekplay.Instance.PlayerData.GameFinished >= 2)
             Geekplay.Instance.RateGameFunc();
 
-        if(PlaceInLevel > 11)
+        if (PlaceInLevel > 5)
         {
-            MoneyReward = 5;
-            HardMoneyReward = 0;
-            ExpReward = 5;
-        }
-        else if (PlaceInLevel > 5 && PlaceInLevel < 11)
-        {
-            MoneyReward = 10;
+            MoneyReward = 100;
             HardMoneyReward = 1;
-            ExpReward = 10;
+            ExpReward = 30;
         }
         else if (PlaceInLevel == 5)
         {
-            MoneyReward = 25;
+            MoneyReward = 110;
             HardMoneyReward = 2;
-            ExpReward = 15;
+            ExpReward = 35;
         }
         else if (PlaceInLevel == 4)
         {
-            MoneyReward = 50;
+            MoneyReward = 125;
             HardMoneyReward = 5;
-            ExpReward = 20;
+            ExpReward = 40;
         }
         else if (PlaceInLevel == 3)
         {
-            MoneyReward = 130;
+            MoneyReward = 150;
             HardMoneyReward = 12;
-            ExpReward = 30;
+            ExpReward = 40;
         }
         else if (PlaceInLevel == 2)
         {
-            MoneyReward = 160;
+            MoneyReward = 185;
             HardMoneyReward = 15;
-            ExpReward = 40;
+            ExpReward = 45;
         }
         else if (PlaceInLevel == 1)
         {

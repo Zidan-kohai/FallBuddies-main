@@ -30,6 +30,8 @@ public class Level2Managment : MonoBehaviour
     public PlayerDataUIValue PlayerDataUIValue;
 
     public float SpeedMove;
+    public float SpeedRotation;
+    public float JumpForce;
 
     public bool FirstTime;
     public int FirstTimeIntCoroutine;
@@ -51,8 +53,13 @@ public class Level2Managment : MonoBehaviour
         Geekplay.Instance.GameReady();
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
         deathLevel = FindObjectOfType<DeathLevel>();
+
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
+        SpeedRotation = playerGO.GetComponent<PlayerControlls>().sensitivity;
+        JumpForce = playerGO.GetComponent<PlayerControlls>().jumpForce;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
+        playerGO.GetComponent<PlayerControlls>().sensitivity = 0;
+        playerGO.GetComponent<PlayerControlls>().jumpForce = 0;
 
         if (Geekplay.Instance.mobile)
         {
@@ -162,6 +169,8 @@ public class Level2Managment : MonoBehaviour
 
             NativeSpeed = playerGO.GetComponent<PlayerControlls>().speed;
             playerGO.GetComponent<PlayerControlls>().speed = 0;
+            playerGO.GetComponent<PlayerControlls>().sensitivity = 0;
+            playerGO.GetComponent<PlayerControlls>().jumpForce = 0;
 
             panelTutorial.gameObject.SetActive(true);
             tutorTextQuest.gameObject.SetActive(true);
@@ -174,6 +183,8 @@ public class Level2Managment : MonoBehaviour
         else
         {
             playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
+            playerGO.GetComponent<PlayerControlls>().sensitivity = SpeedRotation;
+            playerGO.GetComponent<PlayerControlls>().jumpForce = JumpForce;
             yield break;
         }
     }
@@ -208,6 +219,8 @@ public class Level2Managment : MonoBehaviour
                 bot.GetComponent<NavMeshAgent>().speed = NativeSpeedBot * 0.5f;
             }
             playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
+            playerGO.GetComponent<PlayerControlls>().sensitivity = SpeedRotation;
+            playerGO.GetComponent<PlayerControlls>().jumpForce = JumpForce;
 
             tutorTextLost.gameObject.SetActive(false);
             panelLost.gameObject.SetActive(false);

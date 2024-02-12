@@ -74,6 +74,8 @@ public class Geekplay : MonoBehaviour
     void Start()
     {
         Utils.GameReady();
+
+        ShowInterstitialAd();
     }
     private void Update()
     {
@@ -712,8 +714,6 @@ public class Geekplay : MonoBehaviour
     {
         if (Platform == Platform.Yandex)
             Utils.GameReady();
-
-        ShowInterstitialAd();
     }
 
     public void BuyShop()

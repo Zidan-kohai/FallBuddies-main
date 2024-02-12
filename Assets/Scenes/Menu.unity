@@ -26570,6 +26570,7 @@ MonoBehaviour:
   unusual4: {fileID: 947588030}
   unusual5: {fileID: 1122413507}
   unusual6: {fileID: 1164795815}
+  money1: {fileID: 0}
 --- !u!1 &893868358 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9120040576130388201, guid: e469b900253e9ca42a2383b54ff1e20f, type: 3}

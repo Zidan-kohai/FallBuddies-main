@@ -20,6 +20,8 @@ public class Level3Managment : MonoBehaviour
     public PlayerDataUIValue PlayerDataUIValue;
 
     public float SpeedMove;
+    public float SpeedRotation;
+    public float JumpForce;
 
     public GameObject panelWin;
     public panelWinScript panelWinScripting;
@@ -30,9 +32,13 @@ public class Level3Managment : MonoBehaviour
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
 
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
+        SpeedRotation = playerGO.GetComponent<PlayerControlls>().sensitivity;
+        JumpForce = playerGO.GetComponent<PlayerControlls>().jumpForce;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
+        playerGO.GetComponent<PlayerControlls>().sensitivity = 0;
+        playerGO.GetComponent<PlayerControlls>().jumpForce = 0;
 
-            if (Geekplay.Instance.mobile)
+        if (Geekplay.Instance.mobile)
             {
                 panelMobile.gameObject.SetActive(true);
             }
@@ -96,6 +102,8 @@ public class Level3Managment : MonoBehaviour
 
         panelLevelStarted.gameObject.SetActive(true);
         playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
+        playerGO.GetComponent<PlayerControlls>().sensitivity = SpeedRotation;
+        playerGO.GetComponent<PlayerControlls>().jumpForce = JumpForce;
 
         if (Geekplay.Instance.language == "en")
             panelLevelText.text = "GO!";

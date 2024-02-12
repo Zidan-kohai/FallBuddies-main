@@ -45,6 +45,8 @@ public class Level1Managment : MonoBehaviour
     public bool isFinishedLevel1;
 
     public float SpeedMove;
+    public float SpeedRotation;
+    public float JumpForce;
 
     public RectTransform panelLevel;
     public RectTransform panelLevelStarted;
@@ -55,7 +57,11 @@ public class Level1Managment : MonoBehaviour
     void Start()
     {
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
+        SpeedRotation = playerGO.GetComponent<PlayerControlls>().sensitivity;
+        JumpForce = playerGO.GetComponent<PlayerControlls>().jumpForce;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
+        playerGO.GetComponent<PlayerControlls>().sensitivity = 0;
+        playerGO.GetComponent<PlayerControlls>().jumpForce = 0;
 
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
 
@@ -248,6 +254,8 @@ public class Level1Managment : MonoBehaviour
 
         panelLevelStarted.gameObject.SetActive(true);
         playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
+        playerGO.GetComponent<PlayerControlls>().sensitivity = SpeedRotation;
+        playerGO.GetComponent<PlayerControlls>().jumpForce = JumpForce;
 
         if (Geekplay.Instance.language == "en")
             panelLevelText.text = "GO!";

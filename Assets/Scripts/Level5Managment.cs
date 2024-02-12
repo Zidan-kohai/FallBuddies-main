@@ -20,6 +20,8 @@ public class Level5Managment : MonoBehaviour
     public PlayerDataUIValue PlayerDataUIValue;
 
     public float SpeedMove;
+    public float SpeedRotation;
+    public float JumpForce;
 
     public List<GameObject> CubeListLevel5;
 
@@ -51,7 +53,11 @@ public class Level5Managment : MonoBehaviour
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
 
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
+        SpeedRotation = playerGO.GetComponent<PlayerControlls>().sensitivity;
+        JumpForce = playerGO.GetComponent<PlayerControlls>().jumpForce;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
+        playerGO.GetComponent<PlayerControlls>().sensitivity = 0;
+        playerGO.GetComponent<PlayerControlls>().jumpForce = 0;
 
 
         foreach (var text in CubeTVText)
@@ -124,7 +130,10 @@ public class Level5Managment : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         panelLevelStarted.gameObject.SetActive(true);
+
         playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
+        playerGO.GetComponent<PlayerControlls>().sensitivity = SpeedRotation;
+        playerGO.GetComponent<PlayerControlls>().jumpForce = JumpForce;
 
         if (Geekplay.Instance.language == "en")
             panelLevelText.text = "GO!";

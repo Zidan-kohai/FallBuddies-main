@@ -23,6 +23,8 @@ public class Level4Managment : MonoBehaviour
     public PlayerDataUIValue PlayerDataUIValue;
 
     public float SpeedMove;
+    public float SpeedRotation;
+    public float JumpForce;
 
     public float GameTime;
 
@@ -51,8 +53,14 @@ public class Level4Managment : MonoBehaviour
     {
         BotsLost = 100;
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
+
         SpeedMove = playerGO.GetComponent<PlayerControlls>().speed;
+        SpeedRotation = playerGO.GetComponent<PlayerControlls>().sensitivity;
+        JumpForce = playerGO.GetComponent<PlayerControlls>().jumpForce;
         playerGO.GetComponent<PlayerControlls>().speed = 0;
+        playerGO.GetComponent<PlayerControlls>().sensitivity = 0;
+        playerGO.GetComponent<PlayerControlls>().jumpForce = 0;
+
 
         FinalObstacle.SetActive(false);
 

@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using System.Net.NetworkInformation;
 using UnityEngine.SceneManagement;
 
 public class panelWinScript : MonoBehaviour

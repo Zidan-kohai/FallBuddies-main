@@ -34,7 +34,7 @@ public class AI_Agent_Moving2 : MonoBehaviour
         if((this.gameObject.tag != "Bot") && IsFinished == false)
         {
             IsFinished = true;
-
+            StartCoroutine(VictoryDance());
         }
 
         if (transform.position == oldPos)
@@ -90,5 +90,14 @@ public class AI_Agent_Moving2 : MonoBehaviour
             timeUpdating = 0;
             oldPos = transform.position;
         }
+    }
+    IEnumerator VictoryDance()
+    {
+        animator.SetBool("IsFinished", true);
+        yield return new WaitForSeconds(2f);
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent.enabled = false;
+        rb.useGravity = enabled;
+        yield return null;
     }
 }

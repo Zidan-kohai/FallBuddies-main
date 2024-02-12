@@ -86,27 +86,29 @@ public class PlayerControlls : MonoBehaviour
         Vector3 currentVelocity = rb.velocity;
         Vector3 targetVelocity = new Vector3(move.x, 0, move.y);
         targetVelocity = targetVelocity * speed;
+        if (sensitivity != 0)
+        {
+            if (move.y > -0.5f)
+            {
+                //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+                //PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+                PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y, 0), 0.5f);
+            }
+            else if (move.y < -0.8f)
+            {
+                //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+                //PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
+                PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y - 180, 0), 0.5f);
+            }
 
-        if (move.y > -0.5f)
-        {
-            //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-            //PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-            PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y, 0), 0.5f);
-        }
-        else if (move.y < -0.8f)
-        {
-            //cameraHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
-            //PlayerRotateHolder.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 180, 0);
-            PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y - 180, 0), 0.5f);
-        }
-
-        if(move.x > 0)
-        {
-            PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y + 90, 0), 0.5f);
-        }
-        else if(move.x < 0)
-        {
-            PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y - 90, 0), 0.5f);
+            if (move.x > 0)
+            {
+                PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y + 90, 0), 0.5f);
+            }
+            else if (move.x < 0)
+            {
+                PlayerRotateHolder.transform.DORotate(new Vector3(0, transform.eulerAngles.y - 90, 0), 0.5f);
+            }
         }
 
         //Align direction
@@ -131,7 +133,7 @@ public class PlayerControlls : MonoBehaviour
 
         if (Mathf.Abs(Joystick.Vertical) < 0.15f && Mathf.Abs(Joystick.Horizontal) < 0.15f) return;
 
-        if (Geekplay.Instance.mobile == true)
+        if (sensitivity != 0)
         {
 
             if (Joystick.Vertical < -0.1f)

@@ -167,38 +167,38 @@ public class PlayerUIControl : MonoBehaviour
 
 
         Image mainMenuButtonImage = mainMenuButton.GetComponent<Image>();
-        Image newGameButtonImage = newGameButton.GetComponent<Image>();
-        Image firstLevelStartImage = firstLevelStart.GetComponent<Image>();
-        Image secondLevelStartImage = secondLevelStart.GetComponent<Image>();
-        Image thirdLevelStartImage = thirdLevelStart.GetComponent<Image>();
-        Image fourLevelStartImage = fourLevelStart.GetComponent<Image>();
+        //Image newGameButtonImage = newGameButton.GetComponent<Image>();
+        //Image firstLevelStartImage = firstLevelStart.GetComponent<Image>();
+        //Image secondLevelStartImage = secondLevelStart.GetComponent<Image>();
+        //Image thirdLevelStartImage = thirdLevelStart.GetComponent<Image>();
+        //Image fourLevelStartImage = fourLevelStart.GetComponent<Image>();
 
         DOTween.Sequence().SetDelay(2f).OnComplete(() =>
         {
             mainMenuButtonImage.color = new Color(1, 1, 1, 0);
             mainMenuButtonImage.DOFade(1, 1f);
 
-            newGameButtonImage.color = new Color(1, 1, 1, 0);
-            newGameButtonImage.DOFade(1, 1f);
+            //newGameButtonImage.color = new Color(1, 1, 1, 0);
+            //newGameButtonImage.DOFade(1, 1f);
 
-            firstLevelStartImage.color = new Color(1, 1, 1, 0);
-            firstLevelStartImage.DOFade(1, 1f);
+            //firstLevelStartImage.color = new Color(1, 1, 1, 0);
+            //firstLevelStartImage.DOFade(1, 1f);
 
-            secondLevelStartImage.color = new Color(1, 1, 1, 0);
-            secondLevelStartImage.DOFade(1, 1f);
+            //secondLevelStartImage.color = new Color(1, 1, 1, 0);
+            //secondLevelStartImage.DOFade(1, 1f);
 
-            thirdLevelStartImage.color = new Color(1, 1, 1, 0);
-            thirdLevelStartImage.DOFade(1, 1f);
+            //thirdLevelStartImage.color = new Color(1, 1, 1, 0);
+            //thirdLevelStartImage.DOFade(1, 1f);
 
-            fourLevelStartImage.color = new Color(1, 1, 1, 0);
-            fourLevelStartImage.DOFade(1, 1f);
+            //fourLevelStartImage.color = new Color(1, 1, 1, 0);
+            //fourLevelStartImage.DOFade(1, 1f);
 
-            newGameButton.gameObject.SetActive(true);
             mainMenuButton.gameObject.SetActive(true);
-            firstLevelStart.gameObject.SetActive(true);
-            secondLevelStart.gameObject.SetActive(true);
-            thirdLevelStart.gameObject.SetActive(true);
-            fourLevelStart.gameObject.SetActive(true);
+            //newGameButton.gameObject.SetActive(true);
+            //firstLevelStart.gameObject.SetActive(true);
+            //secondLevelStart.gameObject.SetActive(true);
+            //thirdLevelStart.gameObject.SetActive(true);
+            //fourLevelStart.gameObject.SetActive(true);
         });
 
     }

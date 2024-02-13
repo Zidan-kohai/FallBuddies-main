@@ -18,6 +18,7 @@ public class panelWinScript : MonoBehaviour
 
     [SerializeField] private Ease easeType;
 
+    public AudioSource winAudio;
     void Start()
     {
         isInvoked = false;
@@ -50,6 +51,8 @@ public class panelWinScript : MonoBehaviour
 
     IEnumerator WinPos()
     {
+        winAudio.Play();
+
         roundL.transform.DOMoveX(roundL.transform.position.x + 1700, 0.25f).SetEase(easeType);
         roundR.transform.DOMoveX(roundR.transform.position.x - 1700, 0.25f);
         yield return new WaitForSeconds(0.3f);

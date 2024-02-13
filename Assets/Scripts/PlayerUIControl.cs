@@ -163,49 +163,54 @@ public class PlayerUIControl : MonoBehaviour
                 doubleAwardButtonImage.DOFade(1, 1f);
                 doubleAward.gameObject.SetActive(true);
             });
+
+            Image mainMenuButtonImage = mainMenuButton.GetComponent<Image>();
+            //Image newGameButtonImage = newGameButton.GetComponent<Image>();
+            //Image firstLevelStartImage = firstLevelStart.GetComponent<Image>();
+            //Image secondLevelStartImage = secondLevelStart.GetComponent<Image>();
+            //Image thirdLevelStartImage = thirdLevelStart.GetComponent<Image>();
+            //Image fourLevelStartImage = fourLevelStart.GetComponent<Image>();
+
+            DOTween.Sequence().SetDelay(2f).OnComplete(() =>
+            {
+                mainMenuButtonImage.color = new Color(1, 1, 1, 0);
+                mainMenuButtonImage.DOFade(1, 1f);
+
+                //newGameButtonImage.color = new Color(1, 1, 1, 0);
+                //newGameButtonImage.DOFade(1, 1f);
+
+                //firstLevelStartImage.color = new Color(1, 1, 1, 0);
+                //firstLevelStartImage.DOFade(1, 1f);
+
+                //secondLevelStartImage.color = new Color(1, 1, 1, 0);
+                //secondLevelStartImage.DOFade(1, 1f);
+
+                //thirdLevelStartImage.color = new Color(1, 1, 1, 0);
+                //thirdLevelStartImage.DOFade(1, 1f);
+
+                //fourLevelStartImage.color = new Color(1, 1, 1, 0);
+                //fourLevelStartImage.DOFade(1, 1f);
+
+                mainMenuButton.gameObject.SetActive(true);
+                //newGameButton.gameObject.SetActive(true);
+                //firstLevelStart.gameObject.SetActive(true);
+                //secondLevelStart.gameObject.SetActive(true);
+                //thirdLevelStart.gameObject.SetActive(true);
+                //fourLevelStart.gameObject.SetActive(true);
+            });
+        }
+        else
+        {
+            mainMenuButton.gameObject.SetActive(true);
         }
 
 
-        Image mainMenuButtonImage = mainMenuButton.GetComponent<Image>();
-        //Image newGameButtonImage = newGameButton.GetComponent<Image>();
-        //Image firstLevelStartImage = firstLevelStart.GetComponent<Image>();
-        //Image secondLevelStartImage = secondLevelStart.GetComponent<Image>();
-        //Image thirdLevelStartImage = thirdLevelStart.GetComponent<Image>();
-        //Image fourLevelStartImage = fourLevelStart.GetComponent<Image>();
-
-        DOTween.Sequence().SetDelay(2f).OnComplete(() =>
-        {
-            mainMenuButtonImage.color = new Color(1, 1, 1, 0);
-            mainMenuButtonImage.DOFade(1, 1f);
-
-            //newGameButtonImage.color = new Color(1, 1, 1, 0);
-            //newGameButtonImage.DOFade(1, 1f);
-
-            //firstLevelStartImage.color = new Color(1, 1, 1, 0);
-            //firstLevelStartImage.DOFade(1, 1f);
-
-            //secondLevelStartImage.color = new Color(1, 1, 1, 0);
-            //secondLevelStartImage.DOFade(1, 1f);
-
-            //thirdLevelStartImage.color = new Color(1, 1, 1, 0);
-            //thirdLevelStartImage.DOFade(1, 1f);
-
-            //fourLevelStartImage.color = new Color(1, 1, 1, 0);
-            //fourLevelStartImage.DOFade(1, 1f);
-
-            mainMenuButton.gameObject.SetActive(true);
-            //newGameButton.gameObject.SetActive(true);
-            //firstLevelStart.gameObject.SetActive(true);
-            //secondLevelStart.gameObject.SetActive(true);
-            //thirdLevelStart.gameObject.SetActive(true);
-            //fourLevelStart.gameObject.SetActive(true);
-        });
+        
 
     }
 
     private void OnDoubleAwardClick()
     {
-
         Debug.Log("DoubleAward");
         DOTween.KillAll();
         Geekplay.Instance.ShowRewardedAd("DoubleAward");

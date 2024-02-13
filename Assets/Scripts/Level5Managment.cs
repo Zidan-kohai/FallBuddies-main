@@ -150,8 +150,6 @@ public class Level5Managment : MonoBehaviour
         panelLevelText.rectTransform.DOMoveY(-2000f, 0.1f);
         panelLevelText.color = nativeColorText;
 
-        yield return new WaitForSeconds(2f);
-
         StartCoroutine(Level5());
 
         yield break;
@@ -188,8 +186,6 @@ public class Level5Managment : MonoBehaviour
                 bot.gameObject.GetComponent<Rigidbody>().useGravity = false;
             }
         }
-
-        yield return new WaitForSeconds(_Color);
 
         foreach (var bot in gameBotObjects)
         {

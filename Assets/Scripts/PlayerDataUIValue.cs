@@ -16,6 +16,7 @@ public class PlayerDataUIValue : MonoBehaviour
     public TMP_Text TextValueHardMoney;
     public TMP_Text TextExpPanelReward;
     public TMP_Text TextMoneyPanelReward;
+    public TMP_Text TextHardMoneyPanelReward;
     public TMP_Text TextLevelUp;
     public TMP_Text TextReward;
 
@@ -78,7 +79,7 @@ public class PlayerDataUIValue : MonoBehaviour
 
             PanelMain.gameObject.SetActive(true);
             PanelShowReward.gameObject.SetActive(true);
-            PanelShowSummary.gameObject.SetActive(true);
+            //PanelShowSummary.gameObject.SetActive(true);
             ButtonStart.gameObject.SetActive(false);
             ButtonMainMenu.gameObject.SetActive(false);
 
@@ -232,31 +233,31 @@ public class PlayerDataUIValue : MonoBehaviour
         else if (PlaceInLevel == 5)
         {
             MoneyReward = 110;
-            HardMoneyReward = 2;
+            HardMoneyReward = 1;
             ExpReward = 35;
         }
         else if (PlaceInLevel == 4)
         {
             MoneyReward = 125;
-            HardMoneyReward = 5;
+            HardMoneyReward = 1;
             ExpReward = 40;
         }
         else if (PlaceInLevel == 3)
         {
             MoneyReward = 150;
-            HardMoneyReward = 12;
+            HardMoneyReward = 1;
             ExpReward = 40;
         }
         else if (PlaceInLevel == 2)
         {
             MoneyReward = 185;
-            HardMoneyReward = 15;
+            HardMoneyReward = 1;
             ExpReward = 45;
         }
         else if (PlaceInLevel == 1)
         {
             MoneyReward = 200;
-            HardMoneyReward = 20;
+            HardMoneyReward = 3;
             ExpReward = 50;
         }
         else
@@ -312,11 +313,14 @@ public class PlayerDataUIValue : MonoBehaviour
 
         TextExpPanelReward.text = "" + ExpReward;
         TextMoneyPanelReward.text = "" + MoneyReward;
+        TextHardMoneyPanelReward.text = HardMoneyReward.ToString();
 
         Geekplay.Instance.PlayerData.PlayerMoney += MoneyReward;
         Geekplay.Instance.PlayerData.PlayerHardMoney += HardMoneyReward;
+
         TextValueHardMoney.text = "" + Geekplay.Instance.PlayerData.PlayerHardMoney;
         TextValueMoney.text = "" + Geekplay.Instance.PlayerData.PlayerMoney;
+
 
         for (int i = 0; i < ExpReward; i++)
         {
@@ -374,7 +378,7 @@ public class PlayerDataUIValue : MonoBehaviour
     {
         int doubleMoney = MoneyReward * 2;
         int doubleExp =  ExpReward * 2;
-        HardMoneyReward *= 2;
+        int doubleHardMoney = HardMoneyReward * 2;
 
         j = doubleExp;
         l = doubleMoney;
@@ -430,7 +434,7 @@ public class PlayerDataUIValue : MonoBehaviour
 
         TextExpPanelReward.text = doubleExp.ToString();
         TextMoneyPanelReward.text = doubleMoney.ToString();
-
+        TextHardMoneyPanelReward.text = doubleHardMoney.ToString();
         //for (int i = 0; i < 10; i++)
         //{
         //    j += Random.Range(ExpReward, ExpReward + ExpReward / 100);
@@ -447,9 +451,6 @@ public class PlayerDataUIValue : MonoBehaviour
         //    TextMoneyPanelReward.text = "" + l;
         //    yield return new WaitForSeconds(0.10f * speedUIreward);
         //}
-
-        TextExpPanelReward.text = "" + doubleExp;
-        TextMoneyPanelReward.text = "" + doubleMoney;
 
         Geekplay.Instance.PlayerData.PlayerMoney += MoneyReward;
         Geekplay.Instance.PlayerData.PlayerHardMoney += HardMoneyReward;

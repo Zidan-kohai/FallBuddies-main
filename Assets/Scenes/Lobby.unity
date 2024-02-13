@@ -235,7 +235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -197, y: -339}
+  m_AnchoredPosition: {x: -115, y: -248.99998}
   m_SizeDelta: {x: 271.875, y: 71.875}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &9129853
@@ -9263,7 +9263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -189.20001, y: -142.2}
+  m_AnchoredPosition: {x: -436, y: -249}
   m_SizeDelta: {x: 274.3649, y: 73.7438}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1242258778
@@ -11954,18 +11954,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 134c848280085d94c9ea972d3f1743d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buyedAudio: {fileID: 0}
   TextValueMoney: {fileID: 76685222}
   TextValueHardMoney: {fileID: 1799670957}
   playerDataUIValue: {fileID: 0}
   buyUncommonCard1Button: {fileID: 86034012}
-  buyCommonCard1Button: {fileID: 1776013640}
   buyCommonCard2Button: {fileID: 1663719522}
   buyEpicCard1Button: {fileID: 1860735625}
   buyLegendatyCard1Button: {fileID: 840131100}
   buyRareCard2Button: {fileID: 632077131}
   buyRareCard3Button: {fileID: 2003536092}
   buyedUncommonCard1Panel: {fileID: 1492626731}
-  buyedCommonCard1Panel: {fileID: 1386071336}
   buyedCommonCard2Panel: {fileID: 588419111}
   buyedEpicCard1Panel: {fileID: 1527572165}
   buyedLegendatyCard1Panel: {fileID: 39871341}
@@ -12083,7 +12082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -603, y: -437}
+  m_AnchoredPosition: {x: -419, y: -251.79999}
   m_SizeDelta: {x: 408, y: 209}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!1 &1526876502
@@ -12134,6 +12133,24 @@ MonoBehaviour:
   tutorText: {fileID: 1776241640}
   startGameText: {fileID: 1234421579}
   doubleAwardButtonText: {fileID: 1404948798}
+  rare1: {fileID: 80506180}
+  rare2: {fileID: 1283547496}
+  rare3: {fileID: 1954300093}
+  unusual1: {fileID: 1080920417}
+  unusual2: {fileID: 28036331}
+  unusual3: {fileID: 1988017677}
+  unusual4: {fileID: 1501117029}
+  unusual5: {fileID: 57404294}
+  unusual6: {fileID: 496271602}
+  money1: {fileID: 740916915}
+  buyedText:
+  - {fileID: 293123784}
+  - {fileID: 754781013}
+  - {fileID: 687260689}
+  - {fileID: 302022614}
+  - {fileID: 720533955}
+  - {fileID: 42452937}
+  - {fileID: 508144160}
 --- !u!1 &1527572165
 GameObject:
   m_ObjectHideFlags: 0
@@ -16171,16 +16188,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996963223}
-  m_LocalRotation: {x: -8.4898544e-10, y: 3.8393458e-10, z: -0.35385346, w: 0.9353009}
+  m_LocalRotation: {x: -9.2132096e-10, y: 1.3910381e-10, z: -0.08672532, w: 0.9962323}
   m_LocalPosition: {x: 0, y: 0, z: 0.000000074505806}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1505296892}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -41.446}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -9.95}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 240, y: 82}
+  m_AnchoredPosition: {x: 199, y: -127}
   m_SizeDelta: {x: 62, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1996963225
@@ -16195,9 +16212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4546d0e899ba140a177bca242ec92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.5
-  posX: 100
-  posY: 62
+  duration: 0.8
+  posX: 60
+  posY: -60
   easeType: 2
   loopType: 1
 --- !u!114 &1996963226

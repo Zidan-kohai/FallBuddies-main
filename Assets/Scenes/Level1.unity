@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.38631076, g: 0.7270116, b: 0.72520214, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5235,6 +5235,8 @@ MonoBehaviour:
   isCrashingPlace: 0
   isFinishedLevel1: 0
   SpeedMove: 0
+  SpeedRotation: 0
+  JumpForce: 0
   panelLevel: {fileID: 1922635663}
   panelLevelStarted: {fileID: 405848462}
   panelLevelText: {fileID: 302384328}

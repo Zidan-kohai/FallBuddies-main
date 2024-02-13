@@ -184,6 +184,7 @@ public class PlayerControlls : MonoBehaviour
     }
     public void Jump()
     {
+        audioSource.time = 1.1f;
         audioSource.Play();
 
         Vector3 jumpForces = Vector3.zero;

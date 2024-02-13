@@ -5,12 +5,13 @@ using System.Collections.Generic;
 
 public class InnAppShop : MonoBehaviour
 {
+    public AudioSource buyedAudio;
+
     public TMP_Text TextValueMoney;
     public TMP_Text TextValueHardMoney;
     public PlayerDataUIValue playerDataUIValue;
 
     public Button buyUncommonCard1Button;
-    public Button buyCommonCard1Button;
     public Button buyCommonCard2Button;
     public Button buyEpicCard1Button;
     public Button buyLegendatyCard1Button;
@@ -18,14 +19,13 @@ public class InnAppShop : MonoBehaviour
     public Button buyRareCard3Button;
 
     public GameObject buyedUncommonCard1Panel;
-    public GameObject buyedCommonCard1Panel;
     public GameObject buyedCommonCard2Panel;
     public GameObject buyedEpicCard1Panel;
     public GameObject buyedLegendatyCard1Panel;
     public GameObject buyedRareCard2Panel;
     public GameObject buyedRareCard3Panel;
 
-    void Start()
+    void OnEnable()
     {
         playerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
 
@@ -44,10 +44,6 @@ public class InnAppShop : MonoBehaviour
         if(Geekplay.Instance.PlayerData.buyUncommonCard1)
         {
             Buyed(buyUncommonCard1Button, buyedUncommonCard1Panel);
-        }
-        if (Geekplay.Instance.PlayerData.buyCommonCard1)
-        {
-            Buyed(buyCommonCard1Button, buyedCommonCard1Panel);
         }
         if (Geekplay.Instance.PlayerData.buyCommonCard2)
         {
@@ -85,7 +81,7 @@ public class InnAppShop : MonoBehaviour
 
     public void BuyRareCard1() //вот это правильное назначение награды
     {
-        Geekplay.Instance.PlayerData.PlayerHardMoney += 1000;
+        Geekplay.Instance.PlayerData.PlayerMoney += 1000;
         CheckMoneyTextUI();
 
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
@@ -111,7 +107,7 @@ public class InnAppShop : MonoBehaviour
     {
         Geekplay.Instance.PlayerData.Gloves[3] = 1;
         Geekplay.Instance.PlayerData.Tails[6] = 1;
-        Geekplay.Instance.PlayerData.PlayerMoney += 1000;
+        Geekplay.Instance.PlayerData.PlayerMoney += 500;
         CheckMoneyTextUI();
 
         Buyed(buyRareCard3Button, buyedRareCard3Panel);
@@ -144,12 +140,8 @@ public class InnAppShop : MonoBehaviour
 
     public void BuyCommonCard1()
     {
-        Geekplay.Instance.PlayerData.PlayerHardMoney += 100;
+        Geekplay.Instance.PlayerData.PlayerHardMoney += 500;
         CheckMoneyTextUI();
-
-        Buyed(buyCommonCard1Button, buyedCommonCard1Panel);
-
-        Geekplay.Instance.PlayerData.buyCommonCard1 = true;
 
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
@@ -175,8 +167,8 @@ public class InnAppShop : MonoBehaviour
 
     public void BuyCommonCard3()
     {
-        Geekplay.Instance.PlayerData.PlayerHardMoney += 100;
-        Geekplay.Instance.PlayerData.PlayerMoney += 1000;
+        Geekplay.Instance.PlayerData.PlayerHardMoney += 250;
+        Geekplay.Instance.PlayerData.PlayerMoney += 500;
         CheckMoneyTextUI();
 
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
@@ -192,8 +184,6 @@ public class InnAppShop : MonoBehaviour
         Geekplay.Instance.PlayerData.Gloves[3] = 1;
         Geekplay.Instance.PlayerData.Noise[0] = 1;
         Geekplay.Instance.PlayerData.Ears[2] = 1;
-        Geekplay.Instance.PlayerData.PlayerMoney += 20000;
-        Geekplay.Instance.PlayerData.PlayerHardMoney += 20000;
         CheckMoneyTextUI();
 
 
@@ -223,7 +213,7 @@ public class InnAppShop : MonoBehaviour
         Geekplay.Instance.PlayerData.Combs[0] = 1;
 
 
-        Geekplay.Instance.PlayerData.PlayerHardMoney += 30000;
+        Geekplay.Instance.PlayerData.PlayerMoney += 1000;
         CheckMoneyTextUI();
 
 
@@ -238,7 +228,7 @@ public class InnAppShop : MonoBehaviour
 
     public void BuyMoney1()
     {
-        Geekplay.Instance.PlayerData.PlayerMoney += 50000;
+        Geekplay.Instance.PlayerData.PlayerMoney += 5000;
         CheckMoneyTextUI();
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
@@ -247,7 +237,7 @@ public class InnAppShop : MonoBehaviour
 
     public void BuyHardMoney1()
     {
-        Geekplay.Instance.PlayerData.PlayerHardMoney += 50000;
+        Geekplay.Instance.PlayerData.PlayerHardMoney += 5000;
         CheckMoneyTextUI();
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
@@ -261,6 +251,8 @@ public class InnAppShop : MonoBehaviour
         Debug.Log("Geekplay.Instance.RealBuyItem(string idOrTag)");
         Debug.Log("Geekplay.Instance.Save()");
         Geekplay.Instance.Save();
+
+        buyedAudio.Play();
     }
 
     private void OnDisable()

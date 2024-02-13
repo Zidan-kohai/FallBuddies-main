@@ -666,6 +666,8 @@ public class Geekplay : MonoBehaviour
         canShowAd = false;
         StartCoroutine(CanAdShow());
         AudioListener.volume = 0;
+        AudioListener.pause = true;
+
         Time.timeScale = 0;
     }
 
@@ -673,6 +675,8 @@ public class Geekplay : MonoBehaviour
     {
         adOpen = false;
         AudioListener.volume = 1;
+        AudioListener.pause = false;
+
         Time.timeScale = 1;
         if (!SoundOn)
             AudioListener.volume = 0;
@@ -692,16 +696,19 @@ public class Geekplay : MonoBehaviour
     private void Silence(bool silence)
     {
         AudioListener.volume = silence ? 0 : 1;
+        AudioListener.pause = silence ? true : false;
         Time.timeScale = silence ? 0 : 1;
 
         if (adOpen)
         {
             Time.timeScale = 0;
             AudioListener.volume = 0;
+            AudioListener.pause = true;
         }
         if (!SoundOn)
         {
             AudioListener.volume = 0;
+            AudioListener.pause = true;
         }
     }
 

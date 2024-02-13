@@ -892,6 +892,18 @@ public class BuyButton : MonoBehaviour
                 textBuy.text = "Buy";
             else
                 textBuy.text = "Купить";
+
+            if (idIsAD == true)
+            {
+                if (Geekplay.Instance.language == "ru")
+                {
+                    textBuy.text = "Получить";
+                }
+                else
+                {
+                    textBuy.text = "Get";
+                }
+            }
         }
         else
         {

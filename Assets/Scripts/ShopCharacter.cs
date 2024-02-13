@@ -149,12 +149,13 @@ public class ShopCharacter : MonoBehaviour
 
         if (isBuyOrNot == false)
         {
+            
             if (isBuyByHardMoney == true)
             {
                 CostObject.gameObject.SetActive(false);
                 CostHardObject.gameObject.SetActive(true);
                 CostAD.gameObject.SetActive(false);
-                ButtonBuy.SetActive(true);
+                ButtonBuy.SetActive(true); 
             }
             else if (isAD == true)
             {
@@ -162,6 +163,7 @@ public class ShopCharacter : MonoBehaviour
                 CostHardObject.gameObject.SetActive(false);
                 CostAD.gameObject.SetActive(true);
                 ButtonBuy.SetActive(true);
+
             }
             else
             {

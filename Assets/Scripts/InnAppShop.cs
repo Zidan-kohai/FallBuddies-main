@@ -2,6 +2,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
+using System;
+using UnityEngine.SceneManagement;
 
 public class InnAppShop : MonoBehaviour
 {
@@ -25,23 +28,13 @@ public class InnAppShop : MonoBehaviour
     public GameObject buyedRareCard2Panel;
     public GameObject buyedRareCard3Panel;
 
-    void OnEnable()
+    private void Start()
     {
+        SubscribePurshes();
+
         playerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
 
-        Geekplay.Instance.SubscribeOnPurshace("UncommonCard1", BuyUncommonCard1);
-        Geekplay.Instance.SubscribeOnPurshace("CommonCard1", BuyCommonCard1);
-        Geekplay.Instance.SubscribeOnPurshace("CommonCard2", BuyCommonCard2);
-        Geekplay.Instance.SubscribeOnPurshace("CommonCard3", BuyCommonCard3);
-        Geekplay.Instance.SubscribeOnPurshace("EpicCard1", BuyEpicCard1);
-        Geekplay.Instance.SubscribeOnPurshace("LegendaryCard1", BuyLegendatyCard1);
-        Geekplay.Instance.SubscribeOnPurshace("RareCard1", BuyRareCard1);
-        Geekplay.Instance.SubscribeOnPurshace("RareCard2", BuyRareCard2);
-        Geekplay.Instance.SubscribeOnPurshace("RareCard3", BuyRareCard3);
-        Geekplay.Instance.SubscribeOnPurshace("Money1", BuyMoney1);
-        Geekplay.Instance.SubscribeOnPurshace("HardMoney1", BuyHardMoney1);
-
-        if(Geekplay.Instance.PlayerData.buyUncommonCard1)
+        if (Geekplay.Instance.PlayerData.buyUncommonCard1)
         {
             Buyed(buyUncommonCard1Button, buyedUncommonCard1Panel);
         }
@@ -255,18 +248,33 @@ public class InnAppShop : MonoBehaviour
         buyedAudio.Play();
     }
 
-    private void OnDisable()
+    public void SubscribePurshes()
     {
-        Geekplay.Instance.UnsubscribeOnPurshace("UncommonCard1", BuyUncommonCard1);
-        Geekplay.Instance.UnsubscribeOnPurshace("CommonCard1", BuyCommonCard1);
-        Geekplay.Instance.UnsubscribeOnPurshace("CommonCard2", BuyCommonCard2);
-        Geekplay.Instance.UnsubscribeOnPurshace("CommonCard3", BuyCommonCard3);
-        Geekplay.Instance.UnsubscribeOnPurshace("EpicCard1", BuyEpicCard1);
-        Geekplay.Instance.UnsubscribeOnPurshace("LegendaryCard1", BuyLegendatyCard1);
-        Geekplay.Instance.UnsubscribeOnPurshace("RareCard1", BuyRareCard1);
-        Geekplay.Instance.UnsubscribeOnPurshace("RareCard2", BuyRareCard2);
-        Geekplay.Instance.UnsubscribeOnPurshace("RareCard3", BuyRareCard3);
-        Geekplay.Instance.UnsubscribeOnPurshace("Money1", BuyMoney1);
-        Geekplay.Instance.UnsubscribeOnPurshace("HardMoney1", BuyHardMoney1);
+        Geekplay.Instance.SubscribeOnPurshace("UncommonCard1", BuyUncommonCard1);
+        Geekplay.Instance.SubscribeOnPurshace("CommonCard1", BuyCommonCard1);
+        Geekplay.Instance.SubscribeOnPurshace("CommonCard2", BuyCommonCard2);
+        Geekplay.Instance.SubscribeOnPurshace("CommonCard3", BuyCommonCard3);
+        Geekplay.Instance.SubscribeOnPurshace("EpicCard1", BuyEpicCard1);
+        Geekplay.Instance.SubscribeOnPurshace("LegendaryCard1", BuyLegendatyCard1);
+        Geekplay.Instance.SubscribeOnPurshace("RareCard1", BuyRareCard1);
+        Geekplay.Instance.SubscribeOnPurshace("RareCard2", BuyRareCard2);
+        Geekplay.Instance.SubscribeOnPurshace("RareCard3", BuyRareCard3);
+        Geekplay.Instance.SubscribeOnPurshace("Money1", BuyMoney1);
+        Geekplay.Instance.SubscribeOnPurshace("HardMoney1", BuyHardMoney1);
     }
+
+    //private void OnDisable()
+    //{
+    //    Geekplay.Instance.UnsubscribeOnPurshace("UncommonCard1", BuyUncommonCard1);
+    //    Geekplay.Instance.UnsubscribeOnPurshace("CommonCard1", BuyCommonCard1);
+    //    Geekplay.Instance.UnsubscribeOnPurshace("CommonCard2", BuyCommonCard2);
+    //    Geekplay.Instance.UnsubscribeOnPurshace("CommonCard3", BuyCommonCard3);
+    //    Geekplay.Instance.UnsubscribeOnPurshace("EpicCard1", BuyEpicCard1);
+    //    Geekplay.Instance.UnsubscribeOnPurshace("LegendaryCard1", BuyLegendatyCard1);
+    //    Geekplay.Instance.UnsubscribeOnPurshace("RareCard1", BuyRareCard1);
+    //    Geekplay.Instance.UnsubscribeOnPurshace("RareCard2", BuyRareCard2);
+    //    Geekplay.Instance.UnsubscribeOnPurshace("RareCard3", BuyRareCard3);
+    //    Geekplay.Instance.UnsubscribeOnPurshace("Money1", BuyMoney1);
+    //    Geekplay.Instance.UnsubscribeOnPurshace("HardMoney1", BuyHardMoney1);
+    //}
 }

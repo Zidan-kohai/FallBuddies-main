@@ -71,6 +71,8 @@ public class Geekplay : MonoBehaviour
     public float timeToUpdateLeaderboard = 60;
     public string lastLeaderText;
 
+    public InnAppShop InnAppShop;
+
     void Start()
     {
         Utils.GameReady();
@@ -107,7 +109,20 @@ public class Geekplay : MonoBehaviour
         cor = AdOff();
         StartCoroutine(cor);
     }
+    public void SetPurchasedItem() //начислить уже купленные предметы на старте
+    {
+        InnAppShop.SubscribePurshes();
 
+        for (int i = 0; i < purchasesList.Length; i++)
+        {
+            if (PlayerData.lastBuy == purchasesList[i].itemName)
+            {
+                purchasesList[i].purchaseEvent.Invoke();
+                PlayerData.lastBuy = "";
+                Save();
+            }
+        }
+    }
     IEnumerator AdOff() //ТАЙМЕР С ВЫКЛЮЧЕНИЕМ РЕКЛАМЫ
     {
         canAd = false;
@@ -438,7 +453,7 @@ public class Geekplay : MonoBehaviour
                 {
                     PlayerData = new PlayerData();
                 }
-                language = "ru"; //ВЫБРАТЬ ЯЗЫК ДЛЯ ТЕСТОВ. ru/en/tr/
+                language = "en"; //ВЫБРАТЬ ЯЗЫК ДЛЯ ТЕСТОВ. ru/en/tr/
                 Localization();
                 break;
             case Platform.Yandex:
@@ -517,6 +532,31 @@ public class Geekplay : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void GetLeaders(string value)
+    {
+        l[leaderNumber] = value;
+
+        if (leaderNumber < 9)
+        {
+            leaderNumber += 1;
+            Utils.GetLeaderboard("score", leaderNumber);
+        }
+
+        leaderboardInGame.SetText();
+    }
+    public void GetLeadersName(string value)
+    {
+        lN[leaderNumberN] = value;
+
+        if (leaderNumberN < 9)
+        {
+            leaderNumberN += 1;
+            Utils.GetLeaderboard("name", leaderNumberN);
+        }
+
+        leaderboardInGame.SetText();
     }
 
     protected void Awake()

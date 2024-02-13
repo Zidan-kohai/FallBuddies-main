@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SocialPlatforms;
 
 
 public class MainMenuUI : MonoBehaviour
@@ -39,10 +41,8 @@ public class MainMenuUI : MonoBehaviour
     public List<ShopCharacter> ShopChars;
 
 
-    [SerializeField] private Button firstLevelStart;
-    [SerializeField] private Button secondLevelStart;
-    [SerializeField] private Button thirdLevelStart;
-    [SerializeField] private Button fourLevelStart;
+    [SerializeField] private GameObject Levels;
+    [SerializeField] private GameObject leaderBoard;
 
     public void Start()
     {
@@ -53,29 +53,14 @@ public class MainMenuUI : MonoBehaviour
 
         if ((FirstTime == true) && (FirstTimeShop == false))
         {
-            ImageTextFirstGame.gameObject.SetActive(true);
-            firstLevelStart.gameObject.SetActive(false);
-            secondLevelStart.gameObject.SetActive(false);
-            thirdLevelStart.gameObject.SetActive(false);
-            fourLevelStart.gameObject.SetActive(false);
+            ImageTextFirstGame.SetActive(true);
+            Levels.gameObject.SetActive(false);
+            leaderBoard.SetActive(false);
         }
         else
         {
             ImageTextFirstGame.gameObject.SetActive(false);
             
-        }
-
-        if ((FirstTime == true) && (FirstTimeShop == true))
-        {
-            ImageTextFirstGameShop.gameObject.SetActive(true);
-            firstLevelStart.gameObject.SetActive(false);
-            secondLevelStart.gameObject.SetActive(false);
-            thirdLevelStart.gameObject.SetActive(false);
-            fourLevelStart.gameObject.SetActive(false);
-        }
-        else
-        {
-            ImageTextFirstGameShop.gameObject.SetActive(false);
         }
         ButtonMenuFromShop.SetActive(false);
         PanelShop.SetActive(false);
@@ -113,6 +98,8 @@ public class MainMenuUI : MonoBehaviour
                 ButtonMenuFromShop.SetActive(true);
                 PanelShop.SetActive(true);
                 PanelInnShop.SetActive(false);
+                leaderBoard.SetActive(false);
+                Levels.gameObject.SetActive(false);
 
                 Scrolls[0].SetActive(true);
 
@@ -142,7 +129,8 @@ public class MainMenuUI : MonoBehaviour
                 PlayerUILevelExp.SetActive(false);
                 PanelShop.SetActive(true);
                 PanelInnShop.SetActive(false);
-
+                leaderBoard.SetActive(false);
+                Levels.SetActive(false);
                 Scrolls[0].SetActive(true);
 
                 foreach (var item in LevelstartButtons)
@@ -170,6 +158,8 @@ public class MainMenuUI : MonoBehaviour
         PlayerUILevelExp.SetActive(true);
         ButtonBuy.SetActive(false);
         ButtonMenuFromShop.SetActive(false);
+        Levels.gameObject.SetActive(true);
+
         if (PanelShop.gameObject.active == true) 
         {
             PanelShop.SetActive(false);
@@ -181,6 +171,8 @@ public class MainMenuUI : MonoBehaviour
         }
         PanelInnShop.SetActive(false);
         panelSetting.SetActive(false);
+        leaderBoard.SetActive(true);
+
         foreach (var scroll in Scrolls)
         {
             scroll.SetActive(false);
@@ -207,7 +199,8 @@ public class MainMenuUI : MonoBehaviour
                 PanelShop.SetActive(false);
                 PanelInnShop.SetActive(true); 
                 ButtonMenuFromShop.SetActive(true);
-
+                leaderBoard.SetActive(false);
+                Levels.SetActive(false);
                 foreach (var item in LevelstartButtons)
                 {
                     item.SetActive(false);

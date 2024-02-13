@@ -20,7 +20,7 @@ public class MainMenuLocalization : MonoBehaviour
     [SerializeField] private TextMeshProUGUI eyesText;
     [SerializeField] private TextMeshProUGUI bodypartsText;
     [SerializeField] private TextMeshProUGUI bodyandskinText;
-
+    [SerializeField] private TextMeshProUGUI ChooseLevelText;
 
     [Header("InApp")]
     [SerializeField] private TextMeshProUGUI rare1;
@@ -36,6 +36,7 @@ public class MainMenuLocalization : MonoBehaviour
     [SerializeField] private TextMeshProUGUI money1;
     [SerializeField] private List<TextMeshProUGUI> buyedText;
 
+    [SerializeField] private List<TextMeshProUGUI> YanText;
     void Start()
     {
         if (Geekplay.Instance.language == "ru")
@@ -55,6 +56,7 @@ public class MainMenuLocalization : MonoBehaviour
             bodypartsText.text = "Части тела";
             bodyandskinText.text = "Тело";
             backToMenuText.text = "Вернуться в меню";
+            ChooseLevelText.text = "Выберите уровень сами";
 
             rare1.text = "редкое";
             rare2.text = "редкое";
@@ -71,6 +73,10 @@ public class MainMenuLocalization : MonoBehaviour
             for (int i = 0; i < buyedText.Count; i++)
             {
                 buyedText[i].text = "куплено";
+            }
+            for (int i = 0; i < YanText.Count; i++)
+            {
+                YanText[i].text = "Ян";
             }
 
         }
@@ -91,7 +97,7 @@ public class MainMenuLocalization : MonoBehaviour
             bodypartsText.text = "Bodyparts";
             bodyandskinText.text = "Bodies";
             backToMenuText.text = "Back to Menu";
-
+            ChooseLevelText.text = "Choose level yourself";
 
             rare1.text = "rare";
             rare2.text = "rare";
@@ -108,6 +114,10 @@ public class MainMenuLocalization : MonoBehaviour
             for (int i = 0; i < buyedText.Count; i++)
             {
                 buyedText[i].text = "Buyed";
+            }
+            for (int i = 0; i < YanText.Count; i++)
+            {
+                YanText[i].text = "Yan";
             }
         }
     }

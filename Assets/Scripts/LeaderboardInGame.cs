@@ -7,35 +7,32 @@ using UnityEngine;
 public class LeaderboardInGame : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI leadersText;
-    [SerializeField] private TextMeshProUGUI leadersText2;
 
     [SerializeField] private TextMeshProUGUI leadersText1Bottom;
-    [SerializeField] private TextMeshProUGUI leadersText2Bottom;
 
+    [SerializeField] private TextMeshProUGUI LeaderBoardHeader;
 
     private float timeFlag = 0;
-    private void Awake()
-    {
-        Geekplay.Instance.leaderboardInGame = this;
-    }
     void Start()
     {
+        Geekplay.Instance.leaderboardInGame = this;
         int time = Convert.ToInt32(Geekplay.Instance.remainingTimeUntilUpdateLeaderboard);
 
         if (Geekplay.Instance.language == "en")
         {
+            LeaderBoardHeader.text = "Leaders \"Fall Buddies\"";
             leadersText1Bottom.text = $"Table will be updated in: {time}";
-            leadersText2Bottom.text = $"Table will be updated in: {time}";
         }
         else if (Geekplay.Instance.language == "ru")
         {
+
+            LeaderBoardHeader.text = "лидери \"Fall Buddies\""; 
             leadersText1Bottom.text = $"Таблица обновится через: {time}";
-            leadersText2Bottom.text = $"Таблица обновится через: {time}";
         }
         else if (Geekplay.Instance.language == "tr")
         {
+            LeaderBoardHeader.text = "liderler";
             leadersText1Bottom.text = $"Su yolla güncellendi: {time}";
-            leadersText2Bottom.text = $"Su yolla güncellendi: {time}";
         }
 
         if (Geekplay.Instance.remainingTimeUntilUpdateLeaderboard <= 0)
@@ -44,7 +41,6 @@ public class LeaderboardInGame : MonoBehaviour
         else if (Geekplay.Instance.lastLeaderText != string.Empty)
         {
             leadersText.text = Geekplay.Instance.lastLeaderText;
-            leadersText2.text = Geekplay.Instance.lastLeaderText;
         }
     }
 
@@ -66,17 +62,14 @@ public class LeaderboardInGame : MonoBehaviour
         if (Geekplay.Instance.language == "en")
         {
             leadersText1Bottom.text = $"Table will be updated in: {time}";
-            leadersText2Bottom.text = $"Table will be updated in: {time}";
         }
         else if (Geekplay.Instance.language == "ru")
         {
             leadersText1Bottom.text = $"Таблица обновится через: {time}";
-            leadersText2Bottom.text = $"Таблица обновится через: {time}";
         }
         else if (Geekplay.Instance.language == "tr")
         {
             leadersText1Bottom.text = $"Su yolla güncellendi: {time}";
-            leadersText2Bottom.text = $"Su yolla güncellendi: {time}";
         }
 
     }
@@ -98,10 +91,8 @@ public class LeaderboardInGame : MonoBehaviour
                 {
                     s = $"{i + 1}.\n";
                 }
-
                 Geekplay.Instance.lastLeaderText += $"{i + 1}. {Geekplay.Instance.lN[i]} : {Geekplay.Instance.l[i]}\n";
                 leadersText.text = Geekplay.Instance.lastLeaderText;
-                leadersText2.text = Geekplay.Instance.lastLeaderText;
                 //$"{i + 1}. {Geekplay.Instance.lN[i]} : {Geekplay.Instance.l[i]}\n"
             }
         }
@@ -113,7 +104,7 @@ public class LeaderboardInGame : MonoBehaviour
 
         Geekplay.Instance.leaderNumber = 0;
         Geekplay.Instance.leaderNumberN = 0;
-        //Utils.GetLeaderboard("score", 0);
-        //Utils.GetLeaderboard("name", 0);
+        Utils.GetLeaderboard("score", 0);
+        Utils.GetLeaderboard("name", 0);
     }
 }

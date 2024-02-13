@@ -25,6 +25,8 @@ public class LobbyLocalization : MonoBehaviour
     [SerializeField] private TextMeshProUGUI money1;
     [SerializeField] private List<TextMeshProUGUI> buyedText;
 
+    [SerializeField] private List<TextMeshProUGUI> YanText;
+
     void Start()
     {
         if (Geekplay.Instance.language == "ru")
@@ -50,6 +52,11 @@ public class LobbyLocalization : MonoBehaviour
             {
                 buyedText[i].text = "куплено";
             }
+
+            for (int i = 0; i < YanText.Count; i++)
+            {
+                YanText[i].text = "Ян";
+            }
         }
         else
         {
@@ -70,9 +77,9 @@ public class LobbyLocalization : MonoBehaviour
             unusual6.text = "Legendary";
             money1.text = "WOW!";
 
-            for (int i = 0; i < buyedText.Count; i++)
+            for (int i = 0; i < YanText.Count; i++)
             {
-                buyedText[i].text = "Buyed";
+                YanText[i].text = "Yan";
             }
         }
     }

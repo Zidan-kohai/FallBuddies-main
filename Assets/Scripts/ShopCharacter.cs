@@ -63,7 +63,7 @@ public class ShopCharacter : MonoBehaviour
     public TextMeshProUGUI CostText;
     public TextMeshProUGUI HardCostText;
 
-    // Start is called before the first frame update
+    // Start is callled before the first frame update
     void Start()
     {
         MainCanvas = FindObjectOfType<Geekplay>().gameObject;

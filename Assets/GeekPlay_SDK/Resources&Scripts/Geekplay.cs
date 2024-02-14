@@ -78,6 +78,8 @@ public class Geekplay : MonoBehaviour
         Utils.GameReady();
 
         ShowInterstitialAd();
+
+        CheckBuysOnStart(PlayerData.lastBuy);
     }
     private void Update()
     {
@@ -112,11 +114,13 @@ public class Geekplay : MonoBehaviour
     public void SetPurchasedItem() //начислить уже купленные предметы на старте
     {
         InnAppShop.SubscribePurshes();
-
+        Debug.Log($"On Purshased");
         for (int i = 0; i < purchasesList.Length; i++)
         {
             if (PlayerData.lastBuy == purchasesList[i].itemName)
             {
+                Debug.Log($"On Purshased {purchasesList[i].itemName}");
+
                 purchasesList[i].purchaseEvent.Invoke();
                 PlayerData.lastBuy = "";
                 Save();
@@ -453,7 +457,7 @@ public class Geekplay : MonoBehaviour
                 {
                     PlayerData = new PlayerData();
                 }
-                language = "en"; //ВЫБРАТЬ ЯЗЫК ДЛЯ ТЕСТОВ. ru/en/tr/
+                language = "tr"; //ВЫБРАТЬ ЯЗЫК ДЛЯ ТЕСТОВ. ru/en/tr/
                 Localization();
                 break;
             case Platform.Yandex:
@@ -661,11 +665,15 @@ public class Geekplay : MonoBehaviour
 
     private void OnPurchasedItem() //начислить покупку (при удачной оплате)
     {
+        Debug.Log($"On Purshased");
+
         PlayerData.lastBuy = "";
         for (int i = 0; i < purchasesList.Length; i++)
         {
             if (purchasedTag == purchasesList[i].itemName)
             {
+                Debug.Log($"On Purshased {purchasesList[i].itemName}");
+
                 purchasesList[i].purchaseEvent.Invoke();
                 Save();
             }
@@ -674,6 +682,7 @@ public class Geekplay : MonoBehaviour
 
     public void CheckBuysOnStart(string idOrTag) //проверить покупки на старте
     {
+        Debug.Log($"Check Buys On Start");
         Utils.CheckBuyItem(idOrTag);
     }
 

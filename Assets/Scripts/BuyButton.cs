@@ -889,28 +889,48 @@ public class BuyButton : MonoBehaviour
         if(isBought == false)
         {
             if (Geekplay.Instance.language == "en")
+            {
                 textBuy.text = "Buy";
-            else
+            }
+            else if (Geekplay.Instance.language == "ru")
+            {
                 textBuy.text = "Купить";
+            }
+            else if (Geekplay.Instance.language == "tr")
+            {
+                textBuy.text = "Satin almak";
+            }
 
             if (idIsAD == true)
             {
-                if (Geekplay.Instance.language == "ru")
+                if(Geekplay.Instance.language == "en")
+                {
+                    textBuy.text = "Get";
+                }
+                else if (Geekplay.Instance.language == "ru")
                 {
                     textBuy.text = "Получить";
                 }
-                else
+                else if(Geekplay.Instance.language == "tr")
                 {
-                    textBuy.text = "Get";
+                    textBuy.text = "Elde etmek";
                 }
             }
         }
         else
         {
             if (Geekplay.Instance.language == "en")
+            {
                 textBuy.text = "Equip";
-            else
+            }
+            else if(Geekplay.Instance.language == "ru")
+            {
                 textBuy.text = "Надеть";
+            }
+            else if(Geekplay.Instance.language == "tr")
+            {
+                textBuy.text = "Donatmak";
+            }
         }
     }
 

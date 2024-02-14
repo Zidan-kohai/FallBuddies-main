@@ -120,5 +120,45 @@ public class MainMenuLocalization : MonoBehaviour
                 YanText[i].text = "Yan";
             }
         }
+        else if (Geekplay.Instance.language == "tr")
+        {
+            buyText.text = "Satin Al";
+            startGameText.text = "Rastgele Oyun";
+            tailText.text = "Kuyruk";
+            hairText.text = "Sac";
+            hornText.text = "Korna";
+            hatText.text = "Sapka";
+            earsText.text = "Kulaklar";
+            noseText.text = "Burun";
+            mouthText.text = "Agiz";
+            headpartsText.text = "Bas parcalari";
+            glovesText.text = "Eldivenler";
+            glovesText.text = "Gozler";
+            bodypartsText.text = "Vuucut parcalari";
+            bodyandskinText.text = "Govdeler";
+            backToMenuText.text = "Menuye Don";
+            ChooseLevelText.text = "Seviyeyi kendiniz secin";
+
+            rare1.text = "nadir";
+            rare2.text = "nadir";
+            rare3.text = "nadir";
+
+            unusual1.text = "Olagandisi";
+            unusual2.text = "Olagandisi";
+            unusual3.text = "Olagandisi";
+            unusual4.text = "Olagandisi";
+            unusual5.text = "Epik";
+            unusual6.text = "Efsanevi";
+            money1.text = "VAAY!";
+
+            for (int i = 0; i < buyedText.Count; i++)
+            {
+                buyedText[i].text = "Satin alindi";
+            }
+            for (int i = 0; i < YanText.Count; i++)
+            {
+                YanText[i].text = "Yan";
+            }
+        }
     }
 }

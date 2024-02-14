@@ -31,8 +31,8 @@ public class LeaderboardInGame : MonoBehaviour
         }
         else if (Geekplay.Instance.language == "tr")
         {
-            LeaderBoardHeader.text = "liderler";
-            leadersText1Bottom.text = $"Su yolla güncellendi: {time}";
+            LeaderBoardHeader.text = "liderler \"Fall Buddies\"";
+            leadersText1Bottom.text = $"Su yolla guncellendi: {time}";
         }
 
         if (Geekplay.Instance.remainingTimeUntilUpdateLeaderboard <= 0)
@@ -69,7 +69,7 @@ public class LeaderboardInGame : MonoBehaviour
         }
         else if (Geekplay.Instance.language == "tr")
         {
-            leadersText1Bottom.text = $"Su yolla güncellendi: {time}";
+            leadersText1Bottom.text = $"Su yolla guncellendi: {time}";
         }
 
     }

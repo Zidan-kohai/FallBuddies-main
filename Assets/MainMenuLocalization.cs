@@ -21,6 +21,7 @@ public class MainMenuLocalization : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bodypartsText;
     [SerializeField] private TextMeshProUGUI bodyandskinText;
     [SerializeField] private TextMeshProUGUI ChooseLevelText;
+    [SerializeField] private TextMeshProUGUI telegeram;
 
     [Header("InApp")]
     [SerializeField] private TextMeshProUGUI rare1;
@@ -56,7 +57,8 @@ public class MainMenuLocalization : MonoBehaviour
             bodypartsText.text = "Части тела";
             bodyandskinText.text = "Тело";
             backToMenuText.text = "Вернуться в меню";
-            ChooseLevelText.text = "Выберите уровень сами";
+            ChooseLevelText.text = "Выберите уровень";
+            telegeram.text = "Телеграм";
 
             rare1.text = "редкое";
             rare2.text = "редкое";
@@ -97,7 +99,8 @@ public class MainMenuLocalization : MonoBehaviour
             bodypartsText.text = "Bodyparts";
             bodyandskinText.text = "Bodies";
             backToMenuText.text = "Back to Menu";
-            ChooseLevelText.text = "Choose level yourself";
+            ChooseLevelText.text = "Choose level";
+            telegeram.text = "Telegram";
 
             rare1.text = "rare";
             rare2.text = "rare";
@@ -137,7 +140,8 @@ public class MainMenuLocalization : MonoBehaviour
             bodypartsText.text = "Vuucut parcalari";
             bodyandskinText.text = "Govdeler";
             backToMenuText.text = "Menuye Don";
-            ChooseLevelText.text = "Seviyeyi kendiniz secin";
+            ChooseLevelText.text = "Seviyeyi kendiniz";
+            telegeram.text = "Telegram";
 
             rare1.text = "nadir";
             rare2.text = "nadir";

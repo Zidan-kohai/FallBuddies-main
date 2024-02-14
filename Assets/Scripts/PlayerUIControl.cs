@@ -233,7 +233,10 @@ public class PlayerUIControl : MonoBehaviour
 
         if ((FirstTime == true) && (FirstTimeNeedShop == true))
         {
+            Geekplay.Instance.PlayerData.GameCounter++;
+            Analytics.instance.SendEvent("Tutor_1");
             return;
+
         }
         else
         {
@@ -243,6 +246,10 @@ public class PlayerUIControl : MonoBehaviour
 
             isActivacted = false;
 
+            Geekplay.Instance.PlayerData.GameCounter++;
+            Analytics.instance.SendEvent($"Game_{Geekplay.Instance.PlayerData.GameCounter}_Start");
+            Analytics.instance.SendEvent("Random_Game");
+
             StartCoroutine(ImageMoveStart(MainImagesMover));
             StartCoroutine(ChangeImageLevel());
             StartCoroutine(WaitAwakeGame());
@@ -251,7 +258,11 @@ public class PlayerUIControl : MonoBehaviour
 
     public void StartMainMenu()
     {
-            SceneManager.LoadScene("Menu");
+        if(Geekplay.Instance.PlayerData.PlayerFirstTimePlay)
+        {
+            Analytics.instance.SendEvent("Tutor_3");
+        }
+        SceneManager.LoadScene("Menu");
     }
 
     void Update()
@@ -290,6 +301,10 @@ public class PlayerUIControl : MonoBehaviour
 
     public void LoadLevelByIndex(int index)
     {
+        if (index == 5) Analytics.instance.SendEvent("Color_TV");
+        if (index == 3) Analytics.instance.SendEvent("Race");
+        if (index == 4) Analytics.instance.SendEvent("Doors");
+        if (index == 2) Analytics.instance.SendEvent("Jumper");
         SceneManager.LoadScene(index);
     }
     IEnumerator AwakeGame()

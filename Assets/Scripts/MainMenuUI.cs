@@ -18,6 +18,7 @@ public class MainMenuUI : MonoBehaviour
     public GameObject ButtonMenuFromShop;
     public GameObject ButtonShop;
     public GameObject ButtonStart;
+    public GameObject telegramButton;
     public GameObject ButtonBuy;
     public GameObject PanelShop;
     public GameObject[] Scrolls;
@@ -39,11 +40,10 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hardMoneyValueText;
 
     public List<ShopCharacter> ShopChars;
-
-
     [SerializeField] private GameObject Levels;
     [SerializeField] private GameObject leaderBoard;
 
+    public bool isFirstOpenedShop = false;
     public void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
@@ -56,12 +56,27 @@ public class MainMenuUI : MonoBehaviour
             ImageTextFirstGame.SetActive(true);
             Levels.gameObject.SetActive(false);
             leaderBoard.SetActive(false);
+
+            Analytics.instance.SendEvent("Tutor_Start");
         }
         else
         {
             ImageTextFirstGame.gameObject.SetActive(false);
-            
         }
+
+        if ((FirstTime == true) && (FirstTimeShop == true))
+        {
+            ImageTextFirstGameShop.gameObject.SetActive(true);
+            Levels.gameObject.SetActive(false);
+            leaderBoard.SetActive(false);
+
+            Analytics.instance.SendEvent("Tutor_4");
+        }
+        else
+        {
+            ImageTextFirstGameShop.gameObject.SetActive(false);
+        }
+
         ButtonMenuFromShop.SetActive(false);
         PanelShop.SetActive(false);
         ButtonBuy.SetActive(false);
@@ -76,6 +91,13 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartShopping()
     {
+        if (isFirstOpenedShop)
+        {
+            Analytics.instance.SendEvent("Tutor_end");
+            isFirstOpenedShop = false;
+        }
+
+
         if ((FirstTime == true) && (FirstTimeShop == true))
         {
             if(PanelShop.gameObject.active == false)
@@ -100,9 +122,10 @@ public class MainMenuUI : MonoBehaviour
                 PanelInnShop.SetActive(false);
                 leaderBoard.SetActive(false);
                 Levels.gameObject.SetActive(false);
+                telegramButton.SetActive(false);
 
                 Scrolls[0].SetActive(true);
-
+                isFirstOpenedShop = true;
                 foreach (var item in LevelstartButtons)
                 {
                     item.SetActive(false);
@@ -132,6 +155,7 @@ public class MainMenuUI : MonoBehaviour
                 leaderBoard.SetActive(false);
                 Levels.SetActive(false);
                 Scrolls[0].SetActive(true);
+                telegramButton.SetActive(false);
 
                 foreach (var item in LevelstartButtons)
                 {
@@ -140,10 +164,6 @@ public class MainMenuUI : MonoBehaviour
             }
             else
             {
-                if (Geekplay.Instance.PlayerData.PlayerFirstTimePlay == false)
-                {
-                    Geekplay.Instance.ShowInterstitialAd();
-                }
                 ExitToMainMenu();
             }
         }
@@ -151,6 +171,12 @@ public class MainMenuUI : MonoBehaviour
 
     public void ExitToMainMenu()
     {
+        if (isFirstOpenedShop)
+        {
+            Analytics.instance.SendEvent("Tutor_end");
+            isFirstOpenedShop = false;
+        }
+
         var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
         cam.Follow = CameraTargetStart.transform;
         cam.LookAt = CameraTargetStart.transform;
@@ -159,7 +185,7 @@ public class MainMenuUI : MonoBehaviour
         ButtonBuy.SetActive(false);
         ButtonMenuFromShop.SetActive(false);
         Levels.gameObject.SetActive(true);
-
+        telegramButton.SetActive(true);
         if (PanelShop.gameObject.active == true) 
         {
             PanelShop.SetActive(false);
@@ -187,6 +213,10 @@ public class MainMenuUI : MonoBehaviour
         }
     }
 
+    public void OpenTelegram()
+    {
+        Application.OpenURL("https://t.me/+uQFcFVwGmwM3ZDNi");
+    }
     public void GoToInnShop()
     {
 
@@ -200,7 +230,9 @@ public class MainMenuUI : MonoBehaviour
                 PanelInnShop.SetActive(true); 
                 ButtonMenuFromShop.SetActive(true);
                 leaderBoard.SetActive(false);
-                Levels.SetActive(false);
+                Levels.SetActive(false); 
+                telegramButton.SetActive(false);
+
                 foreach (var item in LevelstartButtons)
                 {
                     item.SetActive(false);

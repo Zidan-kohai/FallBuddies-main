@@ -96,13 +96,16 @@ public class FinishedLevel : MonoBehaviour
                         {
                             Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop = true;
 
-                            
+                            Analytics.instance.SendEvent("Tutor_2");
 
                             PlayerDataUIValue.PlaceInLevel = i + 1;
                         }
                         else
                         {
-                            PlayerDataUIValue.PlaceInLevel = i + 1; 
+                            PlayerDataUIValue.PlaceInLevel = i + 1;
+
+
+                            Analytics.instance.SendEvent($"Game_{Geekplay.Instance.PlayerData.GameCounter}_End");
                         }
                     }
                     else
@@ -111,13 +114,14 @@ public class FinishedLevel : MonoBehaviour
                         {
                             Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop = true;
 
-                            
+                            Analytics.instance.SendEvent("Tutor_2");
 
                             PlayerDataUIValue.PlaceInLevel = i + 1;
                         }
                         else
                         {
                             PlayerDataUIValue.PlaceInLevel = i + 1;
+                            Analytics.instance.SendEvent($"Game_{Geekplay.Instance.PlayerData.GameCounter}_End");
                         }
                     }
 

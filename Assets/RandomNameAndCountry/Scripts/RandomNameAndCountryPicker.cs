@@ -14,13 +14,17 @@ namespace RandomNameAndCountry.Scripts
         [SerializeField] private List<Sprite> countries;
         private static List<string> m_EnNamesList;
         private static List<string> m_RuNamesList;
+        private static List<string> m_TrNamesList;
         private TextAsset enNames;
         private TextAsset ruNames;
+        private TextAsset trNames;
+
         private void Awake()
         {
             Instance = this;
             enNames = Resources.Load("TextFiles/EnNames") as TextAsset;
             ruNames = Resources.Load("TextFiles/RuNames") as TextAsset;
+            trNames = Resources.Load("TextFiles/TrNames") as TextAsset;
 
             ReadTextFile();
             GetRandomPlayerInfo();
@@ -30,6 +34,7 @@ namespace RandomNameAndCountry.Scripts
         {
             m_EnNamesList = enNames.text.Split('\n').ToList();
             m_RuNamesList = ruNames.text.Split('\n').ToList();
+            m_TrNamesList = trNames.text.Split('\n').ToList();
         }
 
         public RandomPlayerInfo GetRandomPlayerInfo()
@@ -47,6 +52,10 @@ namespace RandomNameAndCountry.Scripts
             else if(Geekplay.Instance.language == "ru")
             {
                 randomPlayerInfo.playerName = m_RuNamesList[UnityEngine.Random.Range(0, m_RuNamesList.Count)];
+            }
+            else if (Geekplay.Instance.language == "tr")
+            {
+                randomPlayerInfo.playerName = m_TrNamesList[UnityEngine.Random.Range(0, m_TrNamesList.Count)];
             }
 
             randomPlayerInfo.countrySprite = countrySprite;

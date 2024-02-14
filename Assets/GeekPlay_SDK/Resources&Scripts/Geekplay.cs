@@ -76,6 +76,7 @@ public class Geekplay : MonoBehaviour
     void Start()
     {
         Utils.GameReady();
+        Analytics.instance.SendEvent("Game_Start");
 
         ShowInterstitialAd();
 
@@ -457,7 +458,7 @@ public class Geekplay : MonoBehaviour
                 {
                     PlayerData = new PlayerData();
                 }
-                language = "tr"; //ВЫБРАТЬ ЯЗЫК ДЛЯ ТЕСТОВ. ru/en/tr/
+                language = "en"; //ВЫБРАТЬ ЯЗЫК ДЛЯ ТЕСТОВ. ru/en/tr/
                 Localization();
                 break;
             case Platform.Yandex:

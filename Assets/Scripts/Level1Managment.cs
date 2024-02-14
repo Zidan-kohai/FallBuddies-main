@@ -258,9 +258,18 @@ public class Level1Managment : MonoBehaviour
         playerGO.GetComponent<PlayerControlls>().jumpForce = JumpForce;
 
         if (Geekplay.Instance.language == "en")
+        {
             panelLevelText.text = "GO!";
-        else
+        }
+        else if (Geekplay.Instance.language == "ru")
+        {
             panelLevelText.text = "ВПЕРЕД!";
+        }
+        else if (Geekplay.Instance.language == "tr")
+        {
+            panelLevelText.text = "GITMEK!";
+        }
+
         panelLevelText.rectTransform.DOScale(new Vector3(1, 1, 1), 0.5f);
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(ChangeColorAlpha(panelLevelText));

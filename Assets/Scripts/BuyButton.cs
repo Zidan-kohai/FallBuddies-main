@@ -35,6 +35,7 @@ public class BuyButton : MonoBehaviour
 
     public AudioSource audioSource;
 
+    [SerializeField] private MainMenuUI mainMenuUI;
     public void Start()
     {
         CCharScript = CheckChar.GetComponent<CheckCharactersScript>();
@@ -61,7 +62,11 @@ public class BuyButton : MonoBehaviour
     {
         if(isBought == false)
         {
-            if (isBodies)
+            if(idIsHardMoney && CMainInit.PlayerData.PlayerHardMoney < idCostHard || !idIsHardMoney && CMainInit.PlayerData.PlayerMoney < idCost)
+            {
+                mainMenuUI.GoToInnShop();
+            }
+            else if(isBodies)
             {
                 if (CMainInit.PlayerData.Bodies[idBuy] == 0)
                 {

@@ -2113,7 +2113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208031992}
   serializedVersion: 2
-  m_LocalRotation: {x: 1.770697e-11, y: 0.99988174, z: -0.01538161, w: 0.0000000011510417}
+  m_LocalRotation: {x: -2.8773673e-11, y: 0.99988174, z: -0.015381611, w: -0.0000000018704327}
   m_LocalPosition: {x: 14.549998, y: 14.17, z: -287.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16341,15 +16341,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.01538161
+      value: 0.015381611
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000011510417
+      value: 0.0000000018704327
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.770697e-11
+      value: -2.8773673e-11
       objectReference: {fileID: 0}
     - target: {fileID: 104175313530153702, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_RootOrder
@@ -16949,6 +16949,7 @@ MonoBehaviour:
     \u043F\u043E\u0434\u0431\u0438\u0440\u0430\u044F \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435
     \u043E\u0442\u043A\u0440\u044B\u0442\u044B\u0435 \u0434\u0432\u0435\u0440\u0438"
   e: Finish the race through the open doors, or by opening the doors
+  t: Yarisi acik kapilardan veya kapilari acarak bitirin
 --- !u!1 &2100768418
 GameObject:
   m_ObjectHideFlags: 0

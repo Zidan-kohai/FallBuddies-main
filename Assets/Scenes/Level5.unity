@@ -2819,7 +2819,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934578868}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.015381618, y: -1.7454625e-10, z: 2.6851269e-12, w: 0.99988174}
+  m_LocalRotation: {x: 0.015381616, y: 0.000000002396766, z: -3.6870493e-11, w: 0.99988174}
   m_LocalPosition: {x: 0, y: 9.17, z: 283.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4253,6 +4253,7 @@ MonoBehaviour:
     \u0442\u043E\u0433\u043E \u0446\u0432\u0435\u0442\u0430, \u043A\u043E\u0442\u043E\u0440\u0430\u044F
     \u043F\u043E\u043A\u0430\u0436\u0435\u0442\u0441\u044F \u043D\u0430 \u0442\u0435\u043B\u0435\u0432\u0438\u0437\u043E\u0440\u0430\u0445"
   e: Jump on one of the right platforms with a picture that shows the TV
+  t: TV'yi gosteren bir resimle dogru platformlardan birine atlayin
 --- !u!1001 &1319722750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6503,15 +6504,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.015381618
+      value: 0.015381616
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1.7454625e-10
+      value: 0.000000002396766
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.6851269e-12
+      value: -3.6870493e-11
       objectReference: {fileID: 0}
     - target: {fileID: 104175313530153702, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_RootOrder

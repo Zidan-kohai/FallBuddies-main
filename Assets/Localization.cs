@@ -10,6 +10,11 @@ public class Localization : MonoBehaviour
     [SerializeField] private TextMeshProUGUI showRewardText;
     [SerializeField] private TextMeshProUGUI levelUpText;
 
+    private void Start()
+    {
+        LocalizationFunc();
+    }
+
     public void LocalizationFunc()
     {
     	if (Geekplay.Instance.language == "ru")
@@ -25,6 +30,13 @@ public class Localization : MonoBehaviour
 		    mainMenuText.text = "Main Menu";
 		    showRewardText.text = "Rewards";
 		    levelUpText.text = "Level Up!";
-        } 
+        }
+        else if (Geekplay.Instance.language == "tr")
+        {
+            showSummaryText.text = "Ozeti Goster";
+            mainMenuText.text = "Ana Menu";
+            showRewardText.text = "Oduller";
+            levelUpText.text = "Seviye Yukselt!";
+        }
     }
 }

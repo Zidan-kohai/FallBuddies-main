@@ -1092,6 +1092,7 @@ MonoBehaviour:
   r: "\u041F\u0440\u0438\u0431\u0435\u0433\u0438 \u043D\u0430 \u0444\u0438\u043D\u0438\u0448
     \u043F\u0435\u0440\u0432\u044B\u043C, \u043E\u0431\u0445\u043E\u0434\u044F \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F"
   e: Complete the race ahead of everyone by overcoming obstacles
+  t: Engelleri asarak yarisi herkesin onunde tamamlayin
 --- !u!1 &75300970 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6113548856219940089, guid: 2dc77731ba54b7c4c991e832feaf3fa1, type: 3}
@@ -1693,7 +1694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4546d0e899ba140a177bca242ec92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.7
+  duration: 0.9
   posX: 150
   posY: -80
   easeType: 2
@@ -2947,6 +2948,7 @@ MonoBehaviour:
   r: "\u041F\u0440\u0438\u0431\u0435\u0433\u0438 \u043D\u0430 \u0444\u0438\u043D\u0438\u0448
     \u043F\u0435\u0440\u0432\u044B\u043C, \u043E\u0431\u0445\u043E\u0434\u044F \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F"
   e: Complete the race ahead of everyone by overcoming obstacles
+  t: Engelleri asarak yarisi herkesin onunde tamamlayin
 --- !u!1 &159793928 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7119976071097519831, guid: 8a232d54b437eef45904caca5cde33bd, type: 3}
@@ -9186,6 +9188,7 @@ MonoBehaviour:
     \u043D\u0438\u0445!"
   e: This is the number of connected players. Try to get to the finish line before
     them!
+  t: Bu, bagli oyuncularin sayisidir. Onlardan once bitis cizgisine ulasmaya calisin!
 --- !u!4 &844495701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 844495701, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
@@ -16264,6 +16267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   r: "\u0414\u0430\u043B\u0435\u0435"
   e: Next
+  t: Sonraki
 --- !u!1001 &1462569757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16884,6 +16888,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinishRace (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3267152974201219367, guid: 9279986f7e458e645981625479ab06af, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e3e07ab974e70d4f98a8acedbdb89f1, type: 2}
     - target: {fileID: 3316056463036234800, guid: 9279986f7e458e645981625479ab06af, type: 3}
       propertyPath: powerKickFromPlayer
       value: 10
@@ -17991,6 +17999,7 @@ MonoBehaviour:
   r: "\u042D\u0442\u043E \u0442\u0432\u043E\u044F \u0437\u0430\u0434\u0430\u0447\u0430
     \u0432 \u0434\u0430\u043D\u043D\u043E\u0439 \u0438\u0433\u0440\u0435"
   e: This is your task to complete on this level
+  t: Bu seviyede tamamlamaniz gereken gorev budur
 --- !u!114 &1651957985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21456,7 +21465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902193716}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.015381524, y: -3.3297712e-17, z: 2.6742873e-19, w: 0.99988174}
+  m_LocalRotation: {x: 0.015381527, y: 0.0000000027936375, z: -4.2975495e-11, w: 0.99988174}
   m_LocalPosition: {x: 10.53, y: 13.57, z: -188.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22785,15 +22794,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.015381524
+      value: 0.015381527
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -3.3297712e-17
+      value: 0.0000000027936375
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.6742873e-19
+      value: -4.2975495e-11
       objectReference: {fileID: 0}
     - target: {fileID: 1805923571, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_IsActive

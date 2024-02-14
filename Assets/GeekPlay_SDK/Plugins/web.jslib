@@ -26,13 +26,14 @@ var plugin = {
     RateGame: function () {
         ysdk.feedback.canReview()
         .then(({ value, reason }) => {
+            myGameInstance.SendMessage('Init', 'StopMusAndGame');
             if (value) {
                 ysdk.feedback.requestReview()
                     .then(({ feedbackSent }) => {
-                        console.log(feedbackSent);
+                        myGameInstance.SendMessage('Init', 'ResumeMusAndGame');
                     })
             } else {
-                console.log(reason)
+                myGameInstance.SendMessage('Init', 'ResumeMusAndGame');
             }
         })
     },

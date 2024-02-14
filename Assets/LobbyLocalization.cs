@@ -58,7 +58,7 @@ public class LobbyLocalization : MonoBehaviour
                 YanText[i].text = "Ян";
             }
         }
-        else
+        else if(Geekplay.Instance.language == "en")
         {
 			mainMenuText.text = "Main Menu";
         	tutorText.text = "They gave you a reward for passing the game. Let`s try to speng it!";
@@ -76,6 +76,30 @@ public class LobbyLocalization : MonoBehaviour
             unusual5.text = "Epic";
             unusual6.text = "Legendary";
             money1.text = "WOW!";
+
+            for (int i = 0; i < YanText.Count; i++)
+            {
+                YanText[i].text = "Yan";
+            }
+        }
+        else if(Geekplay.Instance.language == "tr")
+        {
+            mainMenuText.text = "Ana Menu";
+            tutorText.text = "Oyunu gecmeniz icin size bir odul verdiler. Harcamayi deneyelim!";
+            startGameText.text = "Oyunu Baslat";
+            doubleAwardButtonText.text = "cifte odul";
+
+            rare1.text = "nadir";
+            rare2.text = "nadir";
+            rare3.text = "nadir";
+
+            unusual1.text = "Olagandisi";
+            unusual2.text = "Olagandisi";
+            unusual3.text = "Olagandisi";
+            unusual4.text = "Olagandisi";
+            unusual5.text = "Epik";
+            unusual6.text = "Efsanevi";
+            money1.text = "VAAY!";
 
             for (int i = 0; i < YanText.Count; i++)
             {

@@ -2107,7 +2107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1743797182799950873, guid: 9c5473a823f139747a2c22e1cebeff1e, type: 3}
+  m_Sprite: {fileID: -935226199, guid: 93b30213448941b41b882512f0eafaee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2131,6 +2131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rusSprite: {fileID: -7599714632720895536, guid: 9c5473a823f139747a2c22e1cebeff1e, type: 3}
   enSprite: {fileID: -1743797182799950873, guid: 9c5473a823f139747a2c22e1cebeff1e, type: 3}
+  trSprite: {fileID: -935226199, guid: 93b30213448941b41b882512f0eafaee, type: 3}
 --- !u!1 &3131435678465346421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,7 +2468,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4985484418585509803, guid: 9c5473a823f139747a2c22e1cebeff1e, type: 3}
+  m_Sprite: {fileID: 1142122434, guid: 93b30213448941b41b882512f0eafaee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2491,6 +2492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rusSprite: {fileID: -2243101328356349164, guid: 9c5473a823f139747a2c22e1cebeff1e, type: 3}
   enSprite: {fileID: 4985484418585509803, guid: 9c5473a823f139747a2c22e1cebeff1e, type: 3}
+  trSprite: {fileID: 1142122434, guid: 93b30213448941b41b882512f0eafaee, type: 3}
 --- !u!1 &3131435679162413942
 GameObject:
   m_ObjectHideFlags: 0

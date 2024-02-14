@@ -26,7 +26,7 @@ public class LeaderboardInGame : MonoBehaviour
         else if (Geekplay.Instance.language == "ru")
         {
 
-            LeaderBoardHeader.text = "лидери \"Fall Buddies\""; 
+            LeaderBoardHeader.text = "лидеры \"Fall Buddies\""; 
             leadersText1Bottom.text = $"Таблица обновится через: {time}";
         }
         else if (Geekplay.Instance.language == "tr")

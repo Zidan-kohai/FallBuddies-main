@@ -66,9 +66,17 @@ public class CanvasLobby : MonoBehaviour
         var InvokerMethod = MainCanvas.gameObject.GetComponent<PlayerDataUIValue>();
         InvokerMethod.isLevelUp = false;
         if (Geekplay.Instance.language == "en")
+        {
             PlaceText.text = "Place: " + InvokerMethod.PlaceInLevel;
-        else
+        }
+        else if(Geekplay.Instance.language == "ru")
+        {
             PlaceText.text = "Место: " + InvokerMethod.PlaceInLevel;
+        }
+        else if(Geekplay.Instance.language == "tr")
+        {
+            PlaceText.text = "Yer: " + InvokerMethod.PlaceInLevel;
+        }
     }
     private void OnDisable()
     {

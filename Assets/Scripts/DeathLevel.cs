@@ -124,9 +124,17 @@ public class DeathLevel : MonoBehaviour
         else
         {
             if (Geekplay.Instance.language == "en")
+            {
                 TextLost.text = "Players left: " + jj + "/" + ii;
-            else
+            }
+            else if (Geekplay.Instance.language == "ru")
+            {
                 TextLost.text = "Игроков: " + jj + "/" + ii;
+            }
+            else if (Geekplay.Instance.language == "tr")
+            {
+                TextLost.text = "Kalan oyuncular: " + jj + "/" + ii;
+            }
         }
 
         yield return null;
@@ -144,10 +152,17 @@ public class DeathLevel : MonoBehaviour
 
         GOlost = gameBotObjectsLost.Length + 1;
         if (Geekplay.Instance.language == "en")
-                TextLost.text = "Players left: " + GOlost + "/" + GOlost;
-            else
-                TextLost.text = "Игроков осталось: " + GOlost + "/" + GOlost;
-
+        {
+            TextLost.text = "Players left: " + GOlost + "/" + GOlost;
+        }
+        else if (Geekplay.Instance.language == "ru")
+        {
+            TextLost.text = "Игроков: " + GOlost + "/" + GOlost;
+        }
+        else if (Geekplay.Instance.language == "tr")
+        {
+            TextLost.text = "Kalan oyuncular: " + GOlost + "/" + GOlost;
+        }
         yield break;
     }
 

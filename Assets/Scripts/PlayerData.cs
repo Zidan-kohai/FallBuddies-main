@@ -54,6 +54,8 @@ public class PlayerData
     public bool buyLegendatyCard1;
     public bool buyRareCard2;
     public bool buyRareCard3;
+
+    public int GameCounter;
 }
 
 

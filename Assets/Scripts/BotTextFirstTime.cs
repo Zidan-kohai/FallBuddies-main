@@ -49,9 +49,13 @@ public class BotTextFirstTime : MonoBehaviour
                 {
                     text3DBotText.text = "Bot";
                 }
-                else
+                else if(Geekplay.Instance.language == "ru")
                 {
                     text3DBotText.text = "Бот";
+                }
+                else if(Geekplay.Instance.language == "tr")
+                {
+                    text3DBotText.text = "Bot";
                 }
             }
         }

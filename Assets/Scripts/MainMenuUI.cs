@@ -91,7 +91,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartShopping()
     {
-        if (isFirstOpenedShop)
+        if (isFirstOpenedShop && Geekplay.Instance.PlayerData.GameCounter == 1)
         {
             Analytics.instance.SendEvent("Tutor_end");
             isFirstOpenedShop = false;

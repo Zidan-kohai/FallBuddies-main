@@ -784,6 +784,7 @@ public class Geekplay : MonoBehaviour
         {
             if (purchasesList[i].itemName == tag)
             {
+                purchasesList[i].purchaseEvent.RemoveAllListeners();
                 purchasesList[i].purchaseEvent.AddListener(action);
             }
         }
@@ -806,6 +807,8 @@ public class Geekplay : MonoBehaviour
         {
             if (rewardsList[i].rewardName == tag)
             {
+                rewardsList[i].rewardEvent.RemoveAllListeners();
+
                 rewardsList[i].rewardEvent.AddListener(action);
             }
         }

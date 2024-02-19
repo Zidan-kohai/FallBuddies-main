@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -14,6 +11,8 @@ public class ShopCharacter : MonoBehaviour
     public GameObject ButtonBuy;
     public GameObject Equip;
     public GameObject CostAD;
+    public GameObject GoToInAppShopPanel;
+    public GameObject vipTextObject;
 
     public PlayerDataUIValue MCanvas;
     public PlayerData PDShop;
@@ -27,6 +26,7 @@ public class ShopCharacter : MonoBehaviour
     public bool isEquip;
     public bool isBuyByHardMoney;
     public bool isAD;
+    public bool isVip;
 
     [Header("Items Id Shop from Player Data w Init")]
 
@@ -165,6 +165,16 @@ public class ShopCharacter : MonoBehaviour
                 ButtonBuy.SetActive(true);
 
             }
+            else if (isVip)
+            {
+                CostObject.gameObject.SetActive(false);
+                CostHardObject.gameObject.SetActive(false);
+                CostAD.gameObject.SetActive(false);
+                ButtonBuy.SetActive(false);
+
+                vipTextObject.SetActive(true);
+                GoToInAppShopPanel.SetActive(true);
+            }
             else
             {
                 CostObject.gameObject.SetActive(true);
@@ -175,29 +185,32 @@ public class ShopCharacter : MonoBehaviour
 
             Bought.gameObject.SetActive(false);
 
-            // IF NEED BUY ONE ITEM, NO SKIN + PARTS, ONLY ONE ITEM BUY
-            BuyButton b = ButtonBuy.GetComponent<BuyButton>();
+            if (!isVip)
+            {
+                // IF NEED BUY ONE ITEM, NO SKIN + PARTS, ONLY ONE ITEM BUY
+                BuyButton b = ButtonBuy.GetComponent<BuyButton>();
 
-            b.isBodies = isBodies;
-            b.isBodyparts = isBodyparts;
-            b.isEyes = isEyes;
-            b.isGloves = isGloves;
-            b.isHeadparts = isHeadparts;
-            b.isMounth = isMounth;
-            b.isNoise = isNoise;
-            b.isCombs = isCombs;
-            b.isEars = isEars;
-            b.isEyesFromHead = isEyesFromHead;
-            b.isHair = isHair;
-            b.isHat = isHat;
-            b.isHorn = isHorn;
-            b.isTails = isTails;
-            b.idBuy = ItemId;
-            b.idCost = CostForBuy;
-            b.idCostHard = CostHardForBuy;
-            b.idIsAD = isAD;
-            b.idIsHardMoney = isBuyByHardMoney;
-            b.isBought = false;
+                b.isBodies = isBodies;
+                b.isBodyparts = isBodyparts;
+                b.isEyes = isEyes;
+                b.isGloves = isGloves;
+                b.isHeadparts = isHeadparts;
+                b.isMounth = isMounth;
+                b.isNoise = isNoise;
+                b.isCombs = isCombs;
+                b.isEars = isEars;
+                b.isEyesFromHead = isEyesFromHead;
+                b.isHair = isHair;
+                b.isHat = isHat;
+                b.isHorn = isHorn;
+                b.isTails = isTails;
+                b.idBuy = ItemId;
+                b.idCost = CostForBuy;
+                b.idCostHard = CostHardForBuy;
+                b.idIsAD = isAD;
+                b.idIsHardMoney = isBuyByHardMoney;
+                b.isBought = false;
+            }
         }
         else
         {
@@ -1192,6 +1205,14 @@ public class ShopCharacter : MonoBehaviour
                 CostHardObject.gameObject.SetActive(false);
                 CostAD.gameObject.SetActive(true);
             }
+            else if (isVip)
+            {
+                CostObject.gameObject.SetActive(false);
+                CostHardObject.gameObject.SetActive(false);
+                CostAD.gameObject.SetActive(false);
+
+                vipTextObject.SetActive(true);
+            }
             else
             {
                 CostObject.gameObject.SetActive(true);
@@ -1201,6 +1222,7 @@ public class ShopCharacter : MonoBehaviour
         }
         else
         {
+            vipTextObject.SetActive(false);
             if (isEquip == false)
             {
                 Bought.SetActive(true);

@@ -84,7 +84,7 @@ public class InnAppShop : MonoBehaviour
 
     public void BuyRareCard2()
     {
-        Geekplay.Instance.PlayerData.Bodyparts[9] = 1;
+        Geekplay.Instance.PlayerData.Bodyparts[6] = 1;
         CheckMoneyTextUI();
 
         Buyed(buyRareCard2Button, buyedRareCard2Panel);
@@ -97,8 +97,8 @@ public class InnAppShop : MonoBehaviour
     }
 
     public void BuyRareCard3()
-    {
-        Geekplay.Instance.PlayerData.Gloves[3] = 1;
+    { 
+        //Geekplay.Instance.PlayerData.Gloves[3] = 1;
         Geekplay.Instance.PlayerData.Tails[6] = 1;
         Geekplay.Instance.PlayerData.PlayerMoney += 500;
         CheckMoneyTextUI();
@@ -114,12 +114,13 @@ public class InnAppShop : MonoBehaviour
 
     public void BuyUncommonCard1()
     {
-        Geekplay.Instance.PlayerData.Bodies[2] = 1;
-        Geekplay.Instance.PlayerData.Bodyparts[1] = 1;
-        Geekplay.Instance.PlayerData.Gloves[1] = 1;
-        Geekplay.Instance.PlayerData.Mounth[7] = 1;
-        Geekplay.Instance.PlayerData.Eyes[5] = 1;
-        Geekplay.Instance.PlayerData.Ears[0] = 1;
+        //Geekplay.Instance.PlayerData.Bodies[2] = 1;
+        //Geekplay.Instance.PlayerData.Bodyparts[1] = 1;
+        //Geekplay.Instance.PlayerData.Gloves[1] = 1;
+        //Geekplay.Instance.PlayerData.Mounth[7] = 1;
+        //Geekplay.Instance.PlayerData.Eyes[5] = 1;
+        //Geekplay.Instance.PlayerData.Ears[0] = 1;
+        Geekplay.Instance.PlayerData.Gloves[3] = 1;
         CheckMoneyTextUI();
 
         Buyed(buyUncommonCard1Button, buyedUncommonCard1Panel);
@@ -144,8 +145,8 @@ public class InnAppShop : MonoBehaviour
     public void BuyCommonCard2()
     {
         Geekplay.Instance.PlayerData.Bodyparts[1] = 1;
-        Geekplay.Instance.PlayerData.Horn[2] = 1;
-        Geekplay.Instance.PlayerData.EyesFromHead[2] = 1;
+        //Geekplay.Instance.PlayerData.Horn[2] = 1;
+        //Geekplay.Instance.PlayerData.EyesFromHead[2] = 1;
         CheckMoneyTextUI();
 
 
@@ -171,12 +172,13 @@ public class InnAppShop : MonoBehaviour
 
     public void BuyEpicCard1()
     {
-        Geekplay.Instance.PlayerData.Bodies[3] = 1;
-        Geekplay.Instance.PlayerData.Bodyparts[2] = 1;
-        Geekplay.Instance.PlayerData.Eyes[7] = 1;
-        Geekplay.Instance.PlayerData.Gloves[3] = 1;
-        Geekplay.Instance.PlayerData.Noise[0] = 1;
-        Geekplay.Instance.PlayerData.Ears[2] = 1;
+        Geekplay.Instance.PlayerData.Horn[2] = 1;
+        //Geekplay.Instance.PlayerData.Bodies[3] = 1;
+        //Geekplay.Instance.PlayerData.Bodyparts[2] = 1;
+        Geekplay.Instance.PlayerData.Eyes[5] = 1;
+        //Geekplay.Instance.PlayerData.Gloves[3] = 1;
+        //Geekplay.Instance.PlayerData.Noise[0] = 1;
+        //Geekplay.Instance.PlayerData.Ears[2] = 1;
         CheckMoneyTextUI();
 
 
@@ -191,22 +193,23 @@ public class InnAppShop : MonoBehaviour
 
     public void BuyLegendatyCard1()
     {
-        Geekplay.Instance.PlayerData.Bodies[0] = 1;
-        Geekplay.Instance.PlayerData.Bodyparts[5] = 1;
-        Geekplay.Instance.PlayerData.Eyes[9] = 1;
-        Geekplay.Instance.PlayerData.Gloves[5] = 1;
-        Geekplay.Instance.PlayerData.Noise[1] = 1;
-        Geekplay.Instance.PlayerData.Ears[3] = 1;
+        //Geekplay.Instance.PlayerData.Bodies[0] = 1;
+        //Geekplay.Instance.PlayerData.Bodyparts[5] = 1;
+        //Geekplay.Instance.PlayerData.Eyes[9] = 1;
+        //Geekplay.Instance.PlayerData.Gloves[5] = 1;
+        //Geekplay.Instance.PlayerData.Noise[1] = 1;
+        //Geekplay.Instance.PlayerData.Ears[3] = 1;
 
-        Geekplay.Instance.PlayerData.Bodies[5] = 1;
-        Geekplay.Instance.PlayerData.Bodyparts[4] = 1;
-        Geekplay.Instance.PlayerData.Eyes[8] = 1;
-        Geekplay.Instance.PlayerData.Gloves[4] = 1;
-        Geekplay.Instance.PlayerData.Mounth[9] = 1;
-        Geekplay.Instance.PlayerData.Combs[0] = 1;
+        //Geekplay.Instance.PlayerData.Bodies[5] = 1;
+        //Geekplay.Instance.PlayerData.Bodyparts[4] = 1;
+        //Geekplay.Instance.PlayerData.Eyes[8] = 1;
+        //Geekplay.Instance.PlayerData.Gloves[4] = 1;
+        //Geekplay.Instance.PlayerData.Mounth[9] = 1;
+        //Geekplay.Instance.PlayerData.Combs[0] = 1;
 
 
-        Geekplay.Instance.PlayerData.PlayerMoney += 1000;
+        Geekplay.Instance.PlayerData.PlayerMoney += 500;
+        Geekplay.Instance.PlayerData.PlayerHardMoney += 250;
         CheckMoneyTextUI();
 
 

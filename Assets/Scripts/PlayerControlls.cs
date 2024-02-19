@@ -27,7 +27,7 @@ public class PlayerControlls : MonoBehaviour
 
     public PlayerDataUIValue PlayerDataUIValue;
 
-    public FixedJoystick Joystick;
+    public DynamicJoystick Joystick;
 
     public AudioSource audioSource;
 
@@ -51,7 +51,7 @@ public class PlayerControlls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Joystick = FindObjectOfType<FixedJoystick>();
+        Joystick = FindObjectOfType<DynamicJoystick>();
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
         isMobile = Geekplay.Instance.PlayerData.mobile;
     }

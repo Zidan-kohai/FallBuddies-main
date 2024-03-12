@@ -221,14 +221,19 @@ public class PlayerDataUIValue : MonoBehaviour
     IEnumerator GetReward()
     {
         Geekplay.Instance.PlayerData.GameFinished++;
-        if(Geekplay.Instance.PlayerData.GameFinished >= 2)
-            Geekplay.Instance.RateGameFunc();
+        
 
         if (PlaceInLevel > 5)
         {
             MoneyReward = 100;
             HardMoneyReward = 1;
             ExpReward = 30;
+
+            if (PlaceInLevel > 3)
+            {
+                if (Geekplay.Instance.PlayerData.GameFinished >= 2)
+                    Geekplay.Instance.RateGameFunc();
+            }
         }
         else if (PlaceInLevel == 5)
         {

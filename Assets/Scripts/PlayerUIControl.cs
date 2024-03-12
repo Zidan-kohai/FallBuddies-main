@@ -56,15 +56,15 @@ public class PlayerUIControl : MonoBehaviour
     public void Start()
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
-        FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
-        FirstTimeNeedShop = Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop;
+        //FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
+        //FirstTimeNeedShop = Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop;
 
-        if (FirstTime == true)
-        {
-            ImageTextFirstGame.gameObject.SetActive(true);
-        }
-        else
-        {
+        //if (FirstTime == true)
+        //{
+        //    ImageTextFirstGame.gameObject.SetActive(true);
+        //}
+        //else
+        //{
             ImageTextFirstGame.gameObject.SetActive(false);
             if (newGameButton != null && mainMenuButton != null &&
                 firstLevelStart != null && secondLevelStart != null 
@@ -127,7 +127,7 @@ public class PlayerUIControl : MonoBehaviour
 
 
 
-        }
+        //}
 
 
         if (doubleAward != null)
@@ -228,18 +228,18 @@ public class PlayerUIControl : MonoBehaviour
 
     public void StartGameImage()
     {
-        FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
-        FirstTimeNeedShop = Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop;
+        //FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
+        //FirstTimeNeedShop = Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop;
 
-        if ((FirstTime == true) && (FirstTimeNeedShop == true))
-        {
-            Geekplay.Instance.PlayerData.GameCounter++;
-            Analytics.instance.SendEvent("Tutor_1");
-            return;
+        //if ((FirstTime == true) && (FirstTimeNeedShop == true))
+        //{
+        //    Geekplay.Instance.PlayerData.GameCounter++;
+        //    Analytics.instance.SendEvent("Tutor_1");
+        //    return;
 
-        }
-        else
-        {
+        //}
+        //else
+        //{
             isPressed = true;
 
             panel.gameObject.SetActive(true);
@@ -253,15 +253,15 @@ public class PlayerUIControl : MonoBehaviour
             StartCoroutine(ImageMoveStart(MainImagesMover));
             StartCoroutine(ChangeImageLevel());
             StartCoroutine(WaitAwakeGame());
-        }
+        //}
     }
 
     public void StartMainMenu()
     {
-        if(Geekplay.Instance.PlayerData.PlayerFirstTimePlay)
-        {
-            Analytics.instance.SendEvent("Tutor_3");
-        }
+        //if(Geekplay.Instance.PlayerData.PlayerFirstTimePlay)
+        //{
+         //   Analytics.instance.SendEvent("Tutor_3");
+        //}
         SceneManager.LoadScene("Menu");
     }
 
@@ -356,32 +356,32 @@ public class PlayerUIControl : MonoBehaviour
 
         DOTween.Kill(MainImagesMover.transform);
         
-        if(FirstTime == true)
-        {
-            Sprite sprite = imagesList1[1].GetComponent<Image>().sprite;
-            imageCenterImageInPanel.GetComponent<Image>().sprite = sprite;
-        }
-        else
-        {
+        //if(FirstTime == true)
+        //{
+        //    Sprite sprite = imagesList1[1].GetComponent<Image>().sprite;
+        //    imageCenterImageInPanel.GetComponent<Image>().sprite = sprite;
+        //}
+        //else
+        //{
             Sprite sprite = imagesList1[imageLevel].GetComponent<Image>().sprite;
             imageCenterImageInPanel.GetComponent<Image>().sprite = sprite;
-        }
+        //}
         yield return new WaitForSeconds(1.5f);
 
         panel.gameObject.SetActive(false);
 
-        FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
+        //FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
 
         if (isNeedTheLevelLoad == false)
         {
-            if (FirstTime == true)
-            {
-                SceneManager.LoadScene("Level2");
-            }
-            else
-            {
+            //if (FirstTime == true)
+            //{
+            //    SceneManager.LoadScene("Level2");
+            //}
+            //else
+            //{
                 SceneManager.LoadScene(Level);
-            }
+            //}
         }
         else
         {

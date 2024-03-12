@@ -1,11 +1,7 @@
 using Cinemachine;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.SocialPlatforms;
 
 
 public class MainMenuUI : MonoBehaviour
@@ -14,9 +10,7 @@ public class MainMenuUI : MonoBehaviour
     public GameObject CameraTargetTimeShop;
     public GameObject CmVcam;
     public GameObject PlayerUILevelExp;
-    public GameObject ButtonMenu;
     public GameObject ButtonMenuFromShop;
-    public GameObject ButtonShop;
     public GameObject ButtonStart;
     public GameObject telegramButton;
     public GameObject ButtonBuy;
@@ -48,34 +42,34 @@ public class MainMenuUI : MonoBehaviour
     {
         PlayerDataUIValue = FindObjectOfType<PlayerDataUIValue>();
         PlayerUILevelExp = GameObject.FindGameObjectWithTag("PlayerUILevelPanel");
-        FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
-        FirstTimeShop = Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop;
+        //FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
+        //FirstTimeShop = Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop;
 
-        if ((FirstTime == true) && (FirstTimeShop == false))
-        {
-            ImageTextFirstGame.SetActive(true);
-            Levels.gameObject.SetActive(false);
-            leaderBoard.SetActive(false);
+        //if ((FirstTime == true) && (FirstTimeShop == false))
+        //{
+        //    ImageTextFirstGame.SetActive(true);
+        //    Levels.gameObject.SetActive(false);
+        //    leaderBoard.SetActive(false);
 
-            Analytics.instance.SendEvent("Tutor_Start");
-        }
-        else
-        {
-            ImageTextFirstGame.gameObject.SetActive(false);
-        }
+        //    Analytics.instance.SendEvent("Tutor_Start");
+        //}
+        //else
+        //{
+        //    ImageTextFirstGame.gameObject.SetActive(false);
+        //}
 
-        if ((FirstTime == true) && (FirstTimeShop == true))
-        {
-            ImageTextFirstGameShop.gameObject.SetActive(true);
-            Levels.gameObject.SetActive(false);
-            leaderBoard.SetActive(false);
+        //if ((FirstTime == true) && (FirstTimeShop == true))
+        //{
+        //    ImageTextFirstGameShop.gameObject.SetActive(true);
+        //    Levels.gameObject.SetActive(false);
+        //    leaderBoard.SetActive(false);
 
-            Analytics.instance.SendEvent("Tutor_4");
-        }
-        else
-        {
-            ImageTextFirstGameShop.gameObject.SetActive(false);
-        }
+        //    Analytics.instance.SendEvent("Tutor_4");
+        //}
+        //else
+        //{
+        //    ImageTextFirstGameShop.gameObject.SetActive(false);
+        //}
 
         ButtonMenuFromShop.SetActive(false);
         PanelShop.SetActive(false);
@@ -91,57 +85,57 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartShopping()
     {
-        if (isFirstOpenedShop && Geekplay.Instance.PlayerData.GameCounter == 1)
-        {
-            Analytics.instance.SendEvent("Tutor_end");
-            isFirstOpenedShop = false;
-        }
+        //if (isFirstOpenedShop && Geekplay.Instance.PlayerData.GameCounter == 1)
+        //{
+        //    Analytics.instance.SendEvent("Tutor_end");
+        //    isFirstOpenedShop = false;
+        //}
 
 
-        if ((FirstTime == true) && (FirstTimeShop == true))
-        {
-            if(PanelShop.gameObject.active == false)
-            {
-                if (ImageTextFirstGameShop.gameObject.active == true)
-                {
-                    ImageTextFirstGameShop.gameObject.SetActive(false);
-                }
+        //if ((FirstTime == true) && (FirstTimeShop == true))
+        //{
+        //    if(PanelShop.gameObject.active == false)
+        //    {
+        //        if (ImageTextFirstGameShop.gameObject.active == true)
+        //        {
+        //            ImageTextFirstGameShop.gameObject.SetActive(false);
+        //        }
 
-                Geekplay.Instance.PlayerData.PlayerFirstTimePlay = false;
-                Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop = false;
-                FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
-                FirstTimeShop = Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop;
+        //        Geekplay.Instance.PlayerData.PlayerFirstTimePlay = false;
+        //        Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop = false;
+        //        FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
+        //        FirstTimeShop = Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop;
 
-                var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
-                cam.Follow = CameraTargetTimeShop.transform;
-                cam.LookAt = CameraTargetTimeShop.transform;
-                ButtonStart.SetActive(false);
-                PlayerUILevelExp.SetActive(false);
-                ButtonMenuFromShop.SetActive(true);
-                PanelShop.SetActive(true);
-                PanelInnShop.SetActive(false);
-                leaderBoard.SetActive(false);
-                Levels.gameObject.SetActive(false);
-                telegramButton.SetActive(false);
+        //        var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
+        //        cam.Follow = CameraTargetTimeShop.transform;
+        //        cam.LookAt = CameraTargetTimeShop.transform;
+        //        ButtonStart.SetActive(false);
+        //        PlayerUILevelExp.SetActive(false);
+        //        ButtonMenuFromShop.SetActive(true);
+        //        PanelShop.SetActive(true);
+        //        PanelInnShop.SetActive(false);
+        //        leaderBoard.SetActive(false);
+        //        Levels.gameObject.SetActive(false);
+        //        telegramButton.SetActive(false);
 
-                Scrolls[0].SetActive(true);
-                isFirstOpenedShop = true;
-                foreach (var item in LevelstartButtons)
-                {
-                    item.SetActive(false);
-                }
-            }
-            else
-            {
-                ExitToMainMenu();
-            }
-        }
-        else if ((FirstTime == true) && (FirstTimeShop == false))
-        {
-            return;
-        }
-        else
-        {
+        //        Scrolls[0].SetActive(true);
+        //        isFirstOpenedShop = true;
+        //        foreach (var item in LevelstartButtons)
+        //        {
+        //            item.SetActive(false);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        ExitToMainMenu();
+        //    }
+        //}
+        //else if ((FirstTime == true) && (FirstTimeShop == false))
+        //{
+        //    return;
+        //}
+        //else
+        //{
             if (PanelShop.gameObject.active == false)
             {
                 var cam = CmVcam.GetComponent<CinemachineVirtualCamera>();
@@ -166,7 +160,7 @@ public class MainMenuUI : MonoBehaviour
             {
                 ExitToMainMenu();
             }
-        }
+       // }
     }
 
     public void ExitToMainMenu()
@@ -190,10 +184,10 @@ public class MainMenuUI : MonoBehaviour
         {
             PanelShop.SetActive(false);
 
-            if (Geekplay.Instance.PlayerData.PlayerFirstTimePlay == false)
-            {
+            //if (Geekplay.Instance.PlayerData.PlayerFirstTimePlay == false)
+            //{
                 Geekplay.Instance.ShowInterstitialAd();
-            }
+            //}
         }
         PanelInnShop.SetActive(false);
         panelSetting.SetActive(false);
@@ -220,8 +214,8 @@ public class MainMenuUI : MonoBehaviour
     public void GoToInnShop()
     {
 
-        if(FirstTime == false)
-        {
+        //if(FirstTime == false)
+        //{
             if(PanelInnShop.gameObject.active == false)
             {
                 ButtonStart.SetActive(false);
@@ -243,7 +237,7 @@ public class MainMenuUI : MonoBehaviour
                 ExitToMainMenu();
             }
             
-        }
+       // }
     }
 
     public void ShopBody()

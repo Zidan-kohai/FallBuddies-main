@@ -32,23 +32,23 @@ public class BotTextFirstTime : MonoBehaviour
         
         m_playerInfo = RandomNameAndCountryPicker.Instance.GetRandomPlayerInfo();
 
-        if (FirstTime == true)
-        {
-            if (Geekplay.Instance.language == "en")
-            {
-                text3DBotText.text = "Bot";
-            }
-            else if (Geekplay.Instance.language == "ru")
-            {
-                text3DBotText.text = "Бот";
-            }
-            else if (Geekplay.Instance.language == "tr")
-            {
-                text3DBotText.text = "Bot";
-            }
-        }
-        else
-        {
+        //if (FirstTime == true)
+        //{
+        //    if (Geekplay.Instance.language == "en")
+        //    {
+        //        text3DBotText.text = "Bot";
+        //    }
+        //    else if (Geekplay.Instance.language == "ru")
+        //    {
+        //        text3DBotText.text = "Бот";
+        //    }
+        //    else if (Geekplay.Instance.language == "tr")
+        //    {
+        //        text3DBotText.text = "Bot";
+        //    }
+        //}
+        //else
+        //{
             int i = Random.Range(0, 100);
             if (i > 10)
             {
@@ -69,7 +69,7 @@ public class BotTextFirstTime : MonoBehaviour
                     text3DBotText.text = "Bot";
                 }
             }
-        }
+        //}
 
         //if (Geekplay.Instance.language == "ru")
         //    Destroy(text3DBotText.gameObject);

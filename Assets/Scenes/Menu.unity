@@ -905,9 +905,7 @@ MonoBehaviour:
   CameraTargetTimeShop: {fileID: 2081124451}
   CmVcam: {fileID: 1072970151}
   PlayerUILevelExp: {fileID: 0}
-  ButtonMenu: {fileID: 1182817367}
   ButtonMenuFromShop: {fileID: 1039979396}
-  ButtonShop: {fileID: 1547825362}
   ButtonStart: {fileID: 2107744440}
   telegramButton: {fileID: 1179351819}
   ButtonBuy: {fileID: 493108846}
@@ -17303,7 +17301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674605855}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08810864, y: 0.000000017139461, z: -0.0000000015160306, w: 0.99611086}
+  m_LocalRotation: {x: 0.08810864, y: -0.000000017139463, z: 0.0000000015160309, w: 0.99611086}
   m_LocalPosition: {x: 0, y: 38.499996, z: -0.7000351}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -30674,7 +30672,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072970151}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08810864, y: 0.000000017139461, z: -0.0000000015160306, w: 0.99611086}
+  m_LocalRotation: {x: 0.08810864, y: -0.000000017139463, z: 0.0000000015160309, w: 0.99611086}
   m_LocalPosition: {x: 0, y: 38.499996, z: -0.7000351}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35709,11 +35707,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000017139461
+      value: -0.000000017139463
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0000000015160306
+      value: -0.0000000015160309
       objectReference: {fileID: 0}
     - target: {fileID: 963194228, guid: 9a5ab8fe10484f36a24355a159ff8389, type: 3}
       propertyPath: m_LocalRotation.y

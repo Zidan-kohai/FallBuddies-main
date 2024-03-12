@@ -70,12 +70,12 @@ public class Level2Managment : MonoBehaviour
             panelMobile.gameObject.SetActive(false);
         }
 
-        FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
+        //FirstTime = Geekplay.Instance.PlayerData.PlayerFirstTimePlay;
 
-        if(FirstTime)
-        {
-            FirstTimeIntCoroutine = 0;
-        }
+        //if(FirstTime)
+        //{
+        //    FirstTimeIntCoroutine = 0;
+        //}
 
         panelTutorial.gameObject.SetActive(false);
         tutorTextQuest.gameObject.SetActive(false);
@@ -166,36 +166,36 @@ public class Level2Managment : MonoBehaviour
         panelLevelText.rectTransform.DOMoveY(-2000f, 0.1f);
         panelLevelText.color = nativeColorText;
 
-        if (FirstTime == true)
-        {
-            bots = deathLevel.gameBotObjectsLost;
-            NativeSpeedBot = bots[0].GetComponent<NavMeshAgent>().speed;
+        //if (FirstTime == true)
+        //{
+        //    bots = deathLevel.gameBotObjectsLost;
+        //    NativeSpeedBot = bots[0].GetComponent<NavMeshAgent>().speed;
 
-            foreach (var bot in bots)
-            {
-                bot.GetComponent<NavMeshAgent>().speed = 0;
-            }
+        //    foreach (var bot in bots)
+        //    {
+        //        bot.GetComponent<NavMeshAgent>().speed = 0;
+        //    }
 
-            NativeSpeed = playerGO.GetComponent<PlayerControlls>().speed;
-            playerGO.GetComponent<PlayerControlls>().speed = 0;
-            playerGO.GetComponent<PlayerControlls>().sensitivity = 0;
-            playerGO.GetComponent<PlayerControlls>().jumpForce = 0;
+        //    NativeSpeed = playerGO.GetComponent<PlayerControlls>().speed;
+        //    playerGO.GetComponent<PlayerControlls>().speed = 0;
+        //    playerGO.GetComponent<PlayerControlls>().sensitivity = 0;
+        //    playerGO.GetComponent<PlayerControlls>().jumpForce = 0;
 
-            panelTutorial.gameObject.SetActive(true);
-            tutorTextQuest.gameObject.SetActive(true);
-            tutorButton.gameObject.SetActive(true);
-            panelQuest.gameObject.SetActive(true);
-            TextQuest.gameObject.SetActive(true);
+        //    panelTutorial.gameObject.SetActive(true);
+        //    tutorTextQuest.gameObject.SetActive(true);
+        //    tutorButton.gameObject.SetActive(true);
+        //    panelQuest.gameObject.SetActive(true);
+        //    TextQuest.gameObject.SetActive(true);
 
-            yield break;
-        }
-        else
-        {
+        //    yield break;
+        //}
+        //else
+        //{
             playerGO.GetComponent<PlayerControlls>().speed = SpeedMove;
             playerGO.GetComponent<PlayerControlls>().sensitivity = SpeedRotation;
             playerGO.GetComponent<PlayerControlls>().jumpForce = JumpForce;
             yield break;
-        }
+        //}
     }
 
     public void PressButtonStartCoroutine()

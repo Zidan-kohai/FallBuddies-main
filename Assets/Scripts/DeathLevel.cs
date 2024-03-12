@@ -186,15 +186,15 @@ public class DeathLevel : MonoBehaviour
         }
         else
         {
-            if (Geekplay.Instance.PlayerData.PlayerFirstTimePlay == true)
-            {
+            //if (Geekplay.Instance.PlayerData.PlayerFirstTimePlay == true)
+            //{
+            //    PlayerDataUIValue.PlaceInLevel = GOlost;
+            //    Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop = true;
+            //}
+            //else
+           //{
                 PlayerDataUIValue.PlaceInLevel = GOlost;
-                Geekplay.Instance.PlayerData.PlayerFirstTimeNeedShop = true;
-            }
-            else
-            {
-                PlayerDataUIValue.PlaceInLevel = GOlost;
-            }
+            //}
         }
 
         yield return new WaitForSeconds(0.2f);
